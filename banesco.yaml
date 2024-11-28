@@ -1,5 +1,5 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Location
 metadata:
   name: cash-management-and-account-services
   description: "Cash Management and Account Services API"
@@ -14,18 +14,14 @@ metadata:
       title: Production
       icon: globe
 spec:
-  type: api
-  lifecycle: production
-  owner: team:banking-team
-  system: cash-management
-  dependsOn: []
-  definition:
-    - $ref: './Domain/CashManagementAndAccountServices/CashManagementAndAccountServices.yaml'
-    - $ref: './Proxy/CashManagementAndAccountServices/CashManagementAndAccountServices.yaml'
-    - $ref: './Reception/CashManagementAndAccountServices/CashManagementAndAccountServices.yaml'
-    - $ref: './commons/Objects/ABAReference.yaml'
-    - $ref: './commons/HttpResponses/HttpError.yaml'
-    - $ref: './commons/HttpResponses/BadRequest.yaml'
+  tarjets:
+      #Domains
+    - Domain/CashManagementAndAccountServices/CashManagementAndAccountServices.yaml'
+    - Proxy/CashManagementAndAccountServices/CashManagementAndAccountServices.yaml'
+    - Reception/CashManagementAndAccountServices/CashManagementAndAccountServices.yaml'
+    - commons/Objects/ABAReference.yaml'
+    - commons/HttpResponses/HttpError.yaml'
+    - commons/HttpResponses/BadRequest.yaml'
   # Aquí puedes agregar cualquier anotación si es necesario.
   annotations:
     backstage.io/techdocs-ref: 'dir:./docs'
