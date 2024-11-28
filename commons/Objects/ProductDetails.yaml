@@ -1,0 +1,18 @@
+type: object
+properties:
+    ProductType:
+        type: object
+        properties:
+            productType:
+                type: string
+            productName:                    
+                type: string
+    SubProductType:
+        type: object
+        properties:                   
+            subProductName:                    
+                type: string
+    Variations:
+        $ref: './Variations.yaml'
+    salesChannel:                    
+        type: string

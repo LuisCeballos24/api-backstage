@@ -1,0 +1,11 @@
+type: object
+properties:
+    organisationProfileType:
+        type: string
+        description: tipos de características de algo o alguien.
+        enum:
+            - Financial Profile
+            - KYC Profile
+    organisationProfile:
+        type: object
+        description: Una breve descripción de las características de algo o alguien. (Diccionario de Negocios) 

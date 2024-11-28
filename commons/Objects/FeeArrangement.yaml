@@ -1,0 +1,11 @@
+type: array
+items:
+    properties:
+        feeDefinition:
+                type: string
+        feeAmount:
+            type: number
+        feeCurrency:
+            type: string
+        feeType:
+            type: string

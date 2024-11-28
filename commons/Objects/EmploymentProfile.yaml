@@ -1,0 +1,34 @@
+type: object
+properties:
+    employmentStartDate:
+        type: string
+        description: Fecha de inicio en el trabajo
+    governmentIdentification:
+        type: string
+        description: Identificacion de contraloria
+    jobTitle:
+        type: string
+        description: Cargo
+    previousEmploymentEndDate:
+        type: string
+        description: Finalizacion de trabajo anterior
+    previousEmploymentStartDate:
+        type: string
+        description: Inicio de trabajo anterior
+    salaryRange:
+        type: string
+        description: Rango de salario
+    salaryAmount:
+        type: number
+        description: Monto de salario percibido
+    salaryFrequency:
+        type: string
+        description: Frecuencia de salario
+    Location:
+        $ref: './Location.yaml'
+    Organisation:
+        $ref: './Organisation.yaml'
+    OtherIncome:
+        $ref: './OtherIncome.yaml'
+    incomeLevel:
+        type: string

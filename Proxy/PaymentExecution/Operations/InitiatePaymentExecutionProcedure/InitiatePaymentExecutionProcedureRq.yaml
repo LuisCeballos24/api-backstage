@@ -1,0 +1,16 @@
+type: object
+properties:
+    PayerProductReference:
+        $ref: '../../../../commons/Objects/PayerProductReference.yaml'
+    TransactionFacility:
+        $ref: '../../../../commons/Objects/TransactionFacility.yaml'
+    PayeeProductReference:
+        $ref: '../../../../commons/Objects/PayeeProductReference.yaml'
+    PayeeBankReference:
+        $ref: '../../../../commons/Objects/PayeeBankReference.yaml'
+    PayeeReference:
+        $ref: '../../../../commons/Objects/PayeeReference.yaml'
+    PayerReference:
+        $ref: '../../../../commons/Objects/PayerReference.yaml'
+    CustomerAgreement:
+        $ref: '../../../../commons/Objects/CustomerAgreement.yaml'

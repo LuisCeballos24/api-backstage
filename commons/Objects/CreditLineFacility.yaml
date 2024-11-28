@@ -1,0 +1,98 @@
+type: object
+properties:
+    activityCode:
+        type: string
+    autonomyCode:
+        type: string
+    autonomyUser:
+        type: string
+    Maintenace:
+        type: object
+        properties:
+            maintenaceReportType:
+                type: string
+    creditFacilityAdvisedAmount:
+        type: number
+    CreditFacilityAgreement:
+        type: object
+        properties:
+            agreementType:
+                type: string
+            agreementDescription:
+                type: string
+            AgreementDate:
+                type: array
+                items:
+                    type: object
+                    properties:
+                        datatype:
+                            type: string
+                        data:
+                            type: string
+    creditFacilityAmount:
+        type: number
+    creditFacilityCurrency:
+        type: string
+    CreditLineInvolvement:
+        type: array
+        items:
+            type: object
+            properties:
+                PartyIdentification:
+                    $ref: './PartyIdentification.yaml'
+                creditInvolvementType:
+                    type: string
+    CustomerAgreementReference:
+        type: object
+        properties:  
+            ProductInstanceRecord:
+                $ref: './productInstanceRecord.yaml'
+            netting:
+                type: string
+    creditFacilityOriginationDate:
+        type: string
+    creditFacilityAvailableDate:
+        type: string
+    creditFacilityAvailability:
+        type: string
+    CreditLineRisk:
+        type: object
+        properties:
+            cleanRiskAmount:
+                type: string
+            Country:
+                $ref: './Country.yaml'
+    LimitArrangement:
+        type: object
+        properties:
+            LimitIdentification:
+                type: object
+                properties:
+                    Identifier:
+                        $ref: './Identifier.yaml'
+            limitCurrency:
+                type: string
+            limitType:
+                type: number
+            limitRestrictedCurrency:
+                type: string
+            LimitAmount:
+                type: array
+            LimitAmountType:
+                type: array
+                items:
+                    type: number
+            limitFrequency:
+                type: string
+    creditFacilityDeadlineDate:
+            type: string
+    creditFacilityMaturityDate:
+        type: string
+    creditFacilityLastDrawDate:
+        type: string
+    creditFacilityProposalDate:
+        type: string
+    creditFacilityReviewDate:
+        type: string
+    PartyReference:
+        $ref: './PartyReference.yaml'

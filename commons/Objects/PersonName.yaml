@@ -1,0 +1,19 @@
+type: array
+items:
+    type: object
+    properties:
+        personName:
+            type: string
+            description: Nombre de la persona
+        personNameType:
+            type: string
+            description: Pais/entidad donde fue emitida la identificacion
+            example: FirstName
+            enum:
+                - FirstName
+                - FamilyName
+                - NickName
+                - GivenName
+                - FullName
+                - SecondName
+                - SecondLastName

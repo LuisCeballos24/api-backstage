@@ -1,0 +1,22 @@
+type: object
+properties:
+    acceptedList:
+        type: boolean
+    division:
+        type: string
+    dppa:
+        type: string
+    eft:
+        type: string
+    entity:
+        type: string
+    PartyReference:
+        $ref: './PartyReference.yaml'
+    glb:
+        type: string
+    reportLastDate:
+        type: string
+    reportRequestedDate:
+        type: string
+    StatusRecord:
+        $ref: './StatusRecord.yaml'

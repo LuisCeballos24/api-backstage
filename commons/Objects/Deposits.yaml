@@ -1,0 +1,10 @@
+type: object
+properties:
+    Amount:
+        $ref: './Amount.yaml'
+    depositsCount:
+        type: number
+    AverageBalance:
+        $ref: './Amount.yaml'
+    AverageDeposits:
+        $ref: './Amount.yaml'

@@ -1,0 +1,4 @@
+type: object
+properties:
+    CreditLineFacility:
+        $ref: '../../../../commons/Objects/CreditLineFacility.yaml'

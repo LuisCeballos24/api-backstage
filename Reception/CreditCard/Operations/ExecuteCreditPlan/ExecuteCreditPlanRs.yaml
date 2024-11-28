@@ -1,0 +1,6 @@
+type: object
+properties:
+    CreditCardPayment:
+        $ref: '../../../../commons/Objects/CreditCardPayment.yaml'
+    StatusDetails:
+        $ref: '../../../../commons/Objects/StatusInstanceRecord.yaml'

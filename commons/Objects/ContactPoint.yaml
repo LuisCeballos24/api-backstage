@@ -1,0 +1,20 @@
+type: array
+items:
+    type: object
+    properties:
+        contactPointType:
+            type: string
+            description: Tipo de punto de contacto
+            enum:
+                - ElectronicAddress
+                - PhoneNumber
+                - PostalAddress
+                - SocialNetworkAddress
+        contactPointValue: 
+            type: string
+        contactPointSocialType:
+            type: string
+        contactPointAreaCode:
+            type: string
+        contactPointPhoneType:
+            type: string

@@ -1,0 +1,9 @@
+type: object
+description: entidad resultado del servicio records 
+properties:
+    entityName:
+        type: string
+        description: nombre de la entidad
+    entityScore:
+        type: integer
+        description: score de la entidad

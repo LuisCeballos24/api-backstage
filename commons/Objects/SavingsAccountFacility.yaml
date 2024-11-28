@@ -1,0 +1,6 @@
+type: object
+properties:
+    AccountIdentification:
+        $ref: './AccountIdentification.yaml'
+    SavingsAccountTransaction:
+        $ref: './SavingsAccountTransaction.yaml'

@@ -1,0 +1,20 @@
+type: object
+description: Nación con su propio gobierno. ISO20022 
+properties:
+    nationalRegulatoryAuthority:
+        type: string
+        description: Autoridad reguladora del país. (ISO20022) 
+    code:
+        type: string
+        description: Codigo del pais
+    name: 
+        type: string
+        description: Nombre del pais
+    score: 
+        type: integer
+        description: Nombre del pais
+    nameScore: 
+        type: integer
+        description: Nombre del pais
+    risk:
+        type: string

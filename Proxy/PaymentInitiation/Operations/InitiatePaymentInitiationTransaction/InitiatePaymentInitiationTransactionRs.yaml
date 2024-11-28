@@ -1,0 +1,9 @@
+type: object
+properties:
+    PaymentInitiationTransaction:
+        type: array
+        items:
+            type: object
+            properties:
+                referenceId:
+                    type: string

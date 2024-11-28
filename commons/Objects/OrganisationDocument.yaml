@@ -1,0 +1,14 @@
+type: object
+properties:
+    organisationDocumentType:
+        type: string
+        description: Especifica los parámetros asociados a la producción de un certificado para identificar el perfil de un cliente.
+        enum:
+          - Organisation/FormationCertificate
+          - Organisation Manual
+    organisationReference:
+        type: string
+        description: Referencia de la organización
+    documentReference:
+        type: string
+        description: Referencia a un documento

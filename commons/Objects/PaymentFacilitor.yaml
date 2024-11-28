@@ -1,0 +1,10 @@
+type: object
+properties:
+  visaReferenceId:
+    type: string
+  visaSubReferenceId:
+    type: string
+  referenceId:
+    type: string
+  retailerIndicator:
+    type: string

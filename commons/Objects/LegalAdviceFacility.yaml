@@ -1,0 +1,75 @@
+type: array
+items:
+    type: object
+    properties:
+        LegalAdviceFacilityAccountReference:
+            type: object
+            properties:
+                AccountFacility:
+                    $ref: './AccountFacility.yaml'
+        legalAdviceFacilityCurrency:
+            type: string
+        legalAdviceFacilityDescription:
+            type: string
+        legalAdviceFacilityExpiryDate:
+            type: string 
+        legalAdviceFacilityAutoExpiry:
+            type: boolean
+        legalAdviceFacilityId:
+            type: string
+        legalAdviceFacilityCollateralType:
+            type: string
+        legalAdviceFacilityEffectiveDate:
+            type: string
+        legalAdviceFacilityEventProcessing:
+            type: string
+        legalAdviceFacilityMaturityDate:
+            type: string
+        legalAdviceFacilityOpeningDate:
+            type: string
+        legalAdviceFacilityAmount:
+            type: number
+        legalAdviceSelectedOption:
+            type: boolean
+        LegalAdviceFacilityCustomerReference:
+            type: array
+            items:
+                type: object
+                properties:
+                    PartyReference:
+                        $ref: './PartyReference.yaml'
+                    partyType:
+                        type: string
+                    PartyName:
+                        $ref: './PartyName.yaml'
+        LegalAdviceFacilityType:
+            type: object
+            properties:
+                BankingProductType:
+                    type: object
+                    properties:
+                        productType:
+                            type: string
+        LegalAdviceFacilityProductReference:
+            type: object
+            properties:
+                creditFacilityNumber:
+                    type: string
+                liquidationMode:
+                    type: string
+        LegalAdviceFacilityReference:
+            type: array
+            items:
+                type: object
+                properties:
+                    alternateId:
+                        type: string
+                    referenceId:
+                        type: string
+        LegalAdviceFacilityAssociatedParty:
+            type: array
+            items:
+                type: object
+                properties:
+                    PartyReference:
+                        $ref: './PartyReference.yaml'

@@ -1,0 +1,23 @@
+type: array
+items:
+    type: object
+    properties:
+        AccrualRule:
+            type: object
+            properties:
+                accrualType:
+                    type: string
+                dailyBasis:
+                    type: string
+        interestCalculationDate:
+            type: string
+        interestRateType:
+            type: string
+        InterestRate:
+            type: object
+            properties:
+                Rate:
+                    type: object
+                    properties:
+                        rateValue:
+                            type: number

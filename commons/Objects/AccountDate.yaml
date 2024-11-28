@@ -1,0 +1,13 @@
+type: array
+items:
+    type: object
+    properties:
+        accountDate:
+            type: string
+            description: Fecha relacionada a la cuenta.
+        accountDateType:
+            type: string
+            description: Tipo de fecha relacionanda a la cuenta.
+            enum:
+                - OpeningDate
+                - ClosingDate

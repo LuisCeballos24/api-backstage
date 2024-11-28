@@ -1,0 +1,4 @@
+type: object
+properties:
+    PartyReference:
+        $ref: '../../../../commons/Objects/PartyReference.yaml'

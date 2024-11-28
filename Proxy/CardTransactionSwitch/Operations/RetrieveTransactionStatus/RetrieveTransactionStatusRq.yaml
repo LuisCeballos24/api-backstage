@@ -1,0 +1,4 @@
+type: object
+properties:
+    TransactionStatus:
+        $ref: '../../../../commons/Objects/TransactionStatus.yaml'

@@ -1,0 +1,17 @@
+type: array
+items:
+    type: object
+    description: acuerdos o condiciones
+    properties:
+        agreement:
+            type: string
+            description: contenido del acuerdo
+        agreementAmount:
+            type: number
+            description: Monto del acuerdo
+        signatoriesMinAmount:
+            type: integer
+            description: cantidad mínima de firmantes
+        SignatoryGroup:
+            $ref: './SignatoryGroup.yaml'
+            description: grupo de firmantes

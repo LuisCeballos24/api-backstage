@@ -1,0 +1,7 @@
+type: object
+properties:
+    SignatureReference:
+        type: object
+        properties:
+            PartyReference:
+                $ref: './PartyReference.yaml'

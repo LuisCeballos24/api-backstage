@@ -1,0 +1,439 @@
+openapi: 3.0.3
+info:
+  title: Customer Event History
+  description: Customer Event History
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/system/CustomerManagement/CustomerEventHistory/3.0.0/'
+paths:
+  /v3/SalesInstanceRecord/Register:
+    post:
+      tags:
+        - SalesInstanceRecord
+      summary: Register SalesInstanceRecord
+      description: El servicio de proxy está encargado de guardar los datos del canal de la interacción del cliente con el banco.
+      operationId: RegisterSalesInstanceRecord
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/RegisterSalesInstanceRecordRq'
+
+      responses:
+       '201':
+          description: 'Success'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/SalesInstanceRecord/Update:
+    patch:
+      tags:
+        - SalesInstanceRecord
+      summary: Update SalesInstanceRecord
+      description: El servicio de proxy está encargado de actualizar los datos del canal de la interacción del cliente con el banco.
+      operationId: UpdateSalesInstanceRecord
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateSalesInstanceRecordRq'
+
+      responses:
+       '204':
+          description: 'Not content'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/PartyTransactionHistory/Initiate:
+    post:
+      tags:
+        - PartyTransactionHistory
+      summary: Initiate PartyTransactionHistory
+      description: Generar Archivo de Movimientos DB
+      operationId: InitiatePartyTransactionHistory
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiatePartyTransactionHistoryRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiatePartyTransactionHistoryRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/CustomerEventLog/Initiate:
+    post:
+      tags:
+        - CustomerEventLog
+      summary: Initiate CustomerEventLog
+      description: Consultar perfil Transaccional del cliente desde BOL.
+      operationId: InitiateCustomerEventLog
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateCustomerEventLogRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateCustomerEventLogRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    RegisterSalesInstanceRecordRq:
+      $ref: './Operations/RegisterSalesInstanceRecord/RegisterSalesInstanceRecordRq.yaml'
+    UpdateSalesInstanceRecordRq:
+      $ref: './Operations/UpdateSalesInstanceRecord/UpdateSalesInstanceRecordRq.yaml'
+    InitiatePartyTransactionHistoryRq:
+      $ref: './Operations/InitiatePartyTransactionHistory/InitiatePartyTransactionHistoryRq.yaml'
+    InitiateCustomerEventLogRq:
+      $ref: './Operations/InitiateCustomerEventLog/InitiateCustomerEventLogRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    InitiatePartyTransactionHistoryRs:
+      $ref: './Operations/InitiatePartyTransactionHistory/InitiatePartyTransactionHistoryRs.yaml'
+    InitiateCustomerEventLogRs:
+      $ref: './Operations/InitiateCustomerEventLog/InitiateCustomerEventLogRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    RegisterSalesInstanceRecordRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RegisterSalesInstanceRecordRq'
+          example:
+            SalesInstanceRecord:
+              salesChannel: "INTERNET"
+            
+    
+    UpdateSalesInstanceRecordRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateSalesInstanceRecordRq'
+          example:
+            SalesInstanceRecord:
+              salesChannel: "INTERNET"
+            
+    
+    InitiatePartyTransactionHistoryRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiatePartyTransactionHistoryRq'
+          example:
+            Account:
+              AccountDetails:
+                statusDescription: "Active"
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: "123456789"
+            Document:
+              name: "Example Document"
+              url: ""
+            PartyReference:
+              User:
+                userName: ""
+            Period:
+              endDate: "2024-12-31"
+              startDate: "2024-01-01"
+            
+    
+    InitiateCustomerEventLogRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateCustomerEventLogRq'
+          example:
+            AccountDetails:
+              AverageBalance:
+                Amount:
+                  amount: 1500.0
+              AverageDeposits:
+                Amount:
+                  amount: 3000.0
+              CashDepositFrequency: "Weekly"
+              CashWithdrawalFrequency: "Monthly"
+              Covid19StatusAdmin: "Status"
+              Covid19UpdateDt: "2024-10-12"
+              Deposits:
+                Amount:
+                  amount: 5000.0
+                depositsCount: 10
+              OpeningAmount:
+                Amount:
+                  amount: 1000.0
+              OpeningMode:
+                description: "Initial opening mode"
+              PartyReference:
+                PartyIdentification:
+                - partyIdentificationType: "TaxIdentificationNumber"
+                Person:
+                  PersonProfile:
+                    staffDescription: "Staff description here"
+              PaymentCollector:
+                agent: "Agent Name"
+                agentCategoryDescription: "Agent category description"
+              PercentageDeposits:
+                Amount:
+                  amountValue: 10.0
+              ServiceRequestReasons:
+              - reason: "Reason for service request"
+              Transaction:
+                Location:
+                  Address:
+                  - PostalAddress:
+                      Country:
+                        name: "Country Name"
+                allowTransactions: true
+                transactionType: "Deposit"
+              accountUsage: "Usage description"
+              sourceOfFundsDescription: "Funds source description"
+            AccountReference:
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: "123456789"
+            AccountType:
+              accountName: "Savings Account"
+            TransactionFacility:
+              transactionType: ""
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    InitiatePartyTransactionHistoryRs:
+      description: InitiatePartyTransactionHistoryRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiatePartyTransactionHistoryRs'
+          example:
+            Account:
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: "987654321"
+              referenceId: "ref-12345"
+            executionDate: ""
+            
+    
+    InitiateCustomerEventLogRs:
+      description: InitiateCustomerEventLogRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateCustomerEventLogRs'
+          example:
+            AccountReference:
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: "987654321"
+            StatusInstanceRecord:
+              message: "Transaction completed successfully"
+              status: "SUCCESS"
+            TransactionFacility:
+              transactionDate: "2024-10-12T10:00:00Z"
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

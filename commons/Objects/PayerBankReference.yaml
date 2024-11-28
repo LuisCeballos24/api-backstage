@@ -1,0 +1,11 @@
+type: object
+description: Referencia del banco del beneficiario
+properties:
+    referenceId:
+        type: string
+    bankName:
+        type: string
+    Location:
+        $ref: './Location.yaml'
+    routingNumber:
+        type: string

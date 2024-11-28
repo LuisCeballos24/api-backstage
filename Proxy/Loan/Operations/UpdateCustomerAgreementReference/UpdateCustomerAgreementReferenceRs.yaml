@@ -1,0 +1,8 @@
+type: object
+properties:
+    LoanFacility:
+        $ref: '../../../../commons/Objects/LoanFacility.yaml'
+    LoanAgreement:
+        $ref: '../../../../commons/Objects/LoanAgreement.yaml'
+    StatusInstanceRecord:
+        $ref: '../../../../commons/Objects/StatusInstanceRecord.yaml'

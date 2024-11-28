@@ -1,0 +1,10 @@
+type: object
+properties:
+    referenceId:
+        type: string
+    LoanReference:
+        $ref: '../../../../commons/Objects/LoanReference.yaml'
+    PartyReference:
+        $ref: '../../../../commons/Objects/PartyReference.yaml'
+    StatusInstanceRecord:
+        $ref: '../../../../commons/Objects/StatusInstanceRecord.yaml'

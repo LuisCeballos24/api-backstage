@@ -1,0 +1,6 @@
+type: object
+properties:
+    startDate:
+        type: string
+    endDate:
+        type: string

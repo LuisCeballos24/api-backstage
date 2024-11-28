@@ -1,0 +1,13 @@
+type: array
+items:
+    type: object
+    properties:
+        accountBalanceType:
+            type: string
+            description: Tipo de balance
+        accountBalance:
+            type: number
+            description: Tipo de balance
+        BalanceAmount:
+            type: number
+            description: Saldo de la tarjeta de crédito

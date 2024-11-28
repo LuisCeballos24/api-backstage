@@ -1,0 +1,70 @@
+type: object
+description: Estructura organizada que se establece para un propósito particular.Por ejemplo, una empresa, un organismo gubernamental, un departamento, una organización benéfica o una institución financiera. ISO20022 
+properties:
+    OrganisationLocation:
+        $ref: './OrganisationLocation.yaml'
+    OrganisationIdentification:
+        $ref: './OrganisationIdentification.yaml'
+        description: Una forma única e inequívoca de identificar una organización.
+    OrganisationName:
+        $ref: './organisationName.yaml'
+        description: Nombre por el que se conoce a una organización y que se suele utilizar para identificarla.
+    organisationStructureHierarchy:
+        type: string
+        description: Descripción de la estructura de una empresa. ISO20022 
+    OrganisationLegalStructure:
+        $ref: './OrganisationLegalStructureType.yaml'
+        description: Especifica la situación jurídica de la organización.
+    organisationSector:
+        type: string
+        description: Sector de negocio de la organización, por ejemplo, farmacéutico. (ISO20022) 
+    organisationIndustry:
+        type: string
+        description: Sector de negocio de la organización, por ejemplo, farmacéutico. (ISO20022) 
+    OrganisationDate:
+        $ref: './OrganisationDate.yaml'
+        description: Estructura organizada que se establece para un propósito particular. Por ejemplo, una empresa, un organismo gubernamental, un departamento, una organización benéfica o una institución financiera.
+    OrganisationProfile:
+        $ref: './OrganisationProfile.yaml'
+    organisationType:
+        type: string
+        description: Valores posibles para el tipo de organización
+        enum:
+            - LegalEntity
+            - Authority
+            - OrganisationUnit
+            - Charity
+            - GovernmentBody
+            - FinancialInstitution
+    organisationLanguage:
+        type: string
+    freeZoneOperation:
+        type: boolean
+    clubBanesco:
+        type: boolean
+    organisationStatus:
+        type: string
+    nationality:
+        type: string
+        description: Nacionalidad
+    ShareholdingProfile:
+        $ref: './ShareholdingProfile.yaml'
+    BankRelations:
+        $ref: './BankRelations.yaml'
+    ContactPoint:
+        $ref: './ContactPoint.yaml'
+    TaxReference:
+        $ref: './TaxReference.yaml'
+    Location:
+        $ref: './Location.yaml'
+    StockProfile:
+        $ref: './StockProfile.yaml'
+    organisationLanguaje:
+        type: string
+        description: Idioma
+    organisationBusinessName:
+        type: string
+    organisationFreeZoneOperation:
+        type: string
+    OrganizationInvolvement:
+        $ref: './OrganizationInvolvement.yaml'

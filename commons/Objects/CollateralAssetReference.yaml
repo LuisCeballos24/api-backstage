@@ -1,0 +1,18 @@
+type: object
+properties:
+    referenceId:
+        type: string
+    collateralAssetSubType:
+        type: string
+    collateralAssetSubTypeDescription:
+        type: string
+    collateralAssetType:
+        type: string
+    collateralAssetTypeDescription:
+        type: string
+    collateralAssetDescription:
+        type: string
+    collateralAssetGoodDescription:
+        type: string
+    expirationDate:
+        type: string

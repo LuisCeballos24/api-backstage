@@ -1,0 +1,32 @@
+type: object
+properties:
+    AccountFacility:
+        $ref: './AccountFacility.yaml'
+    AccountIdentification:
+        $ref: './AccountIdentification.yaml'
+    currency:
+        type: string
+    amount:  
+        type: number
+    referenceId:  
+        type: string
+    AccountBalance:
+        $ref: './AccountBalance.yaml'
+    accountDate:  
+        type: string
+    AccountDate:
+        type: array
+        items:
+            properties:
+                accountDate:  
+                    type: string
+                accountDateType: 
+                    type: string
+    accountDescription:  
+        type: string
+    activated:  
+        type: string
+    accountStatus:
+        type: string
+    AccountEntry:
+        $ref: './AccountEntry.yaml'

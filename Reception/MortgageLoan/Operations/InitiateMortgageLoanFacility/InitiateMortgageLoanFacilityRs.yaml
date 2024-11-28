@@ -1,0 +1,4 @@
+type: object
+properties:
+    MortgageLoan:
+        $ref: '../../../../commons/Objects/LoanFacility.yaml'

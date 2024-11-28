@@ -1,0 +1,12 @@
+type: object
+properties:
+    relationshipGroup:
+        type: string
+    relationshipGroupName:
+        type: string
+    relationshipGroupNumber:
+        type: string
+    relationshipType:
+        type: string
+    relationshipPurpose:
+        type: string

@@ -1,0 +1,6 @@
+type: object
+properties:
+    ChequeFacility:
+        $ref: '../../../../commons/Objects/ChequeFacility.yaml'
+    ChequeExceptionHandling:
+        $ref: '../../../../commons/Objects/ChequeExceptionHandling.yaml'

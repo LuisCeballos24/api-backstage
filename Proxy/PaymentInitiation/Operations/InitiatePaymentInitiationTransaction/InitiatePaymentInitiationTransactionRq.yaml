@@ -1,0 +1,4 @@
+type: object
+properties:
+    PaymentInitiationTransaction:
+        $ref: '../../../../commons/Objects/PaymentInitiationTransaction.yaml'

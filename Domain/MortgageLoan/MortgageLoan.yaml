@@ -1,0 +1,311 @@
+openapi: 3.0.3
+info:
+  title: MortgageLoan
+  description: MortgageLoan
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/LoansAndDeposits/MortgageLoan/3.0.0/'
+paths:
+  /v3/MortgageLoanFacility/Initiate:
+    post:
+      tags:
+        - MortgageLoanFacility
+      summary: Initiate MortgageLoanFacility
+      description: Operación encargada de Crear préstamo hipotecario.
+      operationId: InitiateMortgageLoanFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateMortgageLoanFacilityRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateMortgageLoanFacilityRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    InitiateMortgageLoanFacilityRq:
+      $ref: './Operations/InitiateMortgageLoanFacility/InitiateMortgageLoanFacilityRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    InitiateMortgageLoanFacilityRs:
+      $ref: './Operations/InitiateMortgageLoanFacility/InitiateMortgageLoanFacilityRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    InitiateMortgageLoanFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateMortgageLoanFacilityRq'
+          example:
+            MortgageLoan:
+              LoanFacility:
+                AccountIdentifier:
+                  identifierValue: ""
+                AccountMembers:
+                - memberName: ""
+                  memberType: ""
+                BankBranch:
+                  codeDestination: ""
+                  collOfficer: ""
+                  countryDestination: ""
+                  creditDestination: ""
+                  fundsDestination: ""
+                  fundsPurpose: ""
+                  salesChannel: ""
+                DisbursementInstanceRecord:
+                - DisbursementPayeeProductReference:
+                    AccountIdentification:
+                    - Identifier:
+                        identifierValue: ""
+                  MoneyTransferInstruction:
+                    moneyTransferInstructionPurpose: ""
+                  disbursementActivityCode: ""
+                  disbursementAgreement: false
+                  disbursementAgreementCode: ""
+                Interest:
+                - AccrualRule:
+                    accrualType: ""
+                    dailyBasis: ""
+                  InterestRate:
+                    Rate:
+                      rateValue: 0
+                  interestRateType: ""
+                LoanAgreement:
+                - agreementType: ""
+                  completionDate: ""
+                  description: ""
+                  expiryDate: ""
+                  loanReference: ""
+                  paymentMethod: ""
+                  registrationDate: ""
+                LoanTransaction:
+                - Account:
+                    AccountIdentification:
+                    - Identifier:
+                        identifierValue: ""
+                    accountPurpose: ""
+                  transactionActivityCode: ""
+                  transactionDescription: true
+                  transactionRule: ""
+                  transactionType: ""
+                MaintenanceInstanceRecord:
+                  maintenanceReportType: ""
+                Repayment:
+                - repaymentArrangement:
+                  - repaymentArrangementAmount: 0
+                    repaymentArrangementOriginationDate: ""
+                    repaymentArrangementPercentage: ""
+                  repaymentInstruction:
+                    repaymentDay: ""
+                    repaymentMonth: ""
+                    repaymentTarget: ""
+                  repaymentInvolvementType: ""
+                  repaymentTransactionDate: ""
+                  repaymentTransactionMethod: ""
+                  repaymentTransactionType: ""
+                  repaymentType: ""
+                ServiceFeesInstanceRecord:
+                - feePlan:
+                  - chargeAutoSettle: false
+                    feeMethod: ""
+                    feePeriod: ""
+                  serviceFeesId: ""
+                SubProductType:
+                  name: ""
+                TaxReference:
+                  taxCalculationConditions: ""
+                  taxCalculationProperty: ""
+                  taxRate: ""
+                Variations:
+                - variationType: ""
+                autoPay: false
+                billsCombined: true
+                calculationMethod: ""
+                clubBanesco: true
+                disbursementDescription: ""
+                feeArrangement:
+                - feeAmount: 0
+                  feeCurrency: ""
+                  feeType: ""
+                  listCharges: ""
+                fromDay: ""
+                loanAmount: 0
+                loanCurrency: ""
+                loanMaturityDate: ""
+                loanOriginationDate: ""
+                loanTermAndCondition: ""
+                loanType: ""
+                toDay: ""
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    InitiateMortgageLoanFacilityRs:
+      description: InitiateMortgageLoanFacilityRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateMortgageLoanFacilityRs'
+          example:
+            MortgageLoan:
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

@@ -1,0 +1,4 @@
+type: object
+properties:
+    ExternalReporting:
+        $ref: '../../../../commons/Objects/ExternalReporting.yaml'

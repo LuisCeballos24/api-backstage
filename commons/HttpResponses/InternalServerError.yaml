@@ -1,0 +1,16 @@
+description: InternalServerError
+content:
+  application/json:
+    schema:
+      $ref: './HttpError.yaml'
+    examples:
+      objectExample:
+        $ref: '#/components/examples/InternalServerError'
+
+components:
+  examples:
+    InternalServerError:
+      value:
+        statusCode: '500'
+        status: 'FAILED'
+        message: 'Internal Server Error'

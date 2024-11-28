@@ -1,0 +1,6 @@
+type: object
+properties: 
+    TransactionFacility:
+        $ref: '../../../../commons/Objects/TransactionFacility.yaml'
+    PaymentInstructionProcedure:
+        $ref: '../../../../commons/Objects/PaymentInstructionProcedure.yaml'

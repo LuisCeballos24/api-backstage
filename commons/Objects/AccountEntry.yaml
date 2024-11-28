@@ -1,0 +1,8 @@
+type: object
+properties:
+    accountEntryFrequencyCode:
+        type: string
+    accountEntryFrequencyDetail:
+        type: string
+    accountEntryStatus:
+        type: string

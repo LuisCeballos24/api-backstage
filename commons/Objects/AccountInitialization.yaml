@@ -1,0 +1,16 @@
+type: object
+properties:
+    AccountReference:
+        $ref: './AccountReference.yaml'
+    PartyReference:
+        $ref: './PartyReference.yaml'
+    ProductDetails:
+        $ref: './ProductDetails.yaml'
+    AccountDetails:
+        $ref: './AccountDetails.yaml'
+    ChequeBookReference:
+        $ref: './ChequeBookReference.yaml'
+    SavingsAccountAgreementReference:
+        $ref: './SavingsAccountAgreementReference.yaml'
+    PayeeReference:
+        $ref: './PayeeReference.yaml'

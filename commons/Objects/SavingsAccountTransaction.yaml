@@ -1,0 +1,19 @@
+type: object
+properties:
+    Transaction:
+        type: object
+        properties:
+            transactionType:
+                type: string
+            TransactionIdentification:
+                type: object
+                properties:
+                    Identifier:  
+                        $ref: './Identifier.yaml'
+                    transactionDescription:
+                        type: string
+            TransactionLifecycleStatus:
+                type: object
+                properties:
+                    transactionLifecycleStatus:
+                        type: string

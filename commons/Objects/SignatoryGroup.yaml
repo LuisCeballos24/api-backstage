@@ -1,0 +1,9 @@
+type: array
+items:
+    type: object
+    description: Grupos de Firmantes
+    properties:
+        groupId:
+            type: string
+        PartyReference:
+            $ref: './PartyReference.yaml'

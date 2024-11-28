@@ -1,0 +1,10 @@
+type: object
+properties:
+    predefinedSearchName:
+        type: string
+    writeResultsToDatabase:
+        type: boolean
+    excludeScreeningListMatches:
+        type: boolean
+    duplicateMatchSuppressionSameDivisionOnly:
+        type: boolean

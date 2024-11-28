@@ -1,0 +1,25 @@
+type: object
+properties:
+    CardPaymentTransaction:
+        type: object
+        properties:
+            Transaction:
+                type: object
+                properties:    
+                    TargetAccount:
+                        type: object
+                        properties:
+                            AccountIdentification:
+                                $ref: './AccountIdentification.yaml'
+                    FromAccount:
+                        type: object
+                        properties:
+                            AccountIdentification:
+                                $ref: './AccountIdentification.yaml'
+                    transactionDate:
+                        type: string
+                    TransactionIdentification:
+                        type: object
+                        properties:
+                            Identifier: 
+                                $ref: './Identifier.yaml'

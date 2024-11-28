@@ -1,0 +1,10 @@
+type: object
+properties:
+    AccountReference:
+        $ref: '../../../../commons/Objects/AccountReference.yaml'
+    AccountDetails:
+        $ref: '../../../../commons/Objects/AccountDetails.yaml'
+    TransactionFacility:
+        $ref: '../../../../commons/Objects/TransactionFacility.yaml'
+    AccountType:
+        $ref: '../../../../commons/Objects/AccountType.yaml'

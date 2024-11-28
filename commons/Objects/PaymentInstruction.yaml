@@ -1,0 +1,14 @@
+type: object
+properties:
+    paymentMethod:
+        type: string
+    paymentInstructionDate:
+        type: string
+    PayerAccountReference:
+        $ref: './AccountReference.yaml'
+    PayeeAccountReference:
+        $ref: './AccountReference.yaml'
+    Identifier:
+        $ref: './Identifier.yaml'
+    PaymentCommission:  
+        $ref: './PaymentCommission.yaml'

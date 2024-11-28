@@ -1,0 +1,6 @@
+type: object
+properties:
+    partyReferenceId:
+        type: string
+        description: Numero del cliente
+        example: "94234646468"

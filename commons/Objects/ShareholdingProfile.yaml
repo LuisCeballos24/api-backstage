@@ -1,0 +1,11 @@
+type: object
+properties:
+    numberOfShareholders:
+        type: number
+        description: Cantidad de accionistas
+    numberOfShares:
+        type: number
+        description: Numero de acciones
+    sharesType:
+        type: string
+        description: Tipo de acciones

@@ -1,0 +1,29 @@
+type: object
+properties:
+    customerServicingEventType:
+        type: string
+        description: Una colección de los eventos/transacciones registrados por el registro
+    customerContactRecordReference:
+        type: object
+        description: Referencia a un registro de eventos de contacto
+    accessedProductandService:
+        type: string
+        description: Referencia a los tipos o instancias de productos/servicios a los que se presta servicio, si se proporcionan
+    channel/DeviceType:
+        type: string
+        description: El canal y el dispositivo utilizados en el evento de mantenimiento
+    contactPurpose:
+        type: string
+        description: El propósito dado para la acción de servicio al cliente
+    contactResult:
+        type: string
+        description: El resultado capturado del evento de mantenimiento
+    employee/UnitReference:
+        type: string
+        description: Empleados involucrados en la grabación del evento
+    customerServicingEventRecord:
+        type: string
+        description: Los detalles del evento (en un formato adecuado)
+    date/Time/Location:
+        type: string
+        description: Fecha y hora y el lugar en el que se capturó el evento

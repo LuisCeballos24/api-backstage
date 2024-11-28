@@ -1,0 +1,6 @@
+type: object
+properties:
+    ServiceFee:
+        $ref: '../../../../commons/Objects/ServiceFee.yaml'
+    SavingsAccountFacility:
+        $ref: '../../../../commons/Objects/SavingsAccountFacility.yaml'

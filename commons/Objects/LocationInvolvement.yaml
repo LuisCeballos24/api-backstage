@@ -1,0 +1,15 @@
+type: object
+properties:
+    PartyLocationType:
+        type: string
+        description: Un tipo de ubicacion
+        enum:
+            - Location is Residential Address of Party
+            - Location is Domicile Address of Party
+            - Location is Place of Birth of Party
+            - Location is Work Address of Party
+            - Location is Delivery Point Address of Party
+            - Party is Owner of Location
+            - Party is Occupier of Location
+            - Party is Alliance Partner of Location
+            - Location is Contact Point Address of Party

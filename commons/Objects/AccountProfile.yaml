@@ -1,0 +1,6 @@
+type: object
+properties:
+    PartyReference:
+        $ref: './PartyReference.yaml'
+    BankReference:
+        $ref: './BankReference.yaml'

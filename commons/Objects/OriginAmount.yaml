@@ -1,0 +1,9 @@
+type: object
+properties:
+    amountValue:
+        type: number
+    Currency:
+        type: object
+        properties:
+            currencyCode:
+                type: string

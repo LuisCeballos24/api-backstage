@@ -1,0 +1,6 @@
+type: object
+properties:
+    ChequeBook:
+        $ref: '../../../../commons/Objects/ChequeBook.yaml'
+    requestIdentifier:
+        type: string

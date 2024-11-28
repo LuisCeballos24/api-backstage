@@ -1,0 +1,4 @@
+type: object
+properties:
+    BeneficiaryEntry:
+        $ref: '../../../../commons/Objects/BeneficiaryEntry.yaml'

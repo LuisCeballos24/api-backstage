@@ -1,0 +1,4 @@
+type: object
+properties:
+    SwiftPayments:
+        $ref: '../../../../commons/Objects/SwiftPayments.yaml'

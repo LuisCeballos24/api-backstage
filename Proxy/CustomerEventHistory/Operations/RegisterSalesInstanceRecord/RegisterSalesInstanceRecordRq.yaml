@@ -1,0 +1,4 @@
+type: object
+properties:
+    SalesInstanceRecord:
+        $ref: '../../../../commons/Objects/SalesInstanceRecord.yaml'

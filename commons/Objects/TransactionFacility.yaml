@@ -1,0 +1,34 @@
+type: object
+properties:
+    referenceId:
+        type: string
+    Amount:
+        $ref: './Amount.yaml'
+    paymentType:
+        type: string
+    referenceCode:
+        type: string
+    referenceDescription:
+        type: string
+    transactionDescription:
+        type: string
+    transactionType:
+        type: string
+    transactionTypeRq:
+        type: string
+    authorizationNumber:
+        type: string
+    transactionDate:
+        type: string
+    transactionStatus:
+        type: string
+    referenceNumber:
+        type: string
+    actionCode:
+        type: string
+    Cheque:
+        $ref: './Cheque.yaml'
+    Fees:
+        $ref: './Fees.yaml'
+    agencyName:
+        type: string

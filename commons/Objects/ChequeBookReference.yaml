@@ -1,0 +1,14 @@
+type: object
+properties:
+    totalAmount:
+        type: number
+    hasChequeBook:
+        type: boolean
+    holderCondition:
+        type: string
+    multipleHolders:
+        type: boolean
+    Holders:
+        $ref: './Holders.yaml'
+    chequeBookType:
+        type: string

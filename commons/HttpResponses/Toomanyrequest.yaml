@@ -1,0 +1,16 @@
+description: Toomanyrequest
+content:
+  application/json:
+    schema:
+      $ref: './HttpError.yaml'
+    examples:
+      objectExample:
+        $ref: '#/components/examples/Toomanyrequest'
+
+components:
+  examples:
+    Toomanyrequest:
+      value:
+        statusCode: '429'
+        status: 'FAILED'
+        message: 'Too many request'

@@ -1,0 +1,342 @@
+openapi: 3.0.3
+info:
+  title: Current Account
+  description: Current Account
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/LoansAndDeposits/CurrentAccount/3.0.0/'
+paths:
+  /v3/CurrentAccountFacility/Initiate:
+    post:
+      tags:
+        - CurrentAccountFacility
+      summary: Initiate CurrentAccountFacility
+      description: El servicio de Dominio está encargado de iniciar el proceso de creación de una cuenta corriente.
+      operationId: InitiateCurrentAccountFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateCurrentAccountFacilityRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateCurrentAccountFacilityRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    InitiateCurrentAccountFacilityRq:
+      $ref: './Operations/InitiateCurrentAccountFacility/InitiateCurrentAccountFacilityRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    InitiateCurrentAccountFacilityRs:
+      $ref: './Operations/InitiateCurrentAccountFacility/InitiateCurrentAccountFacilityRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    InitiateCurrentAccountFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateCurrentAccountFacilityRq'
+          example:
+            AccountInitialization:
+              AccountDetails:
+                AccountCurrency:
+                  Amount:
+                    currencyCode: "USD"
+                AccountType:
+                  accountName: "Personal Savings"
+                  accountType: "Savings"
+                ActivityType:
+                  code: "01"
+                  description: "Personal Savings"
+                AverageBalance:
+                  Amount:
+                    amount: 200
+                    currencyCode: "USD"
+                AverageDeposits:
+                  Amount:
+                    amount: 200
+                    currencyCode: "USD"
+                DebitCard:
+                  cardNumber: "1234-5678-9012-3456"
+                Deposits:
+                  Amount:
+                    amount: 200
+                    currencyCode: "USD"
+                  depositsCount: 20
+                OpeningAmount:
+                  Amount:
+                    amount: 200
+                    currencyCode: "USD"
+                OpeningMode:
+                  description: "Opened via online banking"
+                  mode: "Online"
+                PartyReference:
+                  PartyIdentification:
+                  - Identifier:
+                      identifierValue: "PID654321"
+                    partyIdentificationType: "IdentityCardNumber"
+                  Person:
+                    PersonProfile:
+                      staffDescription: "Branch Manager"
+                      staffPosition: "Manager"
+                PaymentCollector:
+                  agent: "John Doe"
+                  agentCategory: "Bank Employee"
+                  agentCategoryDescription: "Authorized Bank Staff"
+                PercentageDeposits:
+                  Amount:
+                    amount: 200
+                ServiceRequestReasons:
+                - reason: "New Account Opening"
+                TargetAmount:
+                  Amount:
+                    amount: 200
+                    currencyCode: "USD"
+                Transaction:
+                  Amount:
+                    amount: 200
+                  Location:
+                    Address:
+                    - PostalAddress:
+                        Country:
+                          code: "US"
+                          name: "United States"
+                  allowTransactions: true
+                  transactionType: "Deposit"
+                accountUsage: "Personal"
+                businessUnit: "Retail Banking"
+                clubBanesco: "Gold Member"
+                movType: "Electronic"
+                purpose: "Savings for future"
+                sourceOfFundsCode: "SALARY"
+                sourceOfFundsDescription: "Monthly Salary"
+              ChequeBookReference:
+                Holders:
+                - holderName: "John Doe"
+                chequeBookType: "Standard"
+                hasChequeBook: true
+                holderCondition: "Primary Holder"
+                multipleHolders: false
+                totalAmount: 200
+              PartyReference:
+                PartyIdentification:
+                - Identifier:
+                    identifierValue: "PID987654"
+              PayeeReference:
+                Association:
+                - PartyReference:
+                    ContactPoint:
+                    - contactPointAreaCode: "123"
+                      contactPointValue: "4567890"
+                    Location:
+                      Address:
+                      - PostalAddress:
+                          Country:
+                            code: "US"
+                            name: "United States"
+                    PartyIdentification:
+                    - Identifier:
+                        identifierValue: "PID654321"
+                    Person:
+                      PersonName:
+                      - personName: "Alex Smith"
+                payeePercentage: 200
+                payeeType: "Primary"
+                underAge: false
+              ProductDetails:
+                ProductType:
+                  productName: "High Yield Savings Account"
+                  productType: "Savings"
+                SubProductType:
+                  subProductName: "Standard Savings"
+                Variations:
+                - description: "2.5% annual interest"
+                  variationType: "Interest Rate"
+                salesChannel: "Online"
+              SavingsAccountAgreementReference:
+                AgreementIdentification:
+                  Identifier:
+                    identifierValue: "AGR987654"
+                referenceId: "REF123456"
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    InitiateCurrentAccountFacilityRs:
+      description: InitiateCurrentAccountFacilityRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateCurrentAccountFacilityRs'
+          example:
+            AccountInitialization:
+              AccountReference:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: "ID123"
+                  accountIdentificationType: "AccountNumber"
+                - Identifier:
+                    identifierValue: "ID456"
+                  accountIdentificationType: "AccountNumber"
+                referenceId: "REF123456"
+            StatusInstanceRecord:
+              description: "string"
+              message: "string"
+              status: "string"
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

@@ -1,0 +1,9 @@
+type: object
+properties:
+    BeneficiaryTransaction:
+        type: object
+        properties:
+            referenceId:
+                type: string
+    StatusInstanceRecord:
+        $ref: '../../../../commons/Objects/StatusInstanceRecord.yaml'

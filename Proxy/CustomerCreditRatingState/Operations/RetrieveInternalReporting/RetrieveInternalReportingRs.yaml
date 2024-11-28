@@ -1,0 +1,18 @@
+type: object
+properties:
+    PartyReference:
+        $ref: '../../../../commons/Objects/PartyReference.yaml'
+    CreditCardFacility:
+        $ref: '../../../../commons/Objects/CreditCardFacility.yaml'
+    LoanFacility:
+        type: array
+        items:
+            properties:
+                loanAmount:
+                    type: number
+                loanType:
+                    type: string
+    registrationPeriod:
+        type: string
+    channel:
+        type: string

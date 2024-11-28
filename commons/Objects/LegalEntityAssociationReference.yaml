@@ -1,0 +1,7 @@
+type: array
+items:
+    properties:
+        PartyRelationship:
+            $ref: './PartyRelationship.yaml'
+        Organisation:
+            $ref: './Organisation.yaml'

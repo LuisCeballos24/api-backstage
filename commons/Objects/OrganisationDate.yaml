@@ -1,0 +1,14 @@
+type: array
+items:
+    type: object
+    properties:
+        organisationDate:
+            type: string
+            description: Una fecha y hora identifica una fecha y hora del día para varias resoluciones comunes año, mes, semana, día, hora, minuto, segundo y fracción de segundo.(ONU/CEFACT) 
+        organisationDateType:
+            type: string
+            description: Valores posibles para el tipo de fecha de organización
+            enum:
+                - Organisation Registration Date
+                - Organisation Establishment Date
+                - Entity Expiration Date

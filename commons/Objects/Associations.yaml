@@ -1,0 +1,26 @@
+type: object
+description: 
+properties:
+    associateType:
+        type: string
+    percentage:
+        type: string
+    AssociateReference:
+        type: object
+        properties:
+            PartyReference:
+                $ref: './PartyReference.yaml'
+    PreferredBeneficiary:
+        type: object
+        properties:
+            PartyReference:
+                $ref: './PartyReference.yaml'
+    Location:
+        type: object
+        properties:
+            Country:
+                $ref: './Country.yaml'
+    legalEntityReference:
+        type: string
+    PartyReference:
+        $ref: './PartyReference.yaml'

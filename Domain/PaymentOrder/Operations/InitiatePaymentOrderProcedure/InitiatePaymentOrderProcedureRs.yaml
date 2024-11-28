@@ -1,0 +1,6 @@
+type: object
+properties:
+    PaymentOrderProcedure:
+        $ref: '../../../../commons/Objects/PaymentOrderProcedure.yaml'
+    StatusInstanceRecord:
+        $ref: '../../../../commons/Objects/StatusInstanceRecord.yaml'

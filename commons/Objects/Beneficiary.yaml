@@ -1,0 +1,18 @@
+type: array
+items:
+    type: object
+    properties:
+        Country:
+            $ref: './Country.yaml'
+        PersonIdentification:
+            $ref: './PersonIdentification.yaml'
+        nationality:
+            type: string
+        partyName:
+            type: string
+        publicPosition:
+            type: string
+            description: Posicion publica
+        relationshipType:
+            type: string
+            description: Tipo de relacion

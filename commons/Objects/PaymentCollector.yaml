@@ -1,0 +1,11 @@
+type: object
+properties:
+    agent:
+        type: string
+        description: Fagente.
+    agentCategory:
+        type: string
+        description: Categoria del Agente.
+    agentCategoryDescription:
+        type: string
+        description: Descripcion de la categoria del Agente.

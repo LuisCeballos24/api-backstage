@@ -1,0 +1,15 @@
+type: object
+description: Dirección a la que se accede por medios electrónicos. (ISO20022) 
+properties:
+    electronicAddressType:
+        type: string
+        description: El tipo de dirección a la que se accede los medios electrónicos.
+        enum:
+            - EmailAddress    
+            - URLAddress
+            - TelexAddress
+            - TeletextAddress
+            - ISDNAddress
+    adressDescription:
+        type: string
+        description: descripcion de la direccion 

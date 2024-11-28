@@ -1,0 +1,39 @@
+type: array
+items:
+    type: object
+    properties:
+        paymentMethod:
+            type: string
+        agreementType:
+            type: string
+        registrationDate:
+            type: string
+        description:
+            type: string
+        expiryDate:
+            type: string
+        completionDate:
+            type: string
+        loanReference:
+            type: string
+        referenceId:
+            type: string
+        LoanAgreementInvolvement:
+            type: object
+            properties:
+                PartyReference:
+                    $ref: './PartyReference.yaml'
+        LoanTransaction:
+            type: object
+            properties:
+                transactionDiscountCode:
+                    type: string
+                FinancialTransaction:
+                    type: array
+                    items:
+                        type: object
+                        properties:
+                            financialTransactionFrequency:
+                                type: string
+                            financialTransactionNumber:
+                                type: number

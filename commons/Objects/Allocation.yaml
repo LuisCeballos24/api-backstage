@@ -1,0 +1,19 @@
+type: object
+properties:
+    PaymentCard:
+        $ref: './PaymentCard.yaml'
+    CollateralAllocationAmount:
+        type: object
+        properties:
+            Amount:
+                $ref: './Amount.yaml'
+    CollateralEarmarkAmount:
+        type: object
+        properties:
+            Amount:
+                $ref: './Amount.yaml'
+    CollateralAllocationForeingAmount:
+        type: object
+        properties:
+            Amount:
+                $ref: './Amount.yaml'

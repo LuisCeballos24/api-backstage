@@ -1,0 +1,9 @@
+type: array
+items:
+    type: object
+    description: Una designación o descripción específica de una ubicación, que generalmente se usa para especificar la ubicación o el destino de algo o alguien.
+    properties:
+        PartyReference:
+            $ref: './PartyReference.yaml'
+        referenceId:
+            type: string

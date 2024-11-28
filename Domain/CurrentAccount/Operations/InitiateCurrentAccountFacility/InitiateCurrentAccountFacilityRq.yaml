@@ -1,0 +1,4 @@
+type: object
+properties:
+    AccountInitialization:
+        $ref: '../../../../commons/Objects/AccountInitialization.yaml'

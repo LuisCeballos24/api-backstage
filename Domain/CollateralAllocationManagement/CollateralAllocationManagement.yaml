@@ -1,0 +1,663 @@
+openapi: 3.0.3
+info:
+  title: Collateral Allocation Management
+  description: Collateral Allocation Management
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/CollateralAdministration/CollateralAllocationManagement/3.0.0/'
+paths:
+  /v3/CollateralAssetAllocation/Initiate:
+    post:
+      tags:
+        - CollateralAssetAllocation
+      summary: Initiate CollateralAssetAllocation
+      description: Operación que permite crear una garantía asociada a un préstamo.
+      operationId: InitiateCollateralAssetAllocation
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateCollateralAssetAllocationRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateCollateralAssetAllocationRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/CollateralAssetAllocation/Update:
+    patch:
+      tags:
+        - CollateralAssetAllocation
+      summary: Update CollateralAssetAllocation
+      description: Operación que permite actualizar una garantía asociada a un préstamo.
+      operationId: UpdateCollateralAssetAllocation
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateCollateralAssetAllocationRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/UpdateCollateralAssetAllocationRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    InitiateCollateralAssetAllocationRq:
+      $ref: './Operations/InitiateCollateralAssetAllocation/InitiateCollateralAssetAllocationRq.yaml'
+    UpdateCollateralAssetAllocationRq:
+      $ref: './Operations/UpdateCollateralAssetAllocation/UpdateCollateralAssetAllocationRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    InitiateCollateralAssetAllocationRs:
+      $ref: './Operations/InitiateCollateralAssetAllocation/InitiateCollateralAssetAllocationRs.yaml'
+    UpdateCollateralAssetAllocationRs:
+      $ref: './Operations/UpdateCollateralAssetAllocation/UpdateCollateralAssetAllocationRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    InitiateCollateralAssetAllocationRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateCollateralAssetAllocationRq'
+          example:
+            Allocation:
+              CollateralAllocationAmount:
+                Amount:
+                  amount: 123
+                  currencyCode: ""
+              CollateralAllocationForeingAmount:
+                Amount:
+                  amount: 123
+              CollateralEarmarkAmount:
+                Amount:
+                  amount: 123
+                  currencyCode: ""
+              PaymentCard:
+                AccountBalance:
+                - accountBalance: 123
+                  accountBalanceType: ""
+                Limit:
+                  limitAmount: 123
+                cardExpiryDate: ""
+                cardHolderName: ""
+                cardIssueDate: ""
+                cardNumber: ""
+                cardType: ""
+            BankReference:
+              agencyName: ""
+              bankCode: ""
+              bankName: ""
+            CollateralAsset:
+            - AgreementReference:
+                Registration:
+                  folio: ""
+                agreementContent: ""
+                agreementDate: ""
+                agreementSignedDate: ""
+                referenceId: ""
+                scriptureNumber: ""
+              AppraisalReference:
+                Amount:
+                  amount: 123
+                  currencyCode: ""
+                PartyReference:
+                  Person:
+                    PersonName:
+                    - personName: ""
+                      personNameType: "FullName"
+                appraisalDate: ""
+                expirationDate: ""
+              Asset:
+                GeneralLedgerAmount:
+                  Amount:
+                    amount: 123
+                    currencyCode: ""
+                ImprovementsAmount:
+                  Amount:
+                    amount: 123
+                    currencyCode: ""
+                LandAreaAmount:
+                  Amount:
+                    amount: 123
+                    currencyCode: ""
+                Location:
+                  Address:
+                  - PostalAddress:
+                      Building:
+                        code: ""
+                        name: ""
+                      City:
+                        code: ""
+                        name: ""
+                      Country:
+                        code: ""
+                        name: ""
+                      CountyDistrict:
+                        code: ""
+                        name: ""
+                      Jurisdiction:
+                        code: ""
+                        name: ""
+                      Province:
+                        code: ""
+                        name: ""
+                      addressLine: ""
+                      houseNumber: ""
+                      streetName: ""
+                  locationCode: ""
+                SalePriceAmount:
+                  Amount:
+                    amount: 123
+                    currencyCode: ""
+                ThirdPartyAmount:
+                  Amount:
+                    amount: 123
+                    currencyCode: ""
+                collateralGrade: ""
+                issuerRating: ""
+                landArea: ""
+                occupancyPermitDate: ""
+                ownerName: ""
+                plateNumber: ""
+                registryNumber: ""
+                updatedDate: ""
+                vehicleBrand: ""
+                vehicleChassisNumber: ""
+                vehicleColor: ""
+                vehicleModel: ""
+                vehicleType: ""
+                vehicleVINNumber: ""
+                vehicleYear: ""
+              CentralAmount:
+                Amount:
+                  amount: 123
+                  currencyCode: ""
+              ExecutionAmount:
+                Amount:
+                  amount: 123
+                  currencyCode: ""
+              Registration:
+                volumen: ""
+              TrustIssue:
+                trustIssueDate: ""
+                trustIssueNumber: ""
+              collateralAssetType: ""
+              collateralYear: ""
+            CustomerReference:
+            - PartyReference:
+                ContactPoint:
+                - contactPointAreaCode: ""
+                  contactPointPhoneType: ""
+                  contactPointType: "PhoneNumber"
+                  contactPointValue: ""
+                PartyIdentification:
+                - Identifier:
+                    identifierValue: ""
+                  partyIdentificationType: "IdentityCardNumber"
+                chequeDigit: ""
+                partyType: ""
+              referenceId: ""
+            InsuranceReference:
+              Amount:
+                amount: 123
+                currencyCode: ""
+              Companies:
+              - code: ""
+                name: ""
+              PartyReference:
+                Person:
+                  PersonName:
+                  - personName: ""
+                    personNameType: "FullName"
+              brokerName: ""
+              emisionDate: ""
+              expirationDate: ""
+              insuranceNumber: ""
+              insuranceProductType: ""
+              insuranceStatus: ""
+            IssuerReference:
+              issuerName: ""
+              issuerRating: ""
+            LoanReference:
+              Amount:
+                amount: 123
+                currencyCode: ""
+              DepositAccount:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+              LoanAccount:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+                referenceId: ""
+                sourceOfFundsCode: ""
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+              PaymentAccount:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+            collateralAssetDescription: ""
+            collateralAssetGoodDescription: ""
+            collateralAssetSubTypeCode: ""
+            collateralAssetSubTypeDescription: ""
+            collateralAssetType: ""
+            collateralAssetTypeCode: ""
+            collateralAssetTypeDescription: ""
+            expirationDate: ""
+            referenceId: ""
+            
+    
+    UpdateCollateralAssetAllocationRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateCollateralAssetAllocationRq'
+          example:
+            Allocation:
+              CollateralAllocationAmount:
+                Amount:
+                  amount: 123
+                  currencyCode: ""
+              CollateralAllocationForeingAmount:
+                Amount:
+                  amount: 123
+              CollateralEarmarkAmount:
+                Amount:
+                  amount: 123
+                  currencyCode: ""
+              PaymentCard:
+                AccountBalance:
+                - accountBalance: 123
+                  accountBalanceType: ""
+                Limit:
+                  limitAmount: 123
+                cardExpiryDate: ""
+                cardHolderName: ""
+                cardIssueDate: ""
+                cardNumber: ""
+                cardType: ""
+            BankReference:
+              agencyName: ""
+              bankCode: ""
+              bankName: ""
+            CollateralAsset:
+            - AgreementReference:
+                Registration:
+                  folio: ""
+                agreementContent: ""
+                agreementDate: ""
+                agreementSignedDate: ""
+                referenceId: ""
+                scriptureNumber: ""
+              AppraisalReference:
+                Amount:
+                  amount: 123
+                  currencyCode: ""
+                PartyReference:
+                  Person:
+                    PersonName:
+                    - personName: ""
+                      personNameType: "FullName"
+                appraisalDate: ""
+                expirationDate: ""
+              Asset:
+                GeneralLedgerAmount:
+                  Amount:
+                    amount: 123
+                    currencyCode: ""
+                ImprovementsAmount:
+                  Amount:
+                    amount: 123
+                    currencyCode: ""
+                LandAreaAmount:
+                  Amount:
+                    amount: 123
+                    currencyCode: ""
+                Location:
+                  Address:
+                  - PostalAddress:
+                      Building:
+                        code: ""
+                        name: ""
+                      City:
+                        code: ""
+                        name: ""
+                      Country:
+                        code: ""
+                        name: ""
+                      CountyDistrict:
+                        code: ""
+                        name: ""
+                      Jurisdiction:
+                        code: ""
+                        name: ""
+                      Province:
+                        code: ""
+                        name: ""
+                      addressLine: ""
+                      houseNumber: ""
+                      streetName: ""
+                  locationCode: ""
+                SalePriceAmount:
+                  Amount:
+                    amount: 123
+                    currencyCode: ""
+                ThirdPartyAmount:
+                  Amount:
+                    amount: 123
+                    currencyCode: ""
+                collateralGrade: ""
+                issuerRating: ""
+                landArea: ""
+                occupancyPermitDate: ""
+                ownerName: ""
+                plateNumber: ""
+                registryNumber: ""
+                updatedDate: ""
+                vehicleBrand: ""
+                vehicleChassisNumber: ""
+                vehicleColor: ""
+                vehicleModel: ""
+                vehicleType: ""
+                vehicleVINNumber: ""
+                vehicleYear: ""
+              CentralAmount:
+                Amount:
+                  amount: 123
+                  currencyCode: ""
+              ExecutionAmount:
+                Amount:
+                  amount: 123
+                  currencyCode: ""
+              Registration:
+                volumen: ""
+              TrustIssue:
+                trustIssueDate: ""
+                trustIssueNumber: ""
+              collateralAssetType: ""
+              collateralYear: ""
+            CustomerReference:
+            - PartyReference:
+                ContactPoint:
+                - contactPointAreaCode: ""
+                  contactPointPhoneType: ""
+                  contactPointType: "PhoneNumber"
+                  contactPointValue: ""
+                PartyIdentification:
+                - Identifier:
+                    identifierValue: ""
+                  partyIdentificationType: "IdentityCardNumber"
+                chequeDigit: ""
+                partyType: ""
+              referenceId: ""
+            InsuranceReference:
+              Amount:
+                amount: 123
+                currencyCode: ""
+              Companies:
+              - code: ""
+                name: ""
+              PartyReference:
+                Person:
+                  PersonName:
+                  - personName: ""
+                    personNameType: "FullName"
+              brokerName: ""
+              emisionDate: ""
+              expirationDate: ""
+              insuranceNumber: ""
+              insuranceProductType: ""
+              insuranceStatus: ""
+            IssuerReference:
+              issuerName: ""
+              issuerRating: ""
+            LoanReference:
+              Amount:
+                amount: 123
+                currencyCode: ""
+              DepositAccount:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+              LoanAccount:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+                referenceId: ""
+                sourceOfFundsCode: ""
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+              PaymentAccount:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+            collateralAssetDescription: ""
+            collateralAssetGoodDescription: ""
+            collateralAssetSubTypeCode: ""
+            collateralAssetSubTypeDescription: ""
+            collateralAssetType: ""
+            collateralAssetTypeCode: ""
+            collateralAssetTypeDescription: ""
+            expirationDate: ""
+            referenceId: ""
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    InitiateCollateralAssetAllocationRs:
+      description: InitiateCollateralAssetAllocationRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateCollateralAssetAllocationRs'
+          example:
+            LoanReference:
+              LoanAccount:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+            PartyReference:
+              PartyIdentification:
+              - Identifier:
+                  identifierValue: ""
+              chequeDigit: ""
+            referenceId: ""
+            
+    
+    UpdateCollateralAssetAllocationRs:
+      description: UpdateCollateralAssetAllocationRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateCollateralAssetAllocationRs'
+          example:
+            LoanReference:
+              LoanAccount:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+            PartyReference:
+              PartyIdentification:
+              - Identifier:
+                  identifierValue: ""
+              chequeDigit: ""
+            referenceId: ""
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

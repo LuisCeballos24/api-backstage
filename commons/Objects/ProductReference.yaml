@@ -1,0 +1,14 @@
+type: object
+properties:
+    productType:
+        type: string
+    productSubType:
+        type: string
+    productSubTypeDescription:
+        type: string
+    productName:
+        type: string
+    referenceId:
+        type: string
+    currencyCode:
+        type: string

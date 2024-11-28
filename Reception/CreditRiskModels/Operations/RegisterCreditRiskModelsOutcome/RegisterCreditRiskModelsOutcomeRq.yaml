@@ -1,0 +1,4 @@
+type: object
+properties:
+    CreditRiskModelsOutcome:
+        $ref: '../../../../commons/Objects/CreditRiskModelsOutcome.yaml'

@@ -1,0 +1,15 @@
+type: object
+properties:
+    agencyName:
+        type: string
+    bankName:
+        type: string
+    bankCode:
+        type: string
+    SwiftReference:
+        type: object
+        properties:
+            referenceNumber:
+                type: string
+            UpdatedDate:
+                type: string

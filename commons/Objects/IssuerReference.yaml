@@ -1,0 +1,6 @@
+type: object
+properties:
+    issuerName:
+        type: string
+    issuerRating:
+        type: string

@@ -1,0 +1,29 @@
+type: object
+properties:
+    customerSalesEventType:
+        type: string
+        description: El tipo de evento (por ejemplo, campaña, no solicitado, solicitado, desarrollo)
+    Employee/UnitReference:
+        type: object
+        description: Empleados involucrados en la grabación del evento
+    productandServiceType:
+        type: string
+        description: El tipo de producto o servicio que se vende
+    leadAndOpportunityReference:
+        type: object
+        description: Referencia al lead/oportunidad registrada si la venta avanza
+    customerSalesEventRecord:
+        type: string
+        description: Los detalles del evento (en un formato adecuado)
+    CommissionAgreementReference:
+        type: object
+        description: Referencia a cualquier acuerdo de comisión, si procede
+    date/Time/Location:
+        type: string
+        description: Fecha y hora y el lugar en el que se capturó el evento
+    salesChannel:
+        type: string
+        description: Canal de Ventas
+    EmployeeUnitReference:
+        type: object
+        description: Empleados involucrados en la grabación del evento

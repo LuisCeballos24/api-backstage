@@ -1,0 +1,9 @@
+type: object
+properties:
+    PartyReferenceDataDirectoryEntry:
+        type: object
+        properties:
+            PartyReference:
+                $ref: '../../../../commons/Objects/PartyReference.yaml'
+    SalesInstanceRecord:
+        $ref: '../../../../commons/Objects/SalesInstanceRecord.yaml'

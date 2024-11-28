@@ -1,0 +1,34 @@
+type: object
+properties:
+    identifierValue:
+        type: string
+        description: Valor de la identificacion
+    identifierIssuingAuthority:
+        type: string
+        description: Pais/entidad donde fue emitida la identificacion
+    identifierStartDate:
+        type: string
+        description: Fecha de emision de la identificacion
+    identifierEndDate:
+        type: string
+        description: Fecha de expiracion de la identificacion
+    identifierHolderName:
+        type: string
+        description: Nombre en ID Legal
+    identifierRollDoc:
+        type: string
+        description: Registro del Rollo / Tomo / Documento
+    identifierFile:
+        type: string
+        description: Asiento/Ficha
+    identifierFolio:
+        type: string
+        description: Digito de folio
+    identifierProvinceDigit:
+        type: string
+        description: Digito de provincia
+    identifierSpecialDigit:
+        type: string
+        description: Codigo de cedulas especiales
+    partyIdentificationType:
+        type: string

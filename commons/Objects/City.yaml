@@ -1,0 +1,7 @@
+type: object
+description: Ciudad
+properties:
+    code:
+        type: string
+    name:
+        type: string

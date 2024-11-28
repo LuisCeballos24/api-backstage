@@ -1,0 +1,17 @@
+type: array
+items:
+    type: object
+    properties:
+        serviceFeesId:
+            type: string
+        feePlan:
+            type: array
+            items:
+                type: object
+                properties:
+                    feeMethod: 
+                        type: string
+                    chargeAutoSettle: 
+                        type: boolean
+                    feePeriod: 
+                        type: string

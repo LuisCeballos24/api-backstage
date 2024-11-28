@@ -1,0 +1,74 @@
+type: object
+properties:
+    PartyRelationship:
+        $ref: './PartyRelationship.yaml'
+    PartyProfile:
+        $ref: './PartyProfile.yaml'
+    PartyPartyRelationship:
+        $ref: './PartyPartyRelationship.yaml'
+    PartyIdentification:
+        $ref: './PartyIdentification.yaml'
+    partyType:
+        type:
+        description: Tipo de persona
+    partyStatus:
+        type: string
+        description: Estado del cliente
+    dependants:
+        type: string
+    clubBanesco:
+        type: boolean
+    requiredId:
+        type: string
+        example: FNBE534684
+    Person:
+        $ref: './Person.yaml'
+    PartyName:
+        $ref: './PartyName.yaml'
+    PartyDateTime:
+        $ref: './PartyDateTime.yaml'
+    BankRelations:
+        $ref: './BankRelations.yaml'
+    User:
+        $ref: './User.yaml'
+    ContactPoint:
+        $ref: './ContactPoint.yaml'
+    TaxReference:
+        $ref: './TaxReference.yaml'
+    Location:
+        $ref: './Location.yaml'
+    ShareholdingProfile:
+        $ref: './ShareholdingProfile.yaml'
+    SalesInstanceRecord:
+        $ref: './SalesInstanceRecord.yaml'
+    customerClass:
+        type: string
+    customerStatus:
+        type: string
+    customerType:
+        type: string
+    economicActivity:
+        type: string
+    government:
+        type: string
+    isSecureMessage:
+        type: boolean
+    manual:
+        type: string
+    numberOfDependents:
+        type: string
+    subSegment:
+        type: string
+    target:
+        type: string
+    referenceId: 
+        type: string
+        example: FNBE534684
+    PartyRole:
+        $ref: './PartyRole.yaml'
+    chequeDigit:
+        type: string
+    underAge: 
+        type: string
+    checkDigit:
+        type: string

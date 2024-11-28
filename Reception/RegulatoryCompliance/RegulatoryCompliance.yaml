@@ -1,0 +1,366 @@
+openapi: 3.0.3
+info:
+  title: Regulatory Compliance
+  description: Regulatory Compliance
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/experience/RegulationsAndCompliance/RegulatoryCompliance/3.0.0/'
+paths:
+  /v3/RegulatoryComplianceAssessment/Retrieve:
+    post:
+      tags:
+        - RegulatoryComplianceAssessment
+      summary: Retrieve RegulatoryComplianceAssessment
+      description: Servicio de reception se encarga de consultar Personas (Natural o Juridica) en las listas de Vigilancia
+      operationId: RetrieveRegulatoryComplianceAssessment
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/RetrieveRegulatoryComplianceAssessmentRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/RetrieveRegulatoryComplianceAssessmentRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/RegulatoryComplianceAssessment/Evaluate:
+    post:
+      tags:
+        - RegulatoryComplianceAssessment
+      summary: Evaluate RegulatoryComplianceAssessment
+      description: Servicio de reception se encarga de consultar los Records encuestados previamente en las listas de Vigilancia
+      operationId: EvaluateRegulatoryComplianceAssessment
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/EvaluateRegulatoryComplianceAssessmentRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/EvaluateRegulatoryComplianceAssessmentRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    RetrieveRegulatoryComplianceAssessmentRq:
+      $ref: './Operations/RetrieveRegulatoryComplianceAssessment/RetrieveRegulatoryComplianceAssessmentRq.yaml'
+    EvaluateRegulatoryComplianceAssessmentRq:
+      $ref: './Operations/EvaluateRegulatoryComplianceAssessment/EvaluateRegulatoryComplianceAssessmentRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    RetrieveRegulatoryComplianceAssessmentRs:
+      $ref: './Operations/RetrieveRegulatoryComplianceAssessment/RetrieveRegulatoryComplianceAssessmentRs.yaml'
+    EvaluateRegulatoryComplianceAssessmentRs:
+      $ref: './Operations/EvaluateRegulatoryComplianceAssessment/EvaluateRegulatoryComplianceAssessmentRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    RetrieveRegulatoryComplianceAssessmentRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RetrieveRegulatoryComplianceAssessmentRq'
+          example:
+            RegulatoryComplianceAssessment:
+            - AlertInstanceRecord:
+                customerRelationshipAlertType: "Role"
+                division: "DefaultDivision"
+                emailNotification: true
+                roles:
+                - "Administrator"
+              CustomerReference:
+              - PartyReference:
+                  Location:
+                    Address:
+                    - PostalAddress:
+                        Country:
+                          name: "China"
+                      addressType: "Postal Address"
+                  PartyDateTime:
+                  - dateType: "birthDate"
+                    timeDuration:
+                    - 15
+                    - 9
+                    - 1998
+                  PartyIdentification:
+                  - Identifier:
+                      identifierValue: "164313"
+                    partyIdentificationType: "IdentityCardNumber"
+                  PartyName:
+                  - name: "Marco Antonio"
+                  - name: "PEREZ"
+                  - name: "CASTRO"
+                  Person:
+                    gender: "Género"
+                    nationality: "Nacionalidad"
+                  partyType: "Individual"
+              RegulationConfigurationReference:
+                duplicateMatchSuppressionSameDivisionOnly: true
+                excludeScreeningListMatches: false
+                predefinedSearchName: "Consultas En Tiempo Real"
+                writeResultsToDatabase: true
+            
+    
+    EvaluateRegulatoryComplianceAssessmentRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EvaluateRegulatoryComplianceAssessmentRq'
+          example:
+            RegulatoryComplianceAssessment:
+            - CustomerReference:
+              - referenceId: "123"
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    RetrieveRegulatoryComplianceAssessmentRs:
+      description: RetrieveRegulatoryComplianceAssessmentRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RetrieveRegulatoryComplianceAssessmentRs'
+          example:
+            RegulatoryComplianceAssessment:
+            - RegulatoryWatchlist:
+              - Results:
+                - Details:
+                    RegulatoryAdditionalInformation:
+                    - identification: "1"
+                      type: "Citizenship"
+                      value: "Panama"
+                  PartyReference:
+                    PartyName:
+                    - name: "Marco Antonio"
+                  RegulatoryAuthorityReference:
+                    regulatoryAuthorityResult: "91"
+                  regulatoryAssessmentResult: "91"
+              regulatoryComplianceId: "10257495651"
+            
+    
+    EvaluateRegulatoryComplianceAssessmentRs:
+      description: EvaluateRegulatoryComplianceAssessmentRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EvaluateRegulatoryComplianceAssessmentRs'
+          example:
+            RegulatoryComplianceAssessment:
+            - RegulatoryDetails:
+                PartyReference:
+                  PartyIdentification:
+                  - Identifier:
+                      identifierValue: "ID987654"
+                    partyIdentificationType: "NationalRegistrationNumber"
+                  - Identifier:
+                      identifierValue: "ID123456"
+                    partyIdentificationType: "NationalRegistrationNumber"
+                  Person:
+                    PersonName:
+                    - personName: "John Doe"
+                    - personName: "Jane Doe"
+                    gender: "Male"
+                StatusRecord:
+                  PartyReference:
+                    PartyRole:
+                      partyRoleType: "Compliance Officer"
+                    Person:
+                      PersonName:
+                      - personName: "John Manager"
+                  acceptedList: true
+                  alertStatus: "None"
+                  division: "Legal"
+                  history: "No previous alerts"
+                  matchStates: "Match"
+                  status: "Active"
+                acceptedList: true
+                division: "Finance"
+                dppa: "Compliance"
+                eft: "Electronic Funds Transfer"
+                entity: "XYZ Corp"
+                glb: "Global"
+                reportLastDate: "2023-01-01"
+                reportRequestedDate: "2023-01-15"
+              RegulatoryWatchlist:
+              - Results:
+                - Country:
+                    code: "US"
+                    nameScore: 95
+                    score: 85
+                  Entity:
+                    entityName: "ABC Ltd"
+                    entityScore: 90
+                  match: "json format"
+              recordIndex: -1
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

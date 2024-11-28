@@ -1,0 +1,5 @@
+type: object
+description: Referencia del ABA number
+properties:
+    referenceId:
+        type: string

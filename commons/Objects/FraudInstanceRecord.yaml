@@ -1,0 +1,20 @@
+type: object
+properties:
+    customerFraudCaseEventType:
+        type: string
+        description: El tipo de evento (por ejemplo, tarjeta robada, transacción en disputa)
+    customerContactRecordReference:
+        type: object
+        description: Referencia a un registro de eventos de contacto
+    accessedProductandService:
+        type: string
+        description: Referencia a los tipos o instancias de productos/servicios a los que se presta servicio, si se proporcionan 
+    employee/UnitReference:
+        type: object
+        description: Empleados involucrados en el registro del caso de fraude
+    fraudCaseReference:
+        type: object
+        description: Referencia al caso de fraude, procesamiento del análisis y respuesta
+    date/Time/Location:
+        type: string
+        description: 

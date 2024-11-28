@@ -1,0 +1,10 @@
+type: object
+properties:
+    location_LocationRelationshipType:
+        type: string
+        description: valores de tipo de relación de la localizacion
+        enum:
+            - Location is Contained in Location
+            - Location is Capital of Location
+            - Location is Alternative for Location
+            - Location is Replaced by Location

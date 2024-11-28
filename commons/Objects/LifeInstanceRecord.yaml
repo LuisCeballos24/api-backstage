@@ -1,0 +1,17 @@
+type: object
+properties:
+    customerLifeEventType:
+        type: string
+        description: El tipo de evento (por ejemplo, matrimonio/divorcio, reubicación, nacimiento, graduación)
+    customerContactRecordReference:
+        type: object
+        description: Referencia a un registro de eventos de contacto
+    employee/UnitReference:
+        type: object
+        description: Empleados involucrados en la captura del evento
+    customerLifeEventRecord:
+        type: string
+        description: Los detalles del evento (en un formato adecuado)
+    date/Time/Location:
+        type: string
+        description: Fecha y hora y el lugar en el que se capturó el evento

@@ -1,0 +1,6 @@
+type: object
+description: Mantenga un registro de transacciones o actividad, normalmente una cuenta/diario financiero o un registro de actividad para respaldar el análisis del comportamiento dentro del historial de eventos del cliente.
+properties:
+    customerReference:
+        type: object
+        description: Referencia a la clienta asociada (actualmente puede ser una persona física o una empresa)

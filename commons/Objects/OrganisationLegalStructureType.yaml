@@ -1,0 +1,17 @@
+type: object
+properties:
+    organisationLegalStructureType:
+        type: string
+        description: Especifica la situación jurídica de la organización.
+        enum:
+            - Corporation
+            - Individual
+            - Supranational
+            - Sovereign
+            - Municipal
+            - Province
+            - State
+            - County
+            - Partnership
+            - FinancialInstitution
+            - National

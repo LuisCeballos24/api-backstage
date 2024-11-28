@@ -1,0 +1,19 @@
+type: object
+properties:
+    outboundTransactionFunctionType:
+        type: string
+        example: SERVICIOS PUBLICOS
+    outboundTransactionFunctionDescription:
+        type: string
+        example: ENSA TEST2
+    OutboundTransactionFunctionReference:
+        type: array
+        items:
+            type: object
+            properties:
+                functionItem:
+                    type: string
+                    example: "01010101"
+                functionValue:
+                    type: string
+                    example: "01010101"

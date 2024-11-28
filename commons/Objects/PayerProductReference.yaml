@@ -1,0 +1,17 @@
+type: object
+description: Contiene los detalles de las cuentas o productos desde donde se debitan los fondos.
+properties:
+    referenceId:
+        type: string
+    PaymentCard:
+        $ref: './PaymentCard.yaml'
+    AccountReference:
+        $ref: './AccountReference.yaml'
+    AccountIdentification:
+        $ref: './AccountIdentification.yaml'
+    Amount:
+        $ref: './Amount.yaml'
+    transactionDate:
+        type: string
+    transactionDescription:
+        type: string

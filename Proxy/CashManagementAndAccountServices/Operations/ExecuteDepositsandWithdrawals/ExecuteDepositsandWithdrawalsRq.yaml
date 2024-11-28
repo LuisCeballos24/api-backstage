@@ -1,0 +1,8 @@
+type: object
+properties:
+    AccountReference: 
+        $ref: '../../../../commons/Objects/AccountReference.yaml'
+    TransactionFacility:
+        $ref: '../../../../commons/Objects/TransactionFacility.yaml'
+    PartyReference:
+        $ref: '../../../../commons/Objects/PartyReference.yaml'

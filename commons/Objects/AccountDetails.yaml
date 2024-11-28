@@ -1,0 +1,81 @@
+type: object
+properties:
+    Covid19StatusAdmin:
+        type: string
+    Covid19UpdateDt:
+        type: string
+    CashDepositFrequency:
+        type: string
+    CashWithdrawalFrequency:
+        type: string
+    statusDescription:
+        type: string
+    AccountType:
+        $ref: './AccountType.yaml'
+    clubBanesco:
+        type: string
+    AccountCurrency:
+        type: object
+        properties:
+            Amount:
+                $ref: './Amount.yaml'
+            currencyCode:
+                type: string
+    movType:  
+        type: string
+    ActivityType:  
+        $ref: './ActivityType.yaml'
+    DebitCard:  
+        $ref: './DebitCard.yaml'
+    accountUsage:  
+        type: string
+    businessUnit:  
+        type: string
+    sourceOfFundsCode:  
+        type: string
+    sourceOfFundsDescription:  
+        type: string
+    TargetAmount: 
+        type: object
+        properties:
+            Amount:
+                $ref: './Amount.yaml'
+    OpeningAmount:
+        type: object
+        properties:
+            Amount:
+                $ref: './Amount.yaml'
+    OpeningMode:  
+        $ref: './OpeningMode.yaml'
+    purpose:  
+        type: string
+    ServiceRequestReasons:  
+        $ref: './ServiceRequestReasons.yaml'
+    PaymentCollector: 
+        $ref: './PaymentCollector.yaml'
+    AverageBalance:
+        type: object
+        properties:
+            Amount:
+                $ref: './Amount.yaml'
+    AverageDeposits:
+        type: object
+        properties:
+            Amount:
+                $ref: './Amount.yaml'
+    PercentageDeposits:
+        type: object
+        properties:
+            Amount:
+                $ref: './Amount.yaml'
+    Deposits:     
+        $ref: './Deposits.yaml'
+    Transaction:    
+        $ref: './Transaction.yaml'
+    PartyReference:
+        $ref: './PartyReference.yaml'
+    Category:
+        type: object
+        properties:
+            code:
+                type: string

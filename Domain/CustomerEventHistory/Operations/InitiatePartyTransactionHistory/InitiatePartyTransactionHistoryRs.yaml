@@ -1,0 +1,6 @@
+type: object
+properties:
+    Account: 
+        $ref: '../../../../commons/Objects/Account.yaml'
+    executionDate:
+        type: string

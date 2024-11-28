@@ -1,0 +1,323 @@
+openapi: 3.0.3
+info:
+  title: Term Deposit
+  description: Term Deposit
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/system/LoansAndDeposits/TermDeposit/3.0.0/'
+paths:
+  /v3/TermDepositFacility/Initiate:
+    post:
+      tags:
+        - TermDepositFacility
+      summary: Initiate TermDepositFacility
+      description: Operación que permite la creación de un depósito a plazo.
+      operationId: InitiateTermDepositFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateTermDepositFacilityRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateTermDepositFacilityRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    InitiateTermDepositFacilityRq:
+      $ref: './Operations/InitiateTermDepositFacility/InitiateTermDepositFacilityRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    InitiateTermDepositFacilityRs:
+      $ref: './Operations/InitiateTermDepositFacility/InitiateTermDepositFacilityRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    InitiateTermDepositFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateTermDepositFacilityRq'
+          example:
+            TermDepositFacility:
+              AccountDetails:
+                AccountCurrency:
+                  currencyCode: ""
+                AccountType:
+                  accountName: ""
+                  accountType: ""
+                ActivityType:
+                  code: ""
+                Category:
+                  code: ""
+                PartyReference:
+                  PartyIdentification:
+                  - Identifier:
+                      identifierValue: ""
+                  Person:
+                    PersonProfile:
+                      staffDescription: ""
+                      staffPosition: ""
+                businessUnit: ""
+                clubBanesco: ""
+                movType: ""
+              Associations:
+                PartyReference:
+                  ContactPoint:
+                  - contactPointAreaCode: ""
+                    contactPointPhoneType: ""
+                    contactPointType: "PhoneNumber"
+                    contactPointValue: ""
+                  Location:
+                    Address:
+                    - PostalAddress:
+                        Country:
+                          code: ""
+                          name: ""
+                  PartyIdentification:
+                  - Identifier:
+                      identifierValue: ""
+                  Person:
+                    PersonName:
+                    - personName: ""
+                  underAge: ""
+                associateType: ""
+                percentage: ""
+              PaymentInstruction:
+                PayeeAccountReference:
+                  AccountIdentification:
+                  - Identifier:
+                      identifierValue: ""
+                    referenceId: ""
+                  activated: ""
+                PayerAccountReference:
+                  AccountIdentification:
+                  - Identifier:
+                      identifierValue: ""
+                    referenceId: ""
+                  activated: ""
+              PositionLimits:
+                LimitFrequency:
+                  frequencyCode: ""
+                  frequencyValue: ""
+                  noPaymentMonth: ""
+                  paymentDay: ""
+                  paymentDayNumber: ""
+                  paymentWeek: ""
+                LimitRate:
+                  RatePeriod:
+                    startDate: ""
+                  conditions: ""
+                  effectiveInterestRate: ""
+                  index: ""
+                  nominalInterestRate: ""
+                  ratePaymentMethod: ""
+                  ratePaymentMethodType: ""
+                  ratePaymentTarget: ""
+                  spread: ""
+                startDate: ""
+              ProductInstanceReference:
+                ProductDetails:
+                  ProductType:
+                    productName: ""
+                    productType: ""
+                  SubProductType:
+                    subProductName: ""
+                  Variations:
+                  - description: ""
+                    variationType: ""
+              TermDepositAgreement:
+                ChangePeriod:
+                  changeDate: ""
+                  changeDateType: ""
+                  changePeriodType: ""
+                depositTermAndCondition: ""
+                renewalDescription: ""
+              TermDepositAmount:
+                amount: 123.5
+                currencyCode: ""
+              description: ""
+              generalDescription: ""
+              maturityDate: ""
+              positionLimitType: ""
+              requestReason: ""
+              salesChannel: ""
+              simplified: false
+              termDepositOpenDate: ""
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    InitiateTermDepositFacilityRs:
+      description: InitiateTermDepositFacilityRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateTermDepositFacilityRs'
+          example:
+            StatusInstanceRecord:
+              message: "message"
+              status: "status"
+            TermDepositFacility:
+              AccountReference:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: "identifierValue1"
+                - Identifier:
+                    identifierValue: "identifierValue2"
+                referenceId: "referenceId"
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

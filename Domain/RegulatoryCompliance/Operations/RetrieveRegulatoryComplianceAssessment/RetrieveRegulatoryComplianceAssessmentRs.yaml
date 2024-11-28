@@ -1,0 +1,4 @@
+type: object
+properties:
+    RegulatoryComplianceAssessment:
+        $ref: '../../../../commons/Objects/RegulatoryComplianceAssessment.yaml'

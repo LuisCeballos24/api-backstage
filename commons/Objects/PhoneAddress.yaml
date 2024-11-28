@@ -1,0 +1,18 @@
+type: array
+items:
+    type: object
+    description: Recopilación de información que identifica una dirección de teléfono. (ISO20022) 
+    properties:
+        phoneAddressType:
+            type: string
+            description: el tipo de direccion del telefono
+            enum:
+                - PhoneNumber
+                - FaxNumber
+                - MobileNumber
+        phoneNumber:
+            type: string
+            description: numero de telefono
+        phoneAreaCode:
+            type: string
+            description: Area telefonica

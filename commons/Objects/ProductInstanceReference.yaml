@@ -1,0 +1,6 @@
+type: object
+properties:
+    ProductDetails:
+        $ref: './ProductDetails.yaml'
+    referenceId:
+        type: string

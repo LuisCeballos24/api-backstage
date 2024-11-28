@@ -1,0 +1,59 @@
+type: object
+properties:
+    registryNumber:
+        type: string
+    GeneralLedgerAmount:
+        type: object
+        properties:
+            Amount:
+                $ref: './Amount.yaml'
+    collateralGrade:
+        type: string
+    ImprovementsAmount:
+        type: object
+        properties:
+            Amount:
+                $ref: './Amount.yaml'
+    Location:
+        $ref: './Location.yaml'
+    SalePriceAmount:
+        type: object
+        properties:
+            Amount:
+                $ref: './Amount.yaml'
+    landArea:
+        type: string
+    LandAreaAmount:
+        type: object
+        properties:
+            Amount:
+                $ref: './Amount.yaml'
+    ThirdPartyAmount:
+        type: object
+        properties:
+            Amount:
+                $ref: './Amount.yaml'
+    issuerRating:
+        type: string
+    updatedDate:
+        type: string
+    vehicleBrand:
+        type: string
+    vehicleColor:
+        type: string
+    vehicleModel:
+        type: string
+    plateNumber:
+        type: string
+    vehicleType:
+        type: string
+    vehicleChassisNumber:
+        type: string
+    vehicleVINNumber:
+        type: string
+    vehicleYear:
+        type: string
+    ownerName:
+        type: string
+    occupancyPermitDate:
+        type: string

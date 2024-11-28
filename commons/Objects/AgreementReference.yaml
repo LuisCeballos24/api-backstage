@@ -1,0 +1,14 @@
+type: object
+properties:
+    referenceId:
+        type: string
+    agreementDate:
+        type: string
+    agreementContent:
+        type: string
+    agreementSignedDate:
+        type: string
+    scriptureNumber:
+        type: string
+    Registration:
+        $ref: './Registration.yaml'

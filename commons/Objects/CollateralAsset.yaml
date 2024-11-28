@@ -1,0 +1,28 @@
+type: array
+items:
+    type: object
+    properties:
+        AppraisalReference:
+            $ref: './AppraisalReference.yaml'
+        CentralAmount:
+            type: object
+            properties:
+                Amount:
+                    $ref: './Amount.yaml'
+        AgreementReference:
+            $ref: './AgreementReference.yaml'
+        Registration:
+            $ref: './Registration.yaml'
+        TrustIssue:
+            $ref: './TrustIssue.yaml'
+        ExecutionAmount:
+            type: object
+            properties:
+                Amount:
+                    $ref: './Amount.yaml'
+        Asset:
+            $ref: './Asset.yaml'
+        collateralYear:
+            type: string
+        collateralAssetType:
+            type: string

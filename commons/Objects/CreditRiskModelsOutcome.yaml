@@ -1,0 +1,11 @@
+type: array
+items:
+    type: object
+    description: Resultado del riesgo de credito
+    properties:
+        creditRiskModelClass:
+            type: string
+            description: Riesgo calculado
+        creditRiskModelManualClass:
+            type: string
+            description: Categoria manual de riesgo

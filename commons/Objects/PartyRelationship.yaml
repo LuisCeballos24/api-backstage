@@ -1,0 +1,10 @@
+type: object
+properties:
+    relationshipType:
+        type: string
+    relationshipCode:
+        type: string
+    relationshipLifecycleStatus:
+        type: string
+    relationshipName:
+        type: string

@@ -1,0 +1,10 @@
+type: object
+properties:
+    appraisalDate:
+        type: string
+    expirationDate:
+        type: string
+    Amount:
+        $ref: './Amount.yaml'
+    PartyReference:
+        $ref: './PartyReference.yaml'

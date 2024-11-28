@@ -1,0 +1,4 @@
+type: object
+properties:
+    SwiftProfileAccount:
+        $ref: '../../../../commons/Objects/SwiftProfileAccount.yaml'

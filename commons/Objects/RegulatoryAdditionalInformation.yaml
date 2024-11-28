@@ -1,0 +1,11 @@
+type: array
+items:
+    type: object
+    description: Array (arreglo) de información adicional que complementa los campos anteriores.
+    properties:
+        identification:
+            type: string
+        type:
+            type: string
+        value:
+            type: string

@@ -1,0 +1,8 @@
+type: array
+items:
+    type: object
+    properties:
+        AccountIdentification:
+            $ref: './AccountIdentification.yaml'
+        activated:  
+            type: string

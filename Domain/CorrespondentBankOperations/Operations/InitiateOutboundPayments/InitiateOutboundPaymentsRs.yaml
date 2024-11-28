@@ -1,0 +1,6 @@
+type: object
+properties:
+    OutboundPayments:
+        $ref: '../../../../commons/Objects/OutboundPayments.yaml'
+    StatusInstanceRecord:
+        $ref: '../../../../commons/Objects/StatusInstanceRecord.yaml'

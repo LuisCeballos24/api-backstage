@@ -1,0 +1,16 @@
+description: NotFound
+content:
+  application/json:
+    schema:
+      $ref: './HttpError.yaml'
+    examples:
+      objectExample:
+        $ref: '#/components/examples/NotFound'
+
+components:
+  examples:
+    NotFound:
+      value:
+        statusCode: '404'
+        status: 'FAILED'
+        message: 'Not Found'

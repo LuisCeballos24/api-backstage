@@ -1,0 +1,7 @@
+type: object
+description: Jurisdiccion
+properties:
+    code:
+        type: string
+    name:
+        type: string

@@ -1,0 +1,9 @@
+type: array
+items:
+    properties:
+        feeType:
+            type: string
+        feeAmount:
+            type: number
+        feeApplicationDate:
+            type: string

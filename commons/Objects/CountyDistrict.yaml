@@ -1,0 +1,7 @@
+type: object
+description: Distrito
+properties:
+    code:
+        type: string
+    name:
+        type: string

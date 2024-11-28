@@ -1,0 +1,17 @@
+type: object
+properties:
+  signatoriesGroupId:
+    type: string
+  agreementDescription:
+    type: string
+  Access:
+    type: array
+    items:
+      type: object
+      properties:
+        agreementValidToDate:
+          type: string
+        agreementValidFromDate:
+          type: string
+        AccessArrangementInvolvement:
+          $ref: './AccessArrangementInvolvement.yaml'

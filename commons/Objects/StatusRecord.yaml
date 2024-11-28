@@ -1,0 +1,16 @@
+type: object
+properties:
+    acceptedList:
+        type: boolean
+    alertStatus:
+        type: string
+    division:
+        type: string
+    history:
+        type: string
+    matchStates:
+        type: string
+    status:
+        type: string
+    PartyReference:
+        $ref: './PartyReference.yaml'

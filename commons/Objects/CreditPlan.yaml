@@ -1,0 +1,16 @@
+type: array
+items:
+    type: object
+    properties:
+        creditPlanType:
+            type: string
+        creditPlanCurrency:
+            type: string
+        creditPlanAmount:
+            type: number
+        creditPlanId:
+            type: string
+        creditPlanCode:
+            type: string
+        creditPlanTerms:
+            type: string

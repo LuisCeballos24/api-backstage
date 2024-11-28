@@ -1,0 +1,22 @@
+type: object
+properties:
+    PayeeReference:
+        $ref: './PayeeReference.yaml'
+    PayeeBankReference:
+        $ref: './PayeeBankReference.yaml'
+    PayeeProductReference:
+        $ref: './PayeeProductReference.yaml'
+    PaymentCard:
+        $ref: './PaymentCard.yaml'
+    paymentTransactionType:
+        type: string
+    currency:
+        type: string
+    referenceId:
+        type: string
+    SWIFTTransactionReference:
+        $ref: './SWIFTTransactionReference.yaml'
+    PayerReference:
+        $ref: './PayerReference.yaml'
+    IntemediaryBankReference:
+        $ref: './IntemediaryBankReference.yaml'

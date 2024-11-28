@@ -1,0 +1,54 @@
+type: object
+properties:
+  PartyReference:
+    $ref: './PartyReference.yaml'
+  Currency:
+    type: object
+    properties:
+      currencyCode:
+        type: string
+  chequeCurrency:
+      type: string
+  chequeStatus:
+    type: string
+  chequeNumber:
+    type: string
+  issueBank:
+    type: string
+  amount:
+    type: integer
+  chequeStartNumber:
+    type: string
+  chequeEndNumber:
+    type: string
+  chequeType:
+    type: string
+  chequeAmount:
+    type: string
+  status:
+    type: string
+  ChequeAccount:
+    type: object
+    properties:
+        AccountIdentification:
+            $ref: './AccountIdentification.yaml'
+  FeeArrangement:
+      $ref: './FeeArrangement.yaml'
+  ChequePayment:
+    type: object
+    properties:
+      PayeeProductReference:
+        type: object
+        properties:
+          AccountIdentification:
+            $ref: './AccountIdentification.yaml'
+      PayeeReference:
+        $ref: './PayeeReference.yaml'
+      paymentDetails:
+        type: string
+      chequeDraftNumber:
+        type: string
+      chequeStockIdentifier:
+        type: string
+      chequeSeriesIdentifier:
+        type: string

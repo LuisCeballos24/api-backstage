@@ -1,0 +1,5 @@
+type: object
+properties:
+    FATCA:
+        $ref: './FATCA.yaml'
+        description: Una colección de fuentes/medidas de información que se pueden utilizar para realizar un seguimiento del estado de uno o más elementos/entidades

@@ -1,0 +1,421 @@
+openapi: 3.0.3
+info:
+  title: Card Transaction Switch
+  description: Card Transaction Switch
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/system/OperationalServices/CardTransactionSwitch/3.0.0/'
+paths:
+  /v3/TransactionCapture/Execute:
+    put:
+      tags:
+        - TransactionCapture
+      summary: Execute TransactionCapture
+      description: Operación Proxy que confirma una transacción previamente autorizada, que transfiere los fondos al comerciante.
+      operationId: ExecuteTransactionCapture
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/ExecuteTransactionCaptureRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/ExecuteTransactionCaptureRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/TransactionReversal/Initiate:
+    post:
+      tags:
+        - TransactionReversal
+      summary: Initiate TransactionReversal
+      description: Operación Proxy que confirma una Cancelación o Reembolso de una transacción autorizada o completada.
+      operationId: InitiateTransactionReversal
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateTransactionReversalRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateTransactionReversalRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/TransactionStatus/Retrieve:
+    post:
+      tags:
+        - TransactionStatus
+      summary: Retrieve TransactionStatus
+      description: Retorna el status de la transacción.
+      operationId: RetrieveTransactionStatus
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/RetrieveTransactionStatusRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/RetrieveTransactionStatusRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    ExecuteTransactionCaptureRq:
+      $ref: './Operations/ExecuteTransactionCapture/ExecuteTransactionCaptureRq.yaml'
+    InitiateTransactionReversalRq:
+      $ref: './Operations/InitiateTransactionReversal/InitiateTransactionReversalRq.yaml'
+    RetrieveTransactionStatusRq:
+      $ref: './Operations/RetrieveTransactionStatus/RetrieveTransactionStatusRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    ExecuteTransactionCaptureRs:
+      $ref: './Operations/ExecuteTransactionCapture/ExecuteTransactionCaptureRs.yaml'
+    InitiateTransactionReversalRs:
+      $ref: './Operations/InitiateTransactionReversal/InitiateTransactionReversalRs.yaml'
+    RetrieveTransactionStatusRs:
+      $ref: './Operations/RetrieveTransactionStatus/RetrieveTransactionStatusRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    ExecuteTransactionCaptureRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExecuteTransactionCaptureRq'
+          example:
+            CardTransaction:
+              Amount:
+                amountValue: 123
+                currencyCode: "currency"
+              CardExpirationDate:
+                month: "expMonth"
+                year: "expYear"
+              ProductInstanceReference:
+                referenceId: "orderId"
+              TransactionFacility:
+                referenceId: "intRef"
+                referenceNumber: "rrn"
+                transactionType: "trtype"
+              cardCVV: "cvc2"
+              cardNumber: "card"
+              merchantMacAddress: "P_SIGN"
+              merchantNonceNumber: "NONCE"
+              returnUrlReference: "backRefUrl"
+              transactionDateTime: "timestamp"
+              transactionMerchantReference: "terminal"
+            
+    
+    InitiateTransactionReversalRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateTransactionReversalRq'
+          example:
+            TransactionReversal:
+              Amount:
+                amountValue: 123
+              CardExpirationDate:
+                month: "expMonth"
+                year: "expYear"
+              OriginAmount:
+                amountValue: 123
+                currencyCode: "currency"
+              ProductInstanceReference:
+                referenceId: "orderId"
+              TransactionFacility:
+                referenceId: "intRef"
+                referenceNumber: "rrn"
+                transactionDescription: "desc"
+                transactionType: "trtype"
+              cardCVV: "cvc2"
+              cardNumber: "card"
+              merchantMacAddress: "P_SIGN"
+              merchantNonceNumber: "NONCE"
+              returnUrlReference: "backRefUrl"
+              transactionDateTime: "timestamp"
+              transactionMerchantReference: "terminal"
+            
+    
+    RetrieveTransactionStatusRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RetrieveTransactionStatusRq'
+          example:
+            TransactionStatus:
+              ProductInstanceReference:
+                referenceId: "prod456"
+              TransactionFacility:
+                transactionType: "credit"
+                transactionTypeRq: "creditRequest"
+              transactionMerchantReference: "merchant123"
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    ExecuteTransactionCaptureRs:
+      description: ExecuteTransactionCaptureRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExecuteTransactionCaptureRs'
+          example:
+            CardTransaction:
+              Amount:
+                amountValue: 123
+                currencyCode: "currency"
+              ProductInstanceReference:
+                referenceId: "orderId"
+              TransactionFacility:
+                actionCode: "action"
+                authorizationNumber: "authCode"
+                referenceCode: "rc"
+                referenceId: "intRef"
+                referenceNumber: "rrn"
+                transactionStatus: "approval"
+              cardNumber: "card"
+              merchantMacAddress: "P_SIGN"
+              merchantNonceNumber: "NONCE"
+              transactionDateTime: "timestamp"
+              transactionMerchantReference: "terminal"
+            
+    
+    InitiateTransactionReversalRs:
+      description: InitiateTransactionReversalRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateTransactionReversalRs'
+          example:
+            TransactionReversal:
+              Amount:
+                amountValue: 123
+                currencyCode: "currency"
+              ProductInstanceReference:
+                referenceId: "orderId"
+              TransactionFacility:
+                actionCode: "action"
+                authorizationNumber: "authCode"
+                referenceCode: "rc"
+                referenceId: "intRef"
+                referenceNumber: "rrn"
+                transactionStatus: "approval"
+              cardNumber: "card"
+              merchantMacAddress: "P_SIGN"
+              merchantNonceNumber: "NONCE"
+              transactionDateTime: "timestamp"
+              transactionMerchantReference: "terminal"
+            
+    
+    RetrieveTransactionStatusRs:
+      description: RetrieveTransactionStatusRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RetrieveTransactionStatusRs'
+          example:
+            TransactionStatus:
+              Amount:
+                amountValue: 1231
+                currencyCode: "USD"
+              ProductInstanceReference:
+                referenceId: "prod789"
+              TransactionFacility:
+                actionCode: "approved"
+                referenceCode: "ref789"
+                referenceDescription: "Transaction approved"
+                transactionDate: "2024-10-31"
+                transactionStatus: "completed"
+                transactionType: "debit"
+              cardNumber: ""
+              transactionDateTime: "2024-10-31T10:00:00Z"
+              transactionMerchantReference: "merchant456"
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

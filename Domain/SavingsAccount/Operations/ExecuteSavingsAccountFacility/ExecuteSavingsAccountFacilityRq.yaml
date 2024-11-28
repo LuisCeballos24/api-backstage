@@ -1,0 +1,9 @@
+type: object
+properties:
+    SavingsAccountFacility:
+        type: object
+        properties:      
+            AccountIdentification:
+                $ref: '../../../../commons/Objects/AccountIdentification.yaml'
+            AccountDate:
+                $ref: '../../../../commons/Objects/AccountDate.yaml'

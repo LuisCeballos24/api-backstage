@@ -1,0 +1,16 @@
+description: BadRequest
+content:
+  application/json:
+    schema:
+      $ref: './HttpError.yaml'
+    examples:
+      objectExample:
+        $ref: '#/components/examples/BadRequest'
+
+components:
+  examples:
+    BadRequest:
+      value:
+        statusCode: '400'
+        status: 'FAILED'
+        message: 'Bad Request'

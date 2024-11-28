@@ -1,0 +1,14 @@
+type: object
+properties:
+    PayeeProductReference:
+        $ref: './PayeeProductReference.yaml'
+    PayerProductReference:
+        $ref: './PayerProductReference.yaml'
+    Amount:
+        $ref: './Amount.yaml'
+    TransactionReference:
+        $ref: './TransactionReference.yaml'
+    category:
+        type: string
+    status: 
+        type: string

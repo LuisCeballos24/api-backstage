@@ -1,0 +1,9 @@
+type: object
+properties:
+  limitAmount:
+    type: number
+  limitType:
+    type: string
+    enum:
+      - Daily
+      - Monthly

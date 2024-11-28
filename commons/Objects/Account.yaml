@@ -1,0 +1,12 @@
+type: object
+properties:
+    AccountIdentification:
+        $ref: './AccountIdentification.yaml'
+    accountPurpose:
+        type: string
+    debitAccount:
+        type: string
+    AccountDetails:
+        $ref: './AccountDetails.yaml'
+    referenceId:
+        type: string

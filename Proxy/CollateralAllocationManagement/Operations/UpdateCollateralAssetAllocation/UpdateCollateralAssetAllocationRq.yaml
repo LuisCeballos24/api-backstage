@@ -1,0 +1,34 @@
+type: object
+properties:        
+    referenceId:
+        type: string
+    collateralAssetSubTypeCode:
+        type: string
+    collateralAssetSubTypeDescription:
+        type: string
+    collateralAssetTypeCode:
+        type: string
+    collateralAssetTypeDescription:
+        type: string
+    collateralAssetType:
+        type: string
+    collateralAssetDescription:
+        type: string
+    collateralAssetGoodDescription:
+        type: string
+    expirationDate:
+        type: string
+    LoanReference:
+        $ref: '../../../../commons/Objects/LoanReference.yaml'
+    CustomerReference:
+        $ref: '../../../../commons/Objects/CustomerReference.yaml'
+    Allocation:
+        $ref: '../../../../commons/Objects/Allocation.yaml'
+    IssuerReference:
+        $ref: '../../../../commons/Objects/IssuerReference.yaml'
+    BankReference:
+        $ref: '../../../../commons/Objects/BankReference.yaml'
+    InsuranceReference:
+        $ref: '../../../../commons/Objects/InsuranceReference.yaml'
+    CollateralAsset:
+        $ref: '../../../../commons/Objects/CollateralAsset.yaml'

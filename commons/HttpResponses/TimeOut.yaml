@@ -1,0 +1,16 @@
+description: TimeOut
+content:
+  application/json:
+    schema:
+      $ref: './HttpError.yaml'
+    examples:
+      objectExample:
+        $ref: '#/components/examples/TimeOut'
+
+components:
+  examples:
+    TimeOut:
+      value:
+        statusCode: '408'
+        status: 'FAILED'
+        message: 'Time Out'

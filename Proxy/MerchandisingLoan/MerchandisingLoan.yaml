@@ -1,0 +1,463 @@
+openapi: 3.0.3
+info:
+  title: MerchandisingLoan
+  description: MerchandisingLoan
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/system/LoansAndDeposits/MerchandisingLoan/3.0.0/'
+paths:
+  /v3/MerchandisingLoanFacility/Initiate:
+    post:
+      tags:
+        - MerchandisingLoanFacility
+      summary: Initiate MerchandisingLoanFacility
+      description: Operación de Proxy encargada de Crear préstamo de autos.
+      operationId: InitiateMerchandisingLoanFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateMerchandisingLoanFacilityRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateMerchandisingLoanFacilityRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/MerchandisingLoanFacility/Update:
+    put:
+      tags:
+        - MerchandisingLoanFacility
+      summary: Update MerchandisingLoanFacility
+      description: Operación de Proxy actualizar un préstamo de autos.
+      operationId: UpdateMerchandisingLoanFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateMerchandisingLoanFacilityRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/UpdateMerchandisingLoanFacilityRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    InitiateMerchandisingLoanFacilityRq:
+      $ref: './Operations/InitiateMerchandisingLoanFacility/InitiateMerchandisingLoanFacilityRq.yaml'
+    UpdateMerchandisingLoanFacilityRq:
+      $ref: './Operations/UpdateMerchandisingLoanFacility/UpdateMerchandisingLoanFacilityRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    InitiateMerchandisingLoanFacilityRs:
+      $ref: './Operations/InitiateMerchandisingLoanFacility/InitiateMerchandisingLoanFacilityRs.yaml'
+    UpdateMerchandisingLoanFacilityRs:
+      $ref: './Operations/UpdateMerchandisingLoanFacility/UpdateMerchandisingLoanFacilityRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    InitiateMerchandisingLoanFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateMerchandisingLoanFacilityRq'
+          example:
+            MerchandisingLoan:
+              LoanFacility:
+                AccountIdentifier:
+                  identifierValue: ""
+                AccountMembers:
+                - memberName: ""
+                  memberType: ""
+                BankBranch:
+                  codeDestination: ""
+                  collOfficer: ""
+                  countryDestination: ""
+                  creditDestination: ""
+                  fundsDestination: ""
+                  fundsPurpose: ""
+                  salesChannel: ""
+                DisbursementInstanceRecord:
+                - DisbursementPayeeProductReference:
+                    AccountIdentification:
+                    - Identifier:
+                        identifierValue: ""
+                  MoneyTransferInstruction:
+                    moneyTransferInstructionPurpose: ""
+                  disbursementActivityCode: ""
+                  disbursementAgreement: true
+                  disbursementAgreementCode: ""
+                Interest:
+                - interestCalculationDate: ""
+                InterestInstanceRecord:
+                - AccrualRule:
+                    accrualType: ""
+                    dailyBasis: ""
+                  InterestRate:
+                    Rate:
+                      rateValue: 0
+                  interestRateType: ""
+                LoanAgreement:
+                - agreementType: ""
+                  completionDate: ""
+                  description: ""
+                  expiryDate: ""
+                  loanReference: ""
+                  paymentMethod: ""
+                  registrationDate: ""
+                LoanTransaction:
+                - Account:
+                    accountPurpose: ""
+                    debitAccount: ""
+                  transactionActivityCode: ""
+                  transactionDescription: true
+                  transactionRule: ""
+                  transactionType: ""
+                MaintenanceInstanceRecord:
+                  maintenanceReportType: ""
+                Repayment:
+                - repaymentArrangement:
+                  - repaymentArrangementAmount: 0
+                    repaymentArrangementOriginationDate: ""
+                    repaymentArrangementPercentage: ""
+                  repaymentInstruction:
+                    repaymentDay: ""
+                    repaymentMonth: ""
+                    repaymentTarget: ""
+                  repaymentTransactionMethod: ""
+                  repaymentTransactionType: ""
+                  repaymentType: ""
+                ServiceFeesInstanceRecord:
+                - feePlan:
+                  - chargeAutoSettle: true
+                    feeMethod: ""
+                    feePeriod: ""
+                  serviceFeesId: ""
+                TaxReference:
+                  taxCalculationConditions: ""
+                  taxCalculationProperty: ""
+                  taxRate: ""
+                Variations:
+                - variationType: ""
+                autoPay: true
+                billsCombined: true
+                calculationMethod: ""
+                clubBanesco: true
+                disbursementDescription: ""
+                feeArrangement:
+                - feeAmount: 0
+                  feeCurrency: ""
+                  feeType: ""
+                  listCharges: ""
+                fromDay: ""
+                loanAmount: 0
+                loanCurrency: ""
+                loanMaturityDate: ""
+                loanOriginationDate: ""
+                loanTermAndCondition: ""
+                loanType: ""
+                toDay: ""
+            
+    
+    UpdateMerchandisingLoanFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateMerchandisingLoanFacilityRq'
+          example:
+            MerchandisingLoan:
+              LoanFacility:
+                AccountIdentifier:
+                  identifierValue: ""
+                AccountMembers:
+                - memberName: ""
+                  memberType: ""
+                BankBranch:
+                  codeDestination: ""
+                  collOfficer: ""
+                  countryDestination: ""
+                  creditDestination: ""
+                  fundsDestination: ""
+                  fundsPurpose: ""
+                  salesChannel: ""
+                DisbursementInstanceRecord:
+                - DisbursementPayeeProductReference:
+                    AccountIdentification:
+                    - Identifier:
+                        identifierValue: ""
+                  MoneyTransferInstruction:
+                    moneyTransferInstructionPurpose: ""
+                  disbursementActivityCode: ""
+                  disbursementAgreement: true
+                  disbursementAgreementCode: ""
+                Interest:
+                - interestCalculationDate: ""
+                InterestInstanceRecord:
+                - AccrualRule:
+                    accrualType: ""
+                    dailyBasis: ""
+                  InterestRate:
+                    Rate:
+                      rateValue: 0
+                  interestRateType: ""
+                LoanAgreement:
+                - agreementType: ""
+                  completionDate: ""
+                  description: ""
+                  expiryDate: ""
+                  loanReference: ""
+                  paymentMethod: ""
+                  registrationDate: ""
+                LoanTransaction:
+                - Account:
+                    accountPurpose: ""
+                    debitAccount: ""
+                  transactionActivityCode: ""
+                  transactionDescription: true
+                  transactionRule: ""
+                  transactionType: ""
+                MaintenanceInstanceRecord:
+                  maintenanceReportType: ""
+                Repayment:
+                - repaymentArrangement:
+                  - repaymentArrangementAmount: 0
+                    repaymentArrangementOriginationDate: ""
+                    repaymentArrangementPercentage: ""
+                  repaymentInstruction:
+                    repaymentDay: ""
+                    repaymentMonth: ""
+                    repaymentTarget: ""
+                  repaymentTransactionMethod: ""
+                  repaymentTransactionType: ""
+                  repaymentType: ""
+                ServiceFeesInstanceRecord:
+                - feePlan:
+                  - chargeAutoSettle: true
+                    feeMethod: ""
+                    feePeriod: ""
+                  serviceFeesId: ""
+                TaxReference:
+                  taxCalculationConditions: ""
+                  taxCalculationProperty: ""
+                  taxRate: ""
+                Variations:
+                - variationType: ""
+                autoPay: true
+                billsCombined: true
+                calculationMethod: ""
+                clubBanesco: true
+                disbursementDescription: ""
+                feeArrangement:
+                - feeAmount: 0
+                  feeCurrency: ""
+                  feeType: ""
+                  listCharges: ""
+                fromDay: ""
+                loanAmount: 0
+                loanCurrency: ""
+                loanMaturityDate: ""
+                loanOriginationDate: ""
+                loanTermAndCondition: ""
+                loanType: ""
+                toDay: ""
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    InitiateMerchandisingLoanFacilityRs:
+      description: InitiateMerchandisingLoanFacilityRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateMerchandisingLoanFacilityRs'
+          example:
+            MerchandisingLoan:
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+            
+    
+    UpdateMerchandisingLoanFacilityRs:
+      description: UpdateMerchandisingLoanFacilityRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateMerchandisingLoanFacilityRs'
+          example:
+            MerchandisingLoan:
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

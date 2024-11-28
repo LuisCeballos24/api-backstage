@@ -1,0 +1,641 @@
+openapi: 3.0.3
+info:
+  title: Legal Entity Directory
+  description: Legal Entity Directory
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/Party/LegalEntityDirectory/3.0.0/'
+paths:
+  /v3/LegalEntityDirectoryEntry/Register:
+    post:
+      tags:
+        - LegalEntityDirectoryEntry
+      summary: Register LegalEntityDirectoryEntry
+      description: Operación encargada de insertar los datos de una persona jurídica.
+      operationId: RegisterLegalEntityDirectoryEntry
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/RegisterLegalEntityDirectoryEntryRq'
+
+      responses:
+       '201':
+          description: 'Success'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/LegalEntityDirectoryEntry/Update:
+    patch:
+      tags:
+        - LegalEntityDirectoryEntry
+      summary: Update LegalEntityDirectoryEntry
+      description: Operación encargada de actualizar los datos de una persona jurídica.
+      operationId: UpdateLegalEntityDirectoryEntry
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateLegalEntityDirectoryEntryRq'
+
+      responses:
+       '204':
+          description: 'Not content'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/Associations/Register:
+    post:
+      tags:
+        - Associations
+      summary: Register Associations
+      description: Operación encargada de insertar los staff asociados a un cliente jurídico.
+      operationId: RegisterAssociations
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/RegisterAssociationsRq'
+
+      responses:
+       '201':
+          description: 'Success'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/Associations/Update:
+    patch:
+      tags:
+        - Associations
+      summary: Update Associations
+      description: Operación encargada de actualizar los staff asociados a un cliente jurídico.
+      operationId: UpdateAssociations
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateAssociationsRq'
+
+      responses:
+       '204':
+          description: 'Not content'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    RegisterLegalEntityDirectoryEntryRq:
+      $ref: './Operations/RegisterLegalEntityDirectoryEntry/RegisterLegalEntityDirectoryEntryRq.yaml'
+    UpdateLegalEntityDirectoryEntryRq:
+      $ref: './Operations/UpdateLegalEntityDirectoryEntry/UpdateLegalEntityDirectoryEntryRq.yaml'
+    RegisterAssociationsRq:
+      $ref: './Operations/RegisterAssociations/RegisterAssociationsRq.yaml'
+    UpdateAssociationsRq:
+      $ref: './Operations/UpdateAssociations/UpdateAssociationsRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    RegisterLegalEntityDirectoryEntryRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RegisterLegalEntityDirectoryEntryRq'
+          example:
+            LegalEntityDirectoryEntry:
+              Associations:
+                Location:
+                  Country:
+                    code: "PA"
+                associateType: "1"
+              Organisation:
+                BankRelations:
+                  bankRelation: "1"
+                  bankRelationType: "P999"
+                ContactPoint:
+                - contactPointAreaCode: "507"
+                  contactPointPhoneType: "Home"
+                  contactPointSocialType: "8316700"
+                  contactPointType: "ElectronicAddress"
+                  contactPointValue: "caribbeanportterminal@gmail.com"
+                - contactPointAreaCode: "507"
+                  contactPointPhoneType: "Mobile"
+                  contactPointSocialType: "62391961"
+                  contactPointType: "ElectronicAddress"
+                  contactPointValue: "caribbeanportterminal@gmail.com"
+                Location:
+                  Country:
+                    code: "PA"
+                OrganisationDate:
+                - organisationDate: "string"
+                - organisationDate: "string"
+                OrganisationIdentification:
+                - Identifier:
+                    identifierHolderName: "CARIBBEAN PORT TERMINAL 2 LTD"
+                    identifierIssuingAuthority: "string"
+                    identifierRollDoc: "string"
+                    identifierStartDate: "2020-10-29T00:00:00"
+                    identifierValue: "2323698530-0002-0000002344"
+                  file: "string"
+                  folioDigit: "string"
+                  organisationIdentificationType: "LEI"
+                OrganisationName:
+                - organisationName: "CARIBBEAN PORT TERMINAL 2 LTD"
+                - organisationName: "CARIBBEAN PORT TERMINAL 2 LTD"
+                OrganisationProfile:
+                  PEPProfile:
+                    Beneficiary:
+                    - Country:
+                        code: "PA"
+                      PersonIdentification:
+                      - Identifier:
+                          identifierValue: "0230"
+                      nationality: "US"
+                      partyName: "ROBERTO ORTEGA"
+                      publicPosition: "string"
+                      relationshipType: "Rel"
+                    internationalOrganization: false
+                    isPEP: false
+                    periodStart: "string"
+                  incomeFrequency: "3"
+                  incomeLocation: "03"
+                  incomeSource: "IT"
+                  revenue: "string"
+                OrganizationInvolvement:
+                - Identifier:
+                    identifierValue: "string"
+                ShareholdingProfile:
+                  numberOfShareholders: 1
+                  numberOfShares: 5000
+                  sharesType: "1"
+                StockProfile:
+                  Location:
+                    Country:
+                      code: "PA"
+                  name: "string"
+                  stockPercentage: "string"
+                  stockQuoting: false
+                TaxReference:
+                  Country:
+                    code: "VE"
+                  panamaResident: false
+                  taxEntityClass: "01"
+                clubBanesco: true
+                organisationBusinessName: "CARIBBEAN PORT TERMINAL 2 LTD"
+                organisationFreeZoneOperation: "string"
+                organisationLanguaje: "2"
+                organisationSector: "2000"
+                organisationStatus: "1"
+                organisationType: "Charity"
+            
+    
+    UpdateLegalEntityDirectoryEntryRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateLegalEntityDirectoryEntryRq'
+          example:
+            LegalEntityDirectoryEntry:
+              Associations:
+                Location:
+                  Country:
+                    code: "PA"
+                associateType: "1"
+              Organisation:
+                BankRelations:
+                  bankRelation: "1"
+                  bankRelationType: "P999"
+                ContactPoint:
+                - contactPointAreaCode: "507"
+                  contactPointPhoneType: "Home"
+                  contactPointSocialType: "8316700"
+                  contactPointType: "ElectronicAddress"
+                  contactPointValue: "caribbeanportterminal@gmail.com"
+                - contactPointAreaCode: "507"
+                  contactPointPhoneType: "Mobile"
+                  contactPointSocialType: "62391961"
+                  contactPointType: "ElectronicAddress"
+                  contactPointValue: "caribbeanportterminal@gmail.com"
+                Location:
+                  Country:
+                    code: "PA"
+                OrganisationDate:
+                - organisationDate: "string"
+                - organisationDate: "string"
+                OrganisationIdentification:
+                - Identifier:
+                    identifierHolderName: "CARIBBEAN PORT TERMINAL 2 LTD"
+                    identifierIssuingAuthority: "string"
+                    identifierRollDoc: "string"
+                    identifierStartDate: "2020-10-29T00:00:00"
+                    identifierValue: "2323698530-0002-0000002344"
+                  file: "string"
+                  folioDigit: "string"
+                  organisationIdentificationType: "LEI"
+                OrganisationName:
+                - organisationName: "CARIBBEAN PORT TERMINAL 2 LTD"
+                - organisationName: "CARIBBEAN PORT TERMINAL 2 LTD"
+                OrganisationProfile:
+                  PEPProfile:
+                    Beneficiary:
+                    - Country:
+                        code: "PA"
+                      PersonIdentification:
+                      - Identifier:
+                          identifierValue: "0230"
+                      nationality: "US"
+                      partyName: "ROBERTO ORTEGA"
+                      publicPosition: "string"
+                      relationshipType: "Rel"
+                    internationalOrganization: false
+                    isPEP: false
+                    periodStart: "string"
+                  incomeFrequency: "3"
+                  incomeLocation: "03"
+                  incomeSource: "IT"
+                  revenue: "string"
+                OrganizationInvolvement:
+                - Identifier:
+                    identifierValue: "string"
+                ShareholdingProfile:
+                  numberOfShareholders: 1
+                  numberOfShares: 5000
+                  sharesType: "1"
+                StockProfile:
+                  Location:
+                    Country:
+                      code: "PA"
+                  name: "string"
+                  stockPercentage: "string"
+                  stockQuoting: false
+                TaxReference:
+                  Country:
+                    code: "VE"
+                  panamaResident: false
+                  taxEntityClass: "01"
+                clubBanesco: true
+                organisationBusinessName: "CARIBBEAN PORT TERMINAL 2 LTD"
+                organisationFreeZoneOperation: "string"
+                organisationLanguaje: "2"
+                organisationSector: "2000"
+                organisationStatus: "1"
+                organisationType: "Charity"
+            
+    
+    RegisterAssociationsRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RegisterAssociationsRq'
+          example:
+            Associations:
+              PartyReference:
+                ContactPoint:
+                - contactPointAreaCode: "string"
+                  contactPointPhoneType: "string"
+                  contactPointValue: "string"
+                Location:
+                  Address:
+                  - PostalAddress:
+                      Building:
+                        code: "string"
+                        name: "string"
+                      City:
+                        code: "string"
+                        name: "string"
+                      Country:
+                        code: "string"
+                        name: "string"
+                      CountyDistrict:
+                        code: "string"
+                        name: "string"
+                      Jurisdiction:
+                        code: "string"
+                        name: "string"
+                      PostCode:
+                        identifierValue: "50826"
+                      Province:
+                        code: "string"
+                        name: "string"
+                      houseNumber: "string"
+                      streetName: "string"
+                PartyIdentification:
+                - Identifier:
+                    identifierValue: "string"
+                Person:
+                  CountryBirth:
+                    code: "string"
+                    name: "string"
+                  PersonName:
+                  - personName: "string"
+                  PersonProfile:
+                    Employment:
+                      Organisation:
+                        OrganisationName:
+                        - organisationName: "string"
+                        - organisationName: "string"
+                    FATCAProfile:
+                      otherNationality: true
+                      us183Permanence: true
+                      usRelated: true
+                      usResid: true
+                      usSignor: true
+                    PEPProfile:
+                      isPEP: false
+                    PersonIdentification:
+                    - Identifier:
+                        identifierValue: "string"
+                      personIdentificationType: "PassportNumber"
+                    creationDate: "string"
+                    memberLevel: "string"
+                    profession: "string"
+                    professionType: "string"
+                    staffPosition: "string"
+                  birthDate: "string"
+                  gender: "string"
+                  nationality: "string"
+                ShareholdingProfile:
+                  sharesType: "string"
+                partyType: "string"
+              legalEntityReference: "string"
+            
+    
+    UpdateAssociationsRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateAssociationsRq'
+          example:
+            Associations:
+              PartyReference:
+                ContactPoint:
+                - contactPointAreaCode: "string"
+                  contactPointPhoneType: "string"
+                  contactPointValue: "string"
+                Location:
+                  Address:
+                  - PostalAddress:
+                      Building:
+                        code: "string"
+                        name: "string"
+                      City:
+                        code: "string"
+                        name: "string"
+                      Country:
+                        code: "string"
+                        name: "string"
+                      CountyDistrict:
+                        code: "string"
+                        name: "string"
+                      Jurisdiction:
+                        code: "string"
+                        name: "string"
+                      PostCode:
+                        identifierValue: "50826"
+                      Province:
+                        code: "string"
+                        name: "string"
+                      houseNumber: "string"
+                      streetName: "string"
+                PartyIdentification:
+                - Identifier:
+                    identifierValue: "string"
+                Person:
+                  CountryBirth:
+                    code: "string"
+                    name: "string"
+                  PersonName:
+                  - personName: "string"
+                  PersonProfile:
+                    Employment:
+                      Organisation:
+                        OrganisationName:
+                        - organisationName: "string"
+                        - organisationName: "string"
+                    FATCAProfile:
+                      otherNationality: true
+                      us183Permanence: true
+                      usRelated: true
+                      usResid: true
+                      usSignor: true
+                    PEPProfile:
+                      isPEP: false
+                    PersonIdentification:
+                    - Identifier:
+                        identifierValue: "string"
+                      personIdentificationType: "PassportNumber"
+                    creationDate: "string"
+                    memberLevel: "string"
+                    profession: "string"
+                    professionType: "string"
+                    staffPosition: "string"
+                  birthDate: "string"
+                  gender: "string"
+                  nationality: "string"
+                ShareholdingProfile:
+                  sharesType: "string"
+                partyType: "string"
+              legalEntityReference: "string"
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

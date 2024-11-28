@@ -1,0 +1,18 @@
+type: object
+properties:
+    codeDestination:
+        type: string
+    countryDestination:
+        type: string
+    creditDestination:
+        type: string
+    fundsDestination:
+        type: string
+    fundsPurpose:
+        type: string
+    collOfficer:
+        type: string
+    salesChannel:
+        type: string
+    saleOfficer:
+        type: string

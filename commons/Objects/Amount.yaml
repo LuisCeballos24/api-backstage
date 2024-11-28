@@ -1,0 +1,13 @@
+type: object
+properties:
+    amount:
+        type: number
+        description: monto.
+    currencyCode:
+        type: string
+        description: codigo de moneda.
+    currencyName:
+        type: string
+        description: nombre de moneda.
+    amountValue:
+        type: number

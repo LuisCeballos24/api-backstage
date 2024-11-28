@@ -1,0 +1,17 @@
+type: object
+properties:
+    otherNationality:
+        type: boolean
+        description: ¿Tiene usted otra nacionalidad?
+    us183Permanence:
+        type: boolean
+        description: ¿Ha permanecido usted en los últimos 3 años más de 183 días en los EEUU?
+    usRelated:
+        type: boolean
+        description: ¿Está usted vinculado a algún individuo o entidad estadounidense?
+    usResid:
+        type: boolean
+        description: ¿Es usted ciudadano o residente de los Estados Unidos de América?
+    usSignor:
+        type: boolean
+        description: ¿Es usted firmante autorizado en una entidad americana?

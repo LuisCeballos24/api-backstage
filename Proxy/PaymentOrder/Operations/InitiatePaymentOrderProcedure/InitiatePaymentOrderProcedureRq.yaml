@@ -1,0 +1,4 @@
+type: object
+properties:
+    PaymentOrderProcedure:
+        $ref: '../../../../commons/Objects/PaymentOrderProcedure.yaml'

@@ -1,0 +1,7 @@
+type: object
+properties:
+    AgreementSignatories:
+      type: object
+      properties:
+        signatoriesGroupId:
+          type: string

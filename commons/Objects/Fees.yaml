@@ -1,0 +1,9 @@
+type: object
+properties:
+    FeeArrangement:
+        type: object
+        properties:
+            feeCode:
+                type: string
+            feeType:
+                type: string

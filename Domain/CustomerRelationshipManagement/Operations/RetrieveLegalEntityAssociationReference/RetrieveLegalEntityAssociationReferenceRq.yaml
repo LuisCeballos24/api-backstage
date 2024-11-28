@@ -1,0 +1,8 @@
+type: object
+properties:
+    CustomerRelationship:
+        $ref: '../../../../commons/Objects/CustomerRelationship.yaml'
+    CustomerReference:
+        $ref: '../../../../commons/Objects/CustomerReference.yaml'
+    LegalEntityAssociationReference:
+        $ref: '../../../../commons/Objects/LegalEntityAssociationReference.yaml'

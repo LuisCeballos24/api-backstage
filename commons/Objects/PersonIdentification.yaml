@@ -1,0 +1,34 @@
+type: array
+items:
+    type: object
+    properties:
+        personIdentificationType:
+            type: string
+            description: Tipo de identificacion
+            enum:
+                - TaxIdentificationNumber
+                - NationalRegistrationNumber
+                - LegalEntityIdentifier
+                - AlienRegistrationNumber
+                - PassportNumber
+                - TaxExemptIdentificationNumber
+                - CorporateIdentification
+                - DriverLicenseNumber
+                - ForeignInvestmentIdentityNumber
+                - SocialSecurityNumber
+                - IdentityCardNumber
+                - EmployerIdentificationNumber
+        Identifier:
+            $ref: './Identifier.yaml'
+        file:
+            type: string
+            description: Asiento/Ficha
+        folioDigit:
+            type: string
+            description: Digito de folio
+        provinceDigit:
+            type: string
+            description: Digito de provincia
+        specialIdentDigit:
+            type: string
+            description: Codigo de cedulas especiales

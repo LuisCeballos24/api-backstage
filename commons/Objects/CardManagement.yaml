@@ -1,0 +1,24 @@
+type: object
+properties:
+    PartyReference:
+        $ref: './PartyReference.yaml'
+    ChannelFacility:
+        $ref: './ChannelFacility.yaml'
+    FraudInsurance:
+        $ref: './FraudInsurance.yaml'
+    DestinationBankReference:
+        $ref: './DestinationBankReference.yaml'
+    PayRollReference:
+        $ref: './PayRollReference.yaml'
+    ProductReference:
+        $ref: './ProductReference.yaml'
+    LinkedAccounts:
+        $ref: './LinkedAccounts.yaml'
+    PaymentCard:
+        $ref: './PaymentCard.yaml'
+    operationType:
+        type: string
+    cancelationDate:
+        type: string
+    cancelationReason:
+        type: string

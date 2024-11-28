@@ -1,0 +1,22 @@
+type: object
+description: Contiene detalles de los productos o cuentas asociadas al receptor del dinero.
+properties:
+    referenceId:
+        type: string
+    PaymentCard:
+        $ref: './PaymentCard.yaml'
+    AccountIdentification:
+        $ref: './AccountIdentification.yaml'
+    AccountReference:
+        $ref: './AccountReference.yaml'
+    Amount:
+        $ref: './Amount.yaml'
+    transactionDate:
+        type: string
+    transactionDescription:
+        type: string
+    Interest:
+        type: object
+        properties:
+            interestFee:
+                type: string

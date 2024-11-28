@@ -1,0 +1,37 @@
+type: object
+properties:
+    profileType:
+        type: string
+        description: Tipo de perfil
+    capitalisation:
+        type: string
+        description: Estructura e importe de los fondos propios y de deuda a largo plazo de la organización asociada, expresados como porcentaje del capital total (fondos propios y de deuda).
+    debtLevel:
+        type: string
+        description: El nivel de endeudamiento de la organización (también conocido como "ratio de endeudamiento"), expresado como deuda total dividida por los activos totales.
+    economicIntent:
+        type: string
+        description: Descripción de la intención económica de la organización asociada. El desempeño económico proyectado para la entidad. 
+    growthRate:
+        type: string
+        description: La tasa de crecimiento (pasada y proyectada) de la organización asociada.
+    profitability:
+        type: string
+        description: Descripción resumida de la rentabilidad y de las tenencias de valores de la organización asociada.
+    revenue:
+        type: string
+        description: Descripción resumida de los ingresos y el volumen de negocios de la organización asociada.
+    incomeFrequency:
+        type: string
+        description: Frecuencia de pago
+    incomeLocation:
+        type: string
+        description: Localizacion del trabajo de pago
+    incomeSource:
+        type: string
+        description: Origen del salario
+    profileReference:
+        $ref: './profile.yaml'
+        description: referente al perfil de la organizacion
+    PEPProfile:
+        $ref: './PEPProfile.yaml'

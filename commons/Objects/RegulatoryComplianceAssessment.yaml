@@ -1,0 +1,59 @@
+type: array  
+items:
+    type: object
+    properties:
+        regulatoryAssessmentResult:
+            type: string
+            description: Score de la nombre de la entidad colocada
+        regulatoryComplianceId:
+            type: string
+            description: La identificacion del resultado.
+        CustomerReference:
+            $ref: './CustomerReference.yaml'
+        AlertInstanceRecord:
+            $ref: './AlertInstanceRecord.yaml'
+        RegulationConfigurationReference:
+            $ref: './RegulationConfigurationReference.yaml'
+        RegulatoryAuthorityReference:
+            $ref: './RegulatoryAuthorityReference.yaml'
+        RegulatoryAdditonalInformation:
+            $ref: './RegulatoryAdditionalInformation.yaml'
+        RegulatoryDetails:
+            $ref: './RegulatoryDetails.yaml'
+        recordIndex:
+            type: integer
+            description: posicion del resultado.
+        RegulatoryWatchlist:
+            type: array
+            description: listas de vigilancias consultadas.
+            items:
+                type: object
+                properties:
+                    Results:
+                        type: array
+                        description: resultados encontrados.
+                        items:
+                            type: object
+                            properties:
+                                regulatoryAssessmentResult:
+                                    type: string
+                                    description: Score de la nombre de la entidad colocada
+                                RegulatoryAuthorityReference:
+                                    $ref: './RegulatoryAuthorityReference.yaml'
+                                Details:
+                                    type: object    
+                                    description: detalles
+                                    properties:
+                                        RegulatoryAdditionalInformation:
+                                            $ref: './RegulatoryAdditionalInformation.yaml'
+                                PartyReference:
+                                    $ref: './PartyReference.yaml'
+                                    description: datos de la persona encontrada
+                                Country:
+                                    $ref: './Country.yaml'
+                                Entity:
+                                    $ref: './Entity.yaml'
+                                match:
+                                    type: string
+                                    description: Contiene un objeto json como string
+                                    example: '{"key1": "value1", "key2": "value2"}'

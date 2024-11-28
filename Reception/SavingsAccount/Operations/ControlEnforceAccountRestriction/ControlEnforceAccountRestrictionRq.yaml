@@ -1,0 +1,4 @@
+type: object
+properties:
+    AccountReference:
+        $ref: '../../../../commons/Objects/AccountReference.yaml'

@@ -1,0 +1,42 @@
+type: object
+description: Tarjeta de pago
+properties:
+        deliveryMethod:
+                type: string
+        deliveryPinMethod:
+                type: string
+        IssuedAllocation:
+                type: object
+                properties:
+                        issuedCode:
+                                type: string
+                        issuedDescription:
+                                type: string
+        customized:
+                type: boolean
+        promoDescription:
+                type: string
+        promoCode:
+                type: string
+        cancelationReason:
+                type: string
+        cancelationDate:
+                type: string
+        cardNumber: 
+                type: string
+        cardType: 
+                type: string
+        deviceStatus:
+                type: string
+        BankIdentificationNumber:
+                $ref: './BankIdentificationNumber.yaml'
+        cardIssueDate: 
+                type: string
+        cardHolderName: 
+                type: string
+        cardExpiryDate: 
+                type: string
+        Limit: 
+                $ref: './Limit.yaml'
+        AccountBalance:
+                $ref: './AccountBalance.yaml'

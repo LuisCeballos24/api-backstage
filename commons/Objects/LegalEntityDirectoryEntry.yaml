@@ -1,0 +1,6 @@
+type: object
+properties:
+    Organisation:
+        $ref: './Organisation.yaml'
+    Associations:
+        $ref: './Associations.yaml'

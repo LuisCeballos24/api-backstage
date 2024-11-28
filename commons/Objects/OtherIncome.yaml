@@ -1,0 +1,16 @@
+type: array
+items:
+    type: object
+    properties:
+        incomeAmount:
+            type: number
+            description: Monto del ingreso
+        incomeLocation: 
+            type: string
+            description: Local, extranjero, ambos
+        incomeSource:
+            type: string
+            description: Fuente de ingresos
+        incomeType:
+            type: string
+            description: Forma de recibir ingresos

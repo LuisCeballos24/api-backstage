@@ -1,0 +1,39 @@
+type: object
+properties:
+    Amount:
+        $ref: './Amount.yaml'
+    CollateralSubTypeCode:
+        type: string
+    InitialAmount:
+        type: object
+        properties:
+            amountValue:
+                type: integer
+    referenceId:
+        type: string
+    collateralDescription:
+        type: string
+    CustomerReference:
+        $ref: './CustomerReference.yaml'
+    CentralAmount:
+        type: object
+        properties:
+            amountValue:
+                type: integer
+    ExecutionAmount:
+        type: object
+        properties:
+            amountValue:
+                type: integer
+    GeneralLedgerAmount:
+        type: object
+        properties:
+            amountValue:
+                type: integer
+    ThirdPartyAmount:
+        type: object
+        properties:
+            amountValue:
+                type: integer
+    collateralTypeCode:
+        type: string

@@ -1,0 +1,4 @@
+type: object
+properties:
+    OutboundPayments:
+        $ref: '../../../../commons/Objects/OutboundPayments.yaml'

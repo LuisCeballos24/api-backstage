@@ -1,0 +1,26 @@
+type: object
+properties:
+    creditCardProductType:
+        type: string
+    creditType:
+        type: string
+    CreditPlan:
+        $ref: './CreditPlan.yaml'
+    PartyReference:
+        $ref: './PartyReference.yaml'
+    PaymentCard:
+        $ref: './PaymentCard.yaml'
+    ProductReference:
+        $ref: './ProductReference.yaml'
+    LinkedAccounts:
+        $ref: './LinkedAccounts.yaml'
+    Associations:
+        $ref: './Association.yaml'
+    PositionLimits:
+        $ref: './PositionLimits.yaml'
+    AccountBalance:
+        $ref: './AccountBalance.yaml'
+    CollateralReference:
+        $ref: './CollateralReference.yaml'
+    BankReference:
+        $ref: './BankReference.yaml'

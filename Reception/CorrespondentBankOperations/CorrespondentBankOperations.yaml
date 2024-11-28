@@ -1,0 +1,799 @@
+openapi: 3.0.3
+info:
+  title: Correspondent Bank Operations
+  description: Correspondent Bank Operations
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/experience/Payments/CorrespondentBankOperations/3.0.0/'
+paths:
+  /v3/BeneficiaryEntry/Initiate:
+    post:
+      tags:
+        - BeneficiaryEntry
+      summary: Initiate BeneficiaryEntry
+      description: Operación de Reception  encargada de insertar los datos de una persona jurídica.
+      operationId: InitiateBeneficiaryEntry
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateBeneficiaryEntryRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateBeneficiaryEntryRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/BeneficiaryEntry/Update:
+    patch:
+      tags:
+        - BeneficiaryEntry
+      summary: Update BeneficiaryEntry
+      description: Operación de Reception encargada de actualizar los datos de una persona jurídica.
+      operationId: UpdateBeneficiaryEntry
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateBeneficiaryEntryRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/UpdateBeneficiaryEntryRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/OutboundPayments/Initiate:
+    post:
+      tags:
+        - OutboundPayments
+      summary: Initiate OutboundPayments
+      description: Operación de Reception  que permite realizar transacciones.
+      operationId: InitiateOutboundPayments
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateOutboundPaymentsRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateOutboundPaymentsRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/SwiftProfileAccount/Create:
+    post:
+      tags:
+        - SwiftProfileAccount
+      summary: Create SwiftProfileAccount
+      description: Operación asociada al Acct que permite Crear Afiliación de Dirección de Envío para Servicio MT940 SWIFT
+      operationId: CreateSwiftProfileAccount
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/CreateSwiftProfileAccountRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/CreateSwiftProfileAccountRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/SwiftProfileAccount/Update:
+    patch:
+      tags:
+        - SwiftProfileAccount
+      summary: Update SwiftProfileAccount
+      description: Operación asociada al Acct que permite Actualizar Afiliación de Dirección de Envío para Servicio MT940 SWIFT
+      operationId: UpdateSwiftProfileAccount
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateSwiftProfileAccountRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/UpdateSwiftProfileAccountRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/SwiftAccountEntry/Create:
+    post:
+      tags:
+        - SwiftAccountEntry
+      summary: Create SwiftAccountEntry
+      description: Dado el Número de Cuenta Origen esta versión permite crear la información de la Afiliación de Frecuencia de Emisión del Servicio MT940 SWIFT
+      operationId: CreateSwiftAccountEntry
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/CreateSwiftAccountEntryRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/CreateSwiftAccountEntryRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/SwiftAccountEntry/Update:
+    patch:
+      tags:
+        - SwiftAccountEntry
+      summary: Update SwiftAccountEntry
+      description: Dado el Número de Cuenta Origen esta versión permite actualizar la información de la Afiliación de Frecuencia de Emisión del Servicio MT940 SWIFT
+      operationId: UpdateSwiftAccountEntry
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateSwiftAccountEntryRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/UpdateSwiftAccountEntryRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    InitiateBeneficiaryEntryRq:
+      $ref: './Operations/InitiateBeneficiaryEntry/InitiateBeneficiaryEntryRq.yaml'
+    UpdateBeneficiaryEntryRq:
+      $ref: './Operations/UpdateBeneficiaryEntry/UpdateBeneficiaryEntryRq.yaml'
+    InitiateOutboundPaymentsRq:
+      $ref: './Operations/InitiateOutboundPayments/InitiateOutboundPaymentsRq.yaml'
+    CreateSwiftProfileAccountRq:
+      $ref: './Operations/CreateSwiftProfileAccount/CreateSwiftProfileAccountRq.yaml'
+    UpdateSwiftProfileAccountRq:
+      $ref: './Operations/UpdateSwiftProfileAccount/UpdateSwiftProfileAccountRq.yaml'
+    CreateSwiftAccountEntryRq:
+      $ref: './Operations/CreateSwiftAccountEntry/CreateSwiftAccountEntryRq.yaml'
+    UpdateSwiftAccountEntryRq:
+      $ref: './Operations/UpdateSwiftAccountEntry/UpdateSwiftAccountEntryRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    InitiateBeneficiaryEntryRs:
+      $ref: './Operations/InitiateBeneficiaryEntry/InitiateBeneficiaryEntryRs.yaml'
+    UpdateBeneficiaryEntryRs:
+      $ref: './Operations/UpdateBeneficiaryEntry/UpdateBeneficiaryEntryRs.yaml'
+    InitiateOutboundPaymentsRs:
+      $ref: './Operations/InitiateOutboundPayments/InitiateOutboundPaymentsRs.yaml'
+    CreateSwiftProfileAccountRs:
+      $ref: './Operations/CreateSwiftProfileAccount/CreateSwiftProfileAccountRs.yaml'
+    UpdateSwiftProfileAccountRs:
+      $ref: './Operations/UpdateSwiftProfileAccount/UpdateSwiftProfileAccountRs.yaml'
+    CreateSwiftAccountEntryRs:
+      $ref: './Operations/CreateSwiftAccountEntry/CreateSwiftAccountEntryRs.yaml'
+    UpdateSwiftAccountEntryRs:
+      $ref: './Operations/UpdateSwiftAccountEntry/UpdateSwiftAccountEntryRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    InitiateBeneficiaryEntryRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateBeneficiaryEntryRq'
+          example:
+            BeneficiaryEntry:
+              IntemediaryBankReference:
+                ABAReference:
+                  referenceId: "Identificación ABA del banco intermediario"
+                Location:
+                  Address:
+                  - PostalAddress:
+                      City:
+                        name: "Ciudad del beneficiario"
+                      Country:
+                        code: "Código de país del beneficiario"
+                      addressLine: "Descripción de la dirección del beneficiario"
+                Organisation:
+                  organisationBusinessName: "Nombre de la empresa del banco intermediario"
+                SWIFTTransactionReference:
+                  referenceId: "Identificación de la transacción SWIFT del banco intermediario"
+              PayeeBankReference:
+                referenceId: "ID de referencia del banco del beneficiario"
+              PayeeReference:
+                ABAReference:
+                  referenceId: "Identificación ABA del beneficiario"
+                Location:
+                  Address:
+                  - PostalAddress:
+                      City:
+                        name: "Ciudad del beneficiario"
+                      Country:
+                        code: "Código de país del beneficiario"
+                      addressLine: "Descripción de la dirección del beneficiario"
+                Organisation:
+                  organisationBusinessName: "Nombre de la empresa del beneficiario"
+                Person:
+                  PersonName:
+                  - personName: "Nombre del beneficiario 1"
+                  - personName: "Nombre del beneficiario 2"
+                  PersonProfile:
+                    economicActivity: "Actividad económica del beneficiario"
+                TargetReference:
+                  description: "Descripción del objetivo del beneficiario"
+                beneficiaryType: "Tipo de beneficiario"
+                referenceId: "ID de referencia del beneficiario"
+                relationshipType: "Tipo de relación"
+              PayerReference:
+                ContactPoint:
+                - contactPointValue: "Valor del punto de contacto del pagador"
+                Location:
+                  Address:
+                  - PostalAddress:
+                      City:
+                        name: "Ciudad del beneficiario"
+                      Country:
+                        code: "Código de país del beneficiario"
+                      addressLine: "Descripción de la dirección del beneficiario"
+              SWIFTTransactionReference:
+                referenceId: "Identificación de la transacción SWIFT"
+              currency: "Moneda"
+              paymentTransactionType: "Tipo de transacción de pago"
+            
+    
+    UpdateBeneficiaryEntryRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateBeneficiaryEntryRq'
+          example:
+            BeneficiaryEntry:
+              IntemediaryBankReference:
+                ABAReference:
+                  referenceId: "Identificación ABA del banco intermediario"
+                Location:
+                  Address:
+                  - PostalAddress:
+                      City:
+                        name: "Ciudad del beneficiario"
+                      Country:
+                        code: "Código de país del beneficiario"
+                      addressLine: "Descripción de la dirección del beneficiario"
+                Organisation:
+                  organisationBusinessName: "Nombre de la empresa del banco intermediario"
+                SWIFTTransactionReference:
+                  referenceId: "Identificación de la transacción SWIFT del banco intermediario"
+              PayeeBankReference:
+                referenceId: "ID de referencia del banco del beneficiario"
+              PayeeReference:
+                ABAReference:
+                  referenceId: "Identificación ABA del beneficiario"
+                Location:
+                  Address:
+                  - PostalAddress:
+                      City:
+                        name: "Ciudad del beneficiario"
+                      Country:
+                        code: "Código de país del beneficiario"
+                      addressLine: "Descripción de la dirección del beneficiario"
+                Organisation:
+                  organisationBusinessName: "Nombre de la empresa del beneficiario"
+                Person:
+                  PersonName:
+                  - personName: "Nombre del beneficiario 1"
+                  - personName: "Nombre del beneficiario 2"
+                  PersonProfile:
+                    economicActivity: "Actividad económica del beneficiario"
+                TargetReference:
+                  description: "Descripción del objetivo del beneficiario"
+                beneficiaryType: "Tipo de beneficiario"
+                referenceId: "ID de referencia del beneficiario"
+                relationshipType: "Tipo de relación"
+              PayerReference:
+                ContactPoint:
+                - contactPointValue: "Valor del punto de contacto del pagador"
+                Location:
+                  Address:
+                  - PostalAddress:
+                      City:
+                        name: "Ciudad del beneficiario"
+                      Country:
+                        code: "Código de país del beneficiario"
+                      addressLine: "Descripción de la dirección del beneficiario"
+              SWIFTTransactionReference:
+                referenceId: "Identificación de la transacción SWIFT"
+              currency: "Moneda"
+              paymentTransactionType: "Tipo de transacción de pago"
+            
+    
+    InitiateOutboundPaymentsRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateOutboundPaymentsRq'
+          example:
+            OutboundPayments:
+            - Amount:
+                amount: 10
+              IntemediaryBankReference:
+                ABAReference:
+                  referenceId: ""
+                Location:
+                  Address:
+                  - PostalAddress:
+                      City:
+                        name: ""
+                      Country:
+                        code: ""
+                      addressLine: ""
+                Organisation:
+                  organisationBusinessName: ""
+                SWIFTTransactionReference:
+                  referenceId: ""
+              PayeeProductReference:
+                AccountReference:
+                  AccountIdentification:
+                  - Identifier:
+                      identifierValue: ""
+                  accountDate: ""
+                  accountDescription: ""
+                  currency: ""
+              PayeeReference:
+                Location:
+                  Address:
+                  - PostalAddress:
+                      City:
+                        name: ""
+                      Country:
+                        code: ""
+                      addressLine: ""
+                Person:
+                  PersonName:
+                  - personName: ""
+                dateOfBirth: ""
+                referenceId: ""
+              PayerBankReference:
+                Location:
+                  Address:
+                  - PostalAddress:
+                      City:
+                        name: ""
+                      addressLine: ""
+                bankName: ""
+                referenceId: ""
+              PayerProductReference:
+                AccountReference:
+                  AccountBalance:
+                  - accountBalance: 12.5
+                  AccountIdentification:
+                  - Identifier:
+                      identifierValue: ""
+                  accountDate: ""
+                  currency: ""
+              category: ""
+              description: ""
+              paymentTransactionType: ""
+              specialInstructions: ""
+            
+    
+    CreateSwiftProfileAccountRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateSwiftProfileAccountRq'
+          example:
+            SwiftProfileAccount:
+              AccountProfile:
+                BankReference:
+                  SwiftReference:
+                    referenceNumber: "valor_del_referenceNumber"
+                  bankName: "nombre_del_banco"
+                PartyReference:
+                  referenceId: "1232"
+            
+    
+    UpdateSwiftProfileAccountRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateSwiftProfileAccountRq'
+          example:
+            SwiftProfileAccount:
+              AccountProfile:
+                BankReference:
+                  SwiftReference:
+                    referenceNumber: "valor_del_referenceNumber"
+                  bankName: "nombre_del_banco"
+                PartyReference:
+                  referenceId: "1232"
+            
+    
+    CreateSwiftAccountEntryRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateSwiftAccountEntryRq'
+          example:
+            AccountReference:
+              AccountEntry:
+                accountEntryFrequencyCode: ""
+                accountEntryFrequencyDetail: ""
+                accountEntryStatus: ""
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: ""
+                accountIdentificationType: "AccountNumber"
+              accountDescription: ""
+              accountStatus: ""
+            
+    
+    UpdateSwiftAccountEntryRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateSwiftAccountEntryRq'
+          example:
+            AccountReference:
+              AccountEntry:
+                accountEntryFrequencyCode: ""
+                accountEntryFrequencyDetail: ""
+                accountEntryStatus: ""
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: ""
+                accountIdentificationType: "AccountNumber"
+              accountDescription: ""
+              accountStatus: ""
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    InitiateBeneficiaryEntryRs:
+      description: InitiateBeneficiaryEntryRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateBeneficiaryEntryRs'
+          example:
+            BeneficiaryEntry:
+              referenceId: "string"
+            
+    
+    UpdateBeneficiaryEntryRs:
+      description: UpdateBeneficiaryEntryRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateBeneficiaryEntryRs'
+          example:
+            BeneficiaryEntry:
+              referenceId: "string"
+            
+    
+    InitiateOutboundPaymentsRs:
+      description: InitiateOutboundPaymentsRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateOutboundPaymentsRs'
+          example:
+            OutboundPayments:
+            - referenceId: "exampleReferenceId"
+              transactionDate: "exampleTransactionDate"
+            StatusInstanceRecord:
+              description: "exampleDescription"
+              status: "exampleStatus"
+            
+    
+    CreateSwiftProfileAccountRs:
+      description: CreateSwiftProfileAccountRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateSwiftProfileAccountRs'
+          example:
+            AccountProfile:
+              BankReference:
+                SwiftReference:
+                  UpdatedDate: "fecha_actualizada"
+                  referenceNumber: "valor_del_referenceNumber"
+                bankName: "nombre_del_banco"
+              PartyReference:
+                referenceId: "valor_del_referenceId"
+            
+    
+    UpdateSwiftProfileAccountRs:
+      description: UpdateSwiftProfileAccountRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateSwiftProfileAccountRs'
+          example:
+            AccountProfile:
+              BankReference:
+                SwiftReference:
+                  UpdatedDate: "fecha_actualizada"
+                  referenceNumber: "valor_del_referenceNumber"
+                bankName: "nombre_del_banco"
+              PartyReference:
+                referenceId: "valor_del_referenceId"
+            
+    
+    CreateSwiftAccountEntryRs:
+      description: CreateSwiftAccountEntryRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateSwiftAccountEntryRs'
+          example:
+            AccountReference:
+              AccountDate:
+              - accountDate: ""
+                accountDateType: ""
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: ""
+                accountIdentificationType: "AccountNumber"
+            
+    
+    UpdateSwiftAccountEntryRs:
+      description: UpdateSwiftAccountEntryRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateSwiftAccountEntryRs'
+          example:
+            AccountReference:
+              AccountDate:
+              - accountDate: ""
+                accountDateType: ""
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: ""
+                accountIdentificationType: "AccountNumber"
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

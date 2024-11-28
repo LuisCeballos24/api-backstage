@@ -1,0 +1,345 @@
+openapi: 3.0.3
+info:
+  title: Credit Facility
+  description: Credit Facility
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/experience/TradeBanking/CreditFacility/3.0.0/'
+paths:
+  /v3/CreditLineFacility/Initiate:
+    post:
+      tags:
+        - CreditLineFacility
+      summary: Initiate CreditLineFacility
+      description: El servicio de reception crea un límite de línea de crédito comercial.
+      operationId: InitiateCreditLineFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateCreditLineFacilityRq'
+
+      responses:
+       '201':
+          description: 'Success'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/CreditLineFacility/Update:
+    patch:
+      tags:
+        - CreditLineFacility
+      summary: Update CreditLineFacility
+      description: El servicio de reception está encargado de modificar un límite de línea de crédito comercial.
+      operationId: UpdateCreditLineFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateCreditLineFacilityRq'
+
+      responses:
+       '204':
+          description: 'Not content'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    InitiateCreditLineFacilityRq:
+      $ref: './Operations/InitiateCreditLineFacility/InitiateCreditLineFacilityRq.yaml'
+    UpdateCreditLineFacilityRq:
+      $ref: './Operations/UpdateCreditLineFacility/UpdateCreditLineFacilityRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    InitiateCreditLineFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateCreditLineFacilityRq'
+          example:
+            CreditLineFacility:
+              CreditFacilityAgreement:
+                AgreementDate:
+                - data: ""
+                  datatype: ""
+                agreementDescription: ""
+                agreementType: ""
+              CreditLineInvolvement:
+              - PartyIdentification:
+                - Identifier:
+                    identifierValue: ""
+                creditInvolvementType: ""
+              CreditLineRisk:
+                Country:
+                  code: ""
+                  risk: ""
+                cleanRiskAmount: ""
+              CustomerAgreementReference:
+                ProductInstanceRecord: {}
+                netting: ""
+              LimitArrangement:
+                LimitAmount:
+                - 123
+                LimitAmountType:
+                - 123
+                LimitIdentification:
+                  Identifier:
+                    identifierValue: ""
+                limitCurrency: ""
+                limitFrequency: ""
+                limitRestrictedCurrency: ""
+                limitType: 1122
+              Maintenace:
+                maintenaceReportType: ""
+              PartyReference:
+                PartyIdentification:
+                - Identifier:
+                    identifierValue: ""
+              activityCode: " "
+              autonomyCode: ""
+              autonomyUser: ""
+              creditFacilityAdvisedAmount: 12313
+              creditFacilityAmount: 1232
+              creditFacilityAvailability: ""
+              creditFacilityAvailableDate: ""
+              creditFacilityCurrency: ""
+              creditFacilityDeadlineDate: ""
+              creditFacilityLastDrawDate: ""
+              creditFacilityMaturityDate: ""
+              creditFacilityOriginationDate: ""
+              creditFacilityProposalDate: ""
+              creditFacilityReviewDate: ""
+            
+    
+    UpdateCreditLineFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateCreditLineFacilityRq'
+          example:
+            CreditLineFacility:
+              CreditFacilityAgreement:
+                AgreementDate:
+                - data: ""
+                  datatype: ""
+                agreementDescription: ""
+                agreementType: ""
+              CreditLineInvolvement:
+              - PartyIdentification:
+                - Identifier:
+                    identifierValue: ""
+                creditInvolvementType: ""
+              CreditLineRisk:
+                Country:
+                  code: ""
+                  risk: ""
+                cleanRiskAmount: ""
+              CustomerAgreementReference:
+                ProductInstanceRecord: {}
+                netting: ""
+              LimitArrangement:
+                LimitAmount:
+                - 123
+                LimitAmountType:
+                - 123
+                LimitIdentification:
+                  Identifier:
+                    identifierValue: ""
+                limitCurrency: ""
+                limitFrequency: ""
+                limitRestrictedCurrency: ""
+                limitType: 1122
+              Maintenace:
+                maintenaceReportType: ""
+              PartyReference:
+                PartyIdentification:
+                - Identifier:
+                    identifierValue: ""
+              activityCode: " "
+              autonomyCode: ""
+              autonomyUser: ""
+              creditFacilityAdvisedAmount: 12313
+              creditFacilityAmount: 1232
+              creditFacilityAvailability: ""
+              creditFacilityAvailableDate: ""
+              creditFacilityCurrency: ""
+              creditFacilityDeadlineDate: ""
+              creditFacilityLastDrawDate: ""
+              creditFacilityMaturityDate: ""
+              creditFacilityOriginationDate: ""
+              creditFacilityProposalDate: ""
+              creditFacilityReviewDate: ""
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

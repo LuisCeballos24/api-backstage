@@ -1,0 +1,28 @@
+type: array
+items:
+    type: object
+    properties:
+        PayerProductReference:
+            $ref: './PayerProductReference.yaml'
+        PayeeReference:
+            $ref: './PayeeReference.yaml'
+        Amount:
+            $ref: './Amount.yaml'
+        PayeeProductReference:
+            $ref: './PayeeProductReference.yaml'
+        IntemediaryBankReference:
+            $ref: './IntemediaryBankReference.yaml'
+        PayerBankReference:
+            $ref: './PayerBankReference.yaml'
+        paymentTransactionType:
+            type: string
+        category:
+            type: string
+        description:
+            type: string
+        specialInstructions:
+            type: string
+        referenceId:
+            type: string
+        transactionDate:
+            type: string

@@ -1,0 +1,16 @@
+description: Unauthorized
+content:
+  application/json:
+    schema:
+      $ref: './HttpError.yaml'
+    examples:
+      objectExample:
+        $ref: '#/components/examples/Unauthorized'
+
+components:
+  examples:
+    Unauthorized:
+      value:
+        statusCode: '401'
+        status: 'FAILED'
+        message: 'Unauthorized'

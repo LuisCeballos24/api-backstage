@@ -1,0 +1,921 @@
+openapi: 3.0.3
+info:
+  title: Payment Initiation
+  description: Payment Initiation
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/system/Servicing/PaymentInitiation/3.0.0/'
+paths:
+  /v3/BeneficiaryCreditCardEntry/Initiate:
+    post:
+      tags:
+        - BeneficiaryCreditCardEntry
+      summary: Initiate BeneficiaryCreditCardEntry
+      description: Operación de Proxy encargada de insertar los datos de un beneficiario de tarjeta de crédito.
+      operationId: InitiateBeneficiaryCreditCardEntry
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateBeneficiaryCreditCardEntryRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateBeneficiaryCreditCardEntryRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/BeneficiaryCreditCardEntry/Update:
+    patch:
+      tags:
+        - BeneficiaryCreditCardEntry
+      summary: Update BeneficiaryCreditCardEntry
+      description: Operación de Proxy encargada de actualizar los datos de un beneficiario de tarjeta de crédito.
+      operationId: UpdateBeneficiaryCreditCardEntry
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateBeneficiaryCreditCardEntryRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/UpdateBeneficiaryCreditCardEntryRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/BeneficiaryAccountEntry/Initiate:
+    post:
+      tags:
+        - BeneficiaryAccountEntry
+      summary: Initiate BeneficiaryAccountEntry
+      description: Operación de Proxy encargada de insertar los datos de un beneficiario de cuenta.
+      operationId: InitiateBeneficiaryAccountEntry
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateBeneficiaryAccountEntryRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateBeneficiaryAccountEntryRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/BeneficiaryAccountEntry/Update:
+    patch:
+      tags:
+        - BeneficiaryAccountEntry
+      summary: Update BeneficiaryAccountEntry
+      description: Operación de Proxy encargada de actualizar los datos de un beneficiario de cuenta.
+      operationId: UpdateBeneficiaryAccountEntry
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateBeneficiaryAccountEntryRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/UpdateBeneficiaryAccountEntryRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/BeneficiaryPrepaidCardEntry/Initiate:
+    post:
+      tags:
+        - BeneficiaryPrepaidCardEntry
+      summary: Initiate BeneficiaryPrepaidCardEntry
+      description: Operación de Proxy encargada de insertar los datos de un beneficiario de tarjeta prepagada.
+      operationId: InitiateBeneficiaryPrepaidCardEntry
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateBeneficiaryPrepaidCardEntryRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateBeneficiaryPrepaidCardEntryRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/BeneficiaryPrepaidCardEntry/Update:
+    patch:
+      tags:
+        - BeneficiaryPrepaidCardEntry
+      summary: Update BeneficiaryPrepaidCardEntry
+      description: Operación de Proxy encargada de actualizar los datos de un beneficiario de tarjeta de crédito.
+      operationId: UpdateBeneficiaryPrepaidCardEntry
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateBeneficiaryPrepaidCardEntryRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/UpdateBeneficiaryPrepaidCardEntryRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/PaymentInitiationTransaction/Initiate:
+    post:
+      tags:
+        - PaymentInitiationTransaction
+      summary: Initiate PaymentInitiationTransaction
+      description: Operación que permite crear Beneficiarios
+      operationId: InitiatePaymentInitiationTransaction
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiatePaymentInitiationTransactionRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiatePaymentInitiationTransactionRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/PaymentInitiationTransaction/Update:
+    patch:
+      tags:
+        - PaymentInitiationTransaction
+      summary: Update PaymentInitiationTransaction
+      description: Operación que permite modificar Beneficiarios
+      operationId: UpdatePaymentInitiationTransaction
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdatePaymentInitiationTransactionRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/UpdatePaymentInitiationTransactionRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    InitiateBeneficiaryCreditCardEntryRq:
+      $ref: './Operations/InitiateBeneficiaryCreditCardEntry/InitiateBeneficiaryCreditCardEntryRq.yaml'
+    UpdateBeneficiaryCreditCardEntryRq:
+      $ref: './Operations/UpdateBeneficiaryCreditCardEntry/UpdateBeneficiaryCreditCardEntryRq.yaml'
+    InitiateBeneficiaryAccountEntryRq:
+      $ref: './Operations/InitiateBeneficiaryAccountEntry/InitiateBeneficiaryAccountEntryRq.yaml'
+    UpdateBeneficiaryAccountEntryRq:
+      $ref: './Operations/UpdateBeneficiaryAccountEntry/UpdateBeneficiaryAccountEntryRq.yaml'
+    InitiateBeneficiaryPrepaidCardEntryRq:
+      $ref: './Operations/InitiateBeneficiaryPrepaidCardEntry/InitiateBeneficiaryPrepaidCardEntryRq.yaml'
+    UpdateBeneficiaryPrepaidCardEntryRq:
+      $ref: './Operations/UpdateBeneficiaryPrepaidCardEntry/UpdateBeneficiaryPrepaidCardEntryRq.yaml'
+    InitiatePaymentInitiationTransactionRq:
+      $ref: './Operations/InitiatePaymentInitiationTransaction/InitiatePaymentInitiationTransactionRq.yaml'
+    UpdatePaymentInitiationTransactionRq:
+      $ref: './Operations/UpdatePaymentInitiationTransaction/UpdatePaymentInitiationTransactionRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    InitiateBeneficiaryCreditCardEntryRs:
+      $ref: './Operations/InitiateBeneficiaryCreditCardEntry/InitiateBeneficiaryCreditCardEntryRs.yaml'
+    UpdateBeneficiaryCreditCardEntryRs:
+      $ref: './Operations/UpdateBeneficiaryCreditCardEntry/UpdateBeneficiaryCreditCardEntryRs.yaml'
+    InitiateBeneficiaryAccountEntryRs:
+      $ref: './Operations/InitiateBeneficiaryAccountEntry/InitiateBeneficiaryAccountEntryRs.yaml'
+    UpdateBeneficiaryAccountEntryRs:
+      $ref: './Operations/UpdateBeneficiaryAccountEntry/UpdateBeneficiaryAccountEntryRs.yaml'
+    InitiateBeneficiaryPrepaidCardEntryRs:
+      $ref: './Operations/InitiateBeneficiaryPrepaidCardEntry/InitiateBeneficiaryPrepaidCardEntryRs.yaml'
+    UpdateBeneficiaryPrepaidCardEntryRs:
+      $ref: './Operations/UpdateBeneficiaryPrepaidCardEntry/UpdateBeneficiaryPrepaidCardEntryRs.yaml'
+    InitiatePaymentInitiationTransactionRs:
+      $ref: './Operations/InitiatePaymentInitiationTransaction/InitiatePaymentInitiationTransactionRs.yaml'
+    UpdatePaymentInitiationTransactionRs:
+      $ref: './Operations/UpdatePaymentInitiationTransaction/UpdatePaymentInitiationTransactionRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    InitiateBeneficiaryCreditCardEntryRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateBeneficiaryCreditCardEntryRq'
+          example:
+            BeneficiaryEntry:
+              PayeeBankReference:
+                bankName: "Nombre del banco del beneficiario"
+              PayeeProductReference:
+                PaymentCard:
+                  BankIdentificationNumber:
+                    Identifier:
+                      identifierValue: "Valor del identificador BIN"
+              PayeeReference:
+                ContactPoint:
+                - contactPointValue: "Valor del punto de contacto 1"
+                - contactPointValue: "Valor del punto de contacto 2"
+                Person:
+                  PersonName:
+                  - personName: "Nombre del beneficiario 1"
+                  - personName: "Nombre del beneficiario 2"
+                beneficiaryType: "Tipo de beneficiario"
+                referenceId: "ID de referencia del beneficiario"
+              PaymentCard:
+                cardNumber: "Número de tarjeta"
+                cardType: "Tipo de tarjeta"
+              paymentTransactionType: "Tipo de transacción de pago"
+            
+    
+    UpdateBeneficiaryCreditCardEntryRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateBeneficiaryCreditCardEntryRq'
+          example:
+            BeneficiaryEntry:
+              PayeeBankReference:
+                bankName: "Nombre del banco del beneficiario"
+              PayeeProductReference:
+                PaymentCard:
+                  BankIdentificationNumber:
+                    Identifier:
+                      identifierValue: "Valor del identificador BIN"
+              PayeeReference:
+                ContactPoint:
+                - contactPointValue: "Valor del punto de contacto 1"
+                - contactPointValue: "Valor del punto de contacto 2"
+                Person:
+                  PersonName:
+                  - personName: "Nombre del beneficiario 1"
+                  - personName: "Nombre del beneficiario 2"
+                beneficiaryType: "Tipo de beneficiario"
+                referenceId: "ID de referencia del beneficiario"
+              PaymentCard:
+                cardNumber: "Número de tarjeta"
+                cardType: "Tipo de tarjeta"
+              paymentTransactionType: "Tipo de transacción de pago"
+            
+    
+    InitiateBeneficiaryAccountEntryRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateBeneficiaryAccountEntryRq'
+          example:
+            BeneficiaryEntry:
+              PayeeBankReference:
+                bankName: "Nombre del banco del beneficiario"
+                referenceId: "ID de referencia del banco del beneficiario"
+              PayeeProductReference:
+                PaymentCard:
+                  BankIdentificationNumber:
+                    Identifier:
+                      identifierValue: "Valor de identificación del banco"
+                referenceId: "ID de referencia del producto del beneficiario"
+              PayeeReference:
+                ContactPoint:
+                - contactPointValue: "Valor del punto de contacto 1"
+                - contactPointValue: "Valor del punto de contacto 2"
+                Person:
+                  PersonName:
+                  - personName: "Nombre del beneficiario 1"
+                  - personName: "Nombre del beneficiario 2"
+                  PersonProfile:
+                    economicActivity: "Actividad económica del beneficiario"
+                beneficiaryType: "Tipo de beneficiario"
+                referenceId: "ID de referencia del beneficiario"
+                relationshipType: "Tipo de relación"
+              PaymentCard:
+                cardNumber: "Número de tarjeta de pago"
+              currency: "Moneda"
+              paymentTransactionType: "Tipo de transacción de pago"
+            
+    
+    UpdateBeneficiaryAccountEntryRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateBeneficiaryAccountEntryRq'
+          example:
+            BeneficiaryEntry:
+              PayeeBankReference:
+                bankName: "Nombre del banco del beneficiario"
+                referenceId: "ID de referencia del banco del beneficiario"
+              PayeeProductReference:
+                PaymentCard:
+                  BankIdentificationNumber:
+                    Identifier:
+                      identifierValue: "Valor de identificación del banco"
+                referenceId: "ID de referencia del producto del beneficiario"
+              PayeeReference:
+                ContactPoint:
+                - contactPointValue: "Valor del punto de contacto 1"
+                - contactPointValue: "Valor del punto de contacto 2"
+                Person:
+                  PersonName:
+                  - personName: "Nombre del beneficiario 1"
+                  - personName: "Nombre del beneficiario 2"
+                  PersonProfile:
+                    economicActivity: "Actividad económica del beneficiario"
+                beneficiaryType: "Tipo de beneficiario"
+                referenceId: "ID de referencia del beneficiario"
+                relationshipType: "Tipo de relación"
+              PaymentCard:
+                cardNumber: "Número de tarjeta de pago"
+              currency: "Moneda"
+              paymentTransactionType: "Tipo de transacción de pago"
+            
+    
+    InitiateBeneficiaryPrepaidCardEntryRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateBeneficiaryPrepaidCardEntryRq'
+          example:
+            BeneficiaryEntry:
+              PayeeBankReference:
+                bankName: "Nombre del banco del beneficiario"
+              PayeeProductReference:
+                PaymentCard:
+                  BankIdentificationNumber:
+                    Identifier:
+                      identifierValue: "Valor de identificación del banco"
+              PayeeReference:
+                ContactPoint:
+                - contactPointValue: "Valor de punto de contacto 1"
+                - contactPointValue: "Valor de punto de contacto 2"
+                Person:
+                  PersonName:
+                  - personName: "Nombre del beneficiario 1"
+                  - personName: "Nombre del beneficiario 2"
+                beneficiaryType: "Tipo de beneficiario"
+                referenceId: "ID de referencia del beneficiario"
+              PaymentCard:
+                cardNumber: "Número de tarjeta de pago"
+                cardType: "Tipo de tarjeta"
+              currency: "Moneda"
+              paymentTransactionType: "Tipo de transacción de pago"
+            
+    
+    UpdateBeneficiaryPrepaidCardEntryRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateBeneficiaryPrepaidCardEntryRq'
+          example:
+            BeneficiaryEntry:
+              PayeeBankReference:
+                bankName: "Nombre del banco del beneficiario"
+              PayeeProductReference:
+                PaymentCard:
+                  BankIdentificationNumber:
+                    Identifier:
+                      identifierValue: "Valor de identificación del banco"
+              PayeeReference:
+                ContactPoint:
+                - contactPointValue: "Valor de punto de contacto 1"
+                - contactPointValue: "Valor de punto de contacto 2"
+                Person:
+                  PersonName:
+                  - personName: "Nombre del beneficiario 1"
+                  - personName: "Nombre del beneficiario 2"
+                beneficiaryType: "Tipo de beneficiario"
+                referenceId: "ID de referencia del beneficiario"
+              PaymentCard:
+                cardNumber: "Número de tarjeta de pago"
+                cardType: "Tipo de tarjeta"
+              currency: "Moneda"
+              paymentTransactionType: "Tipo de transacción de pago"
+            
+    
+    InitiatePaymentInitiationTransactionRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiatePaymentInitiationTransactionRq'
+          example:
+            PaymentInitiationTransaction:
+            - IntemediaryBankReference:
+                ABAReference:
+                  referenceId: "Identificación ABA del banco intermediario"
+                Location:
+                  Address:
+                  - PostalAddress:
+                      City:
+                        name: "Ciudad del beneficiario"
+                      Country:
+                        code: "Código de país del beneficiario"
+                      addressLine: "Descripción de la dirección del beneficiario"
+                Organisation:
+                  organisationBusinessName: "Nombre de la empresa del banco intermediario"
+                SWIFTTransactionReference:
+                  referenceId: "Identificación de la transacción SWIFT del banco intermediario"
+              OutboundTransaction:
+                OutboundTransactionFunctionReference:
+                - functionItem: "01010101"
+                  functionValue: "01010101"
+                outboundTransactionFunctionDescription: "ENSA TEST2"
+                outboundTransactionFunctionType: "SERVICIOS.PUBLICOS<"
+              PayeeBankReference:
+                bankName: "string"
+                referenceId: "string"
+              PayeeProductReference:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: "1100013424"
+                  accountIdentificationType: "AccountNumber"
+                PaymentCard:
+                  BankIdentificationNumber:
+                    Identifier:
+                      identifierValue: "string"
+                referenceId: "string"
+              PayeeReference:
+                ABAReference:
+                  referenceId: "Identificación ABA del beneficiario"
+                ContactPoint:
+                - contactPointValue: "string"
+                Location:
+                  Address:
+                  - PostalAddress:
+                      City:
+                        name: "Ciudad del beneficiario"
+                      Country:
+                        code: "Código de país del beneficiario"
+                      addressLine: "Descripción de la dirección del beneficiario"
+                Organisation:
+                  organisationBusinessName: "string"
+                PartyIdentification:
+                - Identifier:
+                    identifierValue: "1100013424"
+                  partyIdentificationType: "IdentityCardNumber"
+                Person:
+                  PersonName:
+                  - personName: "Miguel Quevedo"
+                    personNameType: "FullName"
+                  PersonProfile:
+                    economicActivity: "string"
+                TargetReference:
+                  description: "Descripción del objetivo del beneficiario"
+                beneficiaryType: "INTL"
+                referenceId: "string"
+                relationshipType: "string"
+              PayerReference:
+                ContactPoint:
+                - contactPointValue: "Valor del punto de contacto del pagador"
+                Location:
+                  Address:
+                  - PostalAddress:
+                      City:
+                        name: "Ciudad del beneficiario"
+                      Country:
+                        code: "Código de país del beneficiario"
+                      addressLine: "Descripción de la dirección del beneficiario"
+              PaymentCard:
+                cardNumber: "575910268413684"
+                cardType: "DEBIT"
+              SWIFTTransactionReference:
+                referenceId: "string"
+              currency: "USD"
+              paymentTransactionType: "PrePaid"
+            
+    
+    UpdatePaymentInitiationTransactionRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdatePaymentInitiationTransactionRq'
+          example:
+            PaymentInitiationTransaction:
+            - IntemediaryBankReference:
+                ABAReference:
+                  referenceId: "Identificación ABA del banco intermediario"
+                Location:
+                  Address:
+                  - PostalAddress:
+                      City:
+                        name: "Ciudad del beneficiario"
+                      Country:
+                        code: "Código de país del beneficiario"
+                      addressLine: "Descripción de la dirección del beneficiario"
+                Organisation:
+                  organisationBusinessName: "Nombre de la empresa del banco intermediario"
+                SWIFTTransactionReference:
+                  referenceId: "Identificación de la transacción SWIFT del banco intermediario"
+              OutboundTransaction:
+                OutboundTransactionFunctionReference:
+                - functionItem: "01010101"
+                  functionValue: "01010101"
+                outboundTransactionFunctionDescription: "ENSA TEST2"
+                outboundTransactionFunctionType: "SERVICIOS.PUBLICOS<"
+              PayeeBankReference:
+                bankName: "string"
+                referenceId: "string"
+              PayeeProductReference:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: "1100013424"
+                  accountIdentificationType: "AccountNumber"
+                PaymentCard:
+                  BankIdentificationNumber:
+                    Identifier:
+                      identifierValue: "string"
+                referenceId: "string"
+              PayeeReference:
+                ABAReference:
+                  referenceId: "Identificación ABA del beneficiario"
+                ContactPoint:
+                - contactPointValue: "string"
+                Location:
+                  Address:
+                  - PostalAddress:
+                      City:
+                        name: "Ciudad del beneficiario"
+                      Country:
+                        code: "Código de país del beneficiario"
+                      addressLine: "Descripción de la dirección del beneficiario"
+                Organisation:
+                  organisationBusinessName: "string"
+                Person:
+                  PersonName:
+                  - personName: "Miguel Quevedo"
+                    personNameType: "FullName"
+                  PersonProfile:
+                    economicActivity: "string"
+                TargetReference:
+                  description: "Descripción del objetivo del beneficiario"
+                beneficiaryType: "INTL"
+                referenceId: "string"
+                relationshipType: "string"
+              PayerReference:
+                ContactPoint:
+                - contactPointValue: "Valor del punto de contacto del pagador"
+                Location:
+                  Address:
+                  - PostalAddress:
+                      City:
+                        name: "Ciudad del beneficiario"
+                      Country:
+                        code: "Código de país del beneficiario"
+                      addressLine: "Descripción de la dirección del beneficiario"
+              PaymentCard:
+                cardNumber: "575910268413684"
+                cardType: "DEBIT"
+              SWIFTTransactionReference:
+                referenceId: "string"
+              currency: "USD"
+              paymentTransactionType: "PrePaid"
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    InitiateBeneficiaryCreditCardEntryRs:
+      description: InitiateBeneficiaryCreditCardEntryRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateBeneficiaryCreditCardEntryRs'
+          example:
+            BeneficiaryEntry:
+              referenceId: "string"
+            
+    
+    UpdateBeneficiaryCreditCardEntryRs:
+      description: UpdateBeneficiaryCreditCardEntryRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateBeneficiaryCreditCardEntryRs'
+          example:
+            BeneficiaryEntry:
+              referenceId: "string"
+            
+    
+    InitiateBeneficiaryAccountEntryRs:
+      description: InitiateBeneficiaryAccountEntryRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateBeneficiaryAccountEntryRs'
+          example:
+            BeneficiaryEntry:
+              referenceId: "string"
+            
+    
+    UpdateBeneficiaryAccountEntryRs:
+      description: UpdateBeneficiaryAccountEntryRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateBeneficiaryAccountEntryRs'
+          example:
+            BeneficiaryEntry:
+              referenceId: "string"
+            
+    
+    InitiateBeneficiaryPrepaidCardEntryRs:
+      description: InitiateBeneficiaryPrepaidCardEntryRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateBeneficiaryPrepaidCardEntryRs'
+          example:
+            BeneficiaryEntry:
+              referenceId: "string"
+            
+    
+    UpdateBeneficiaryPrepaidCardEntryRs:
+      description: UpdateBeneficiaryPrepaidCardEntryRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateBeneficiaryPrepaidCardEntryRs'
+          example:
+            BeneficiaryEntry:
+              referenceId: "string"
+            
+    
+    InitiatePaymentInitiationTransactionRs:
+      description: InitiatePaymentInitiationTransactionRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiatePaymentInitiationTransactionRs'
+          example:
+            PaymentInitiationTransaction:
+            - referenceId: "string"
+            
+    
+    UpdatePaymentInitiationTransactionRs:
+      description: UpdatePaymentInitiationTransactionRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdatePaymentInitiationTransactionRs'
+          example:
+            PaymentInitiationTransaction:
+            - referenceId: "string"
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

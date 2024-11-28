@@ -1,0 +1,11 @@
+type: object
+properties:
+    status:
+        type: string
+        description: Codigo de respuesta
+    message:
+        type: string
+        description: Mensaje de respuesta
+    description:
+        type: string
+        description: Descripcion de respuesta

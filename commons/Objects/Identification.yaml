@@ -1,0 +1,4 @@
+type: object
+properties:
+  Identifier:
+    $ref: './Identifier.yaml'

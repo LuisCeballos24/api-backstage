@@ -1,0 +1,48 @@
+type: object
+properties:
+    LimitFrequency:
+        type: object
+        properties:
+            frequencyCode:
+                type: string
+            frequencyValue:
+                type: string
+            noPaymentMonth:
+                type: string
+            paymentDay:
+                type: string
+            paymentDayNumber:
+                type: string
+            paymentWeek:
+                type: string
+    LimitRate:
+        type: object
+        properties:
+            ratePaymentMethod:
+                type: string
+            ratePaymentMethodType:
+                type: string
+            ratePaymentTarget:
+                type: string
+            conditions:
+                type: string
+            RatePeriod:
+                type: object
+                properties:
+                    startDate:
+                        type: string
+            effectiveInterestRate:
+                type: string
+            nominalInterestRate:
+                type: string
+            index:
+                type: string
+            spread:
+                type: string
+    startDate:  
+        type: string
+    LimitAmount:
+        type: object
+        properties:
+            amountValue:
+                type: number

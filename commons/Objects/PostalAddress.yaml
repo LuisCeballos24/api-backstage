@@ -1,0 +1,74 @@
+type: object
+properties:
+    addressType:
+        type: string
+        description: Identifica la naturaleza de la dirección postal.
+        enum:
+            - Business
+            - Correspondence
+            - DeliveryTo
+            - MailTo
+            - POBox
+            - Postal
+            - Residential
+            - Statement
+    addressLine:
+        type: string
+        description: Información que localiza e identifica una dirección específica, según lo definido por los servicios postales, que se presenta en texto de formato libre.
+    streetName:
+         type: string
+         description: Nombre de una calle o vía pública.
+    buildingNumber:
+        type: string
+        description: Número que identifica la posición de un edificio en una calle.
+    PostCode:
+        type: object
+        properties:
+            Identifier:
+                $ref: './Identifier.yaml'
+                description: Identificador que consiste en un grupo de letras y/o números que se añade a una dirección postal para ayudar a clasificar el correo.
+    townName:
+         type: string
+         description: Nombre de un área construida, con límites definidos, y un gobierno local.
+    CountyDistrict:
+        $ref: './countyDistrict.yaml'
+        description: Municipio de Residencia
+    countrySubDivision:
+        type: string
+        description: Identifica una subdivisión de un país, por ejemplo, estado, región, condado.
+        enum:
+            - Continent
+            - Country
+            - State
+            - District
+            - Province
+            - Town
+            - City
+            - Region
+    Country:
+        $ref: './Country.yaml'
+        description: Nación con su propio gobierno, que ocupa un territorio determinado.
+    City:
+        $ref: './City.yaml'
+        description: Ciudad
+    department:
+        type: string
+        description: Identificación de una división de una gran organización o edificio. (ISO20022) 
+    subDepartment:
+        type: string
+        description: Identificación de una subdivisión de una gran organización o edificio. (ISO20022) 
+    Jurisdiction:
+        $ref: './Jurisdiction.yaml'
+        description: Sector de Residencia
+    houseNumber:
+        type: string
+        description: Número de Casa de Residencia
+    Province:
+        $ref: './Province.yaml'
+        description: Ciudad
+    Building:
+        $ref: './Building.yaml'
+        description: Edificio, Casa o Construcción
+    countyDistrict:
+        type: string
+        description: Municipio de Residencia

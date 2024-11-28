@@ -1,0 +1,50 @@
+type: object 
+properties: 
+  TransactionFacility:
+    $ref: './TransactionFacility.yaml'
+  Amount:
+    $ref: './Amount.yaml'
+  ProductInstanceReference:
+    $ref: './ProductInstanceReference.yaml'
+  transactionDescription:
+    type: string
+  transactionDateTime:
+    type: string
+  returnUrlReference:
+    type: string
+  cardNumber:
+    type: string
+  CardExpirationDate:
+    $ref: './CardExpirationDate.yaml'
+  CustomerReference:
+    $ref: './CustomerReference.yaml'
+  PayeeProductReference:
+    $ref: './PayeeProductReference.yaml'
+  PayerProductReference:
+    $ref: './PayerProductReference.yaml'
+  PaymentFacilitor:
+    $ref: './PaymentFacilitor.yaml'
+  cardAVS:
+    type: string
+  cardCVV:
+    type: string
+  cardCVV2:
+    type: string
+  cardCVV3:
+    type: string
+  cardHolderName:
+    type: string
+  urlReference:
+    type: string
+  merchantAcquiringBankReference:
+    type: string
+  merchantNonceNumber:
+    type: string
+  merchantMacAddress:
+    type: string
+  securityLevelIndicator:
+    type: string
+  authenticationData:
+    type: string
+  transactionMerchantReference:
+    type: string

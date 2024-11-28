@@ -1,0 +1,17 @@
+type: object
+properties:
+    customerRelationshipEventType:
+        type: string
+        description: posibles valores que puede tener un evento de relación con el cliente.
+    employee/UnitReference:
+        type: object
+        description: Empleados involucrados en la grabación del evento
+    customerRelationshipEventRecord:
+        type: string
+        description: Registro de eventos de relación con el cliente
+    customerRelationshipEventAction:
+        type: string
+        description: Acción relacionada con el evento de relación con el cliente
+    date/Time/Location:
+        type: string
+        description: Fecha y hora y el lugar en el que se capturó el evento

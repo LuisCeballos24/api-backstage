@@ -1,0 +1,59 @@
+type: object
+description: La definición de un espacio/posición direccionable tanto en entornos reales como virtuales con usos y derechos asociados
+properties:
+    LocationIdentification:
+        $ref: './Identifier.yaml'
+        description: Un identificador es una cadena de caracteres que se utiliza para identificar de forma única una instancia de un objeto dentro de un esquema de identificación administrado por una agencia. (ONU/CEFAT) 
+    Address:
+        $ref: './Address.yaml'
+        description: Una designación o descripción específica de una ubicación, que generalmente se usa para especificar la ubicación o el destino de algo o alguien.
+    locationDescription:
+        type: string
+        description: Una descripción de la propiedad, especialmente si tiene características de punto de referencia.
+    locationDateTime:
+        type: string
+        description: Fechas clave asociadas a la entrada del directorio (por ejemplo, fecha de apertura, fecha de actualización).
+    locationStatus:
+        type: string
+        description: El estado rastreado (por ejemplo, en construcción o reparación, habitado, vacante).
+    locationName:
+        type: string
+        description: Nombre (etiqueta) de la ubicación. (ISO20022) 
+    locationTimeZone:
+        type: string
+        description: Zona horaria local.
+    locationValue:
+        type: string
+        description: El valor estimado (en libros) de la propiedad en la ubicación alquiler y compra, según corresponda.
+    locationCapacity:
+        type: string
+        description: Una indicación del tamaño o la escala de la propiedad cuando corresponda (por ejemplo, auditorio de 4 dormitorios, auditorio de 600 asientos, restaurante de 40 cubiertos).
+    locationType:
+        type: string
+        description: Tipo de ubicación (por ejemplo, edificio, punto de interés, ubicación/dispositivo virtual).
+        enum:
+            - Continent
+            - Country
+            - State
+            - District
+            - Province
+            - Town
+            - City
+            - Region
+    locationZoningType:
+        type: string
+        description: El estado de planificación o zonificación (por ejemplo, residencial, comercial, industrial).
+    locationNeighborhoodType:
+        type: string
+        description: El propósito general y la vecindad de la propiedad (por ejemplo, residencial, industrial, comercial).
+    locationConstructionType:
+        type: string
+        description: El enfoque de construcción de una propiedad en el lugar (por ejemplo, la época y la arquitectura que se podría utilizar en la valoración).
+    locationOccupancyType:
+        type: string
+        description: El tipo de ocupación (por ejemplo, residencia, negocios, comercio minorista, entretenimiento).
+    locationCode:
+        type: string
+        description: codigo de geolocalizacion
+    Country:
+        $ref: './Country.yaml'

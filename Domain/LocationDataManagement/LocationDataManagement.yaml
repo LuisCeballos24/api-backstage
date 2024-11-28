@@ -1,0 +1,285 @@
+openapi: 3.0.3
+info:
+  title: Location Data Management
+  description: Location Data Management
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/MarketData/LocationDataManagement/3.0.0/'
+paths:
+  /v3/LocationDataDirectory/Register:
+    post:
+      tags:
+        - LocationDataDirectory
+      summary: Register LocationDataDirectory
+      description: La definición de un espacio/posición direccionable, tanto en entornos reales como virtuales, con usos y derechos asociados.
+      operationId: RegisterLocationDataDirectory
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/RegisterLocationDataDirectoryRq'
+
+      responses:
+       '201':
+          description: 'Success'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/LocationDataDirectory/Update:
+    patch:
+      tags:
+        - LocationDataDirectory
+      summary: Update LocationDataDirectory
+      description: La actualización de un espacio/posición direccionable, tanto en entornos reales como virtuales, con usos y derechos asociados.
+      operationId: UpdateLocationDataDirectory
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateLocationDataDirectoryRq'
+
+      responses:
+       '204':
+          description: 'Not content'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    RegisterLocationDataDirectoryRq:
+      $ref: './Operations/RegisterLocationDataDirectory/RegisterLocationDataDirectoryRq.yaml'
+    UpdateLocationDataDirectoryRq:
+      $ref: './Operations/UpdateLocationDataDirectory/UpdateLocationDataDirectoryRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    RegisterLocationDataDirectoryRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RegisterLocationDataDirectoryRq'
+          example:
+            LocationDataDirectory:
+              Location:
+                Address:
+                - PostalAddress:
+                    City:
+                      code: "US52"
+                      name: "Hayalea"
+                    Country:
+                      code: "PAN"
+                    CountyDistrict:
+                      code: "US52"
+                    Jurisdiction:
+                      code: "US52"
+                    PostCode:
+                      identifierValue: "50826"
+                    Province:
+                      code: "US52"
+                      name: "CALIFORNIA"
+                    buildingNumber: "RESIDENCIAL ASHVILLE"
+                    houseNumber: "CASA 8909A"
+                    streetName: "CALLE 88A AVE MARTIN"
+                locationDescription: "BOULERVARD ASHVILLE A 300 METR"
+            
+    
+    UpdateLocationDataDirectoryRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateLocationDataDirectoryRq'
+          example:
+            LocationDataDirectory:
+              Location:
+                Address:
+                - PostalAddress:
+                    City:
+                      code: "US52"
+                      name: "Hayalea"
+                    Country:
+                      code: "PAN"
+                    CountyDistrict:
+                      code: "US52"
+                    Jurisdiction:
+                      code: "US52"
+                    PostCode:
+                      identifierValue: "50826"
+                    Province:
+                      code: "US52"
+                      name: "CALIFORNIA"
+                    buildingNumber: "RESIDENCIAL ASHVILLE"
+                    houseNumber: "CASA 8909A"
+                    streetName: "CALLE 88A AVE MARTIN"
+                locationDescription: "BOULERVARD ASHVILLE A 300 METR"
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

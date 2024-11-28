@@ -1,0 +1,40 @@
+type: array
+items:
+    properties:
+        organisationIdentificationType:
+            type: string
+            description: Una forma única e inequívoca de identificar el tipo de organización.
+            enum:
+            - CentralBankIdentificationNumber
+            - ClearingIdentificationNumber
+            - BankPartyIdentification 
+            - CertificateOfIncorporationNumber
+            - CountryIdentificationCode
+            - CustomerNumber
+            - LEI 
+            - DataUniversalNumberingSystem
+            - EmployerIdentificationNumber
+            - GS1GLNIdentifier
+            - ELF
+            - SIREN
+            - SIRET
+            - TaxIdentificationNumber
+            - MIC
+            - BICFI
+            - DUNS
+            - EANGLN  
+        Identifier:
+            $ref: './Identifier.yaml'
+            description: Un identificador es una cadena de caracteres que se utiliza para identificar de forma única una instancia de un objeto dentro de un esquema de identificación administrado por una agencia. (CEFAT/ONU)     
+        file:
+            type: string
+            description: Asiento/Ficha
+        folioDigit:
+            type: string
+            description: Digito de folio
+        provinceDigit:
+            type: string
+            description: Digito de provincia
+        specialIdentDigit:
+            type: string
+            description: Codigo de cedulas especiales

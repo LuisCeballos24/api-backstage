@@ -1,0 +1,5 @@
+type: object
+properties:
+    partyRoleType:
+        type: string
+        description: Tipo de rol de un cliente

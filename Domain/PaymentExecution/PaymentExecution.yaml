@@ -1,0 +1,350 @@
+openapi: 3.0.3
+info:
+  title: Payment Execution
+  description: Payment Execution
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/Payments/PaymentExecution/3.0.0/'
+paths:
+  /v3/PaymentExecutionProcedure/Initiate:
+    post:
+      tags:
+        - PaymentExecutionProcedure
+      summary: Initiate PaymentExecutionProcedure
+      description: Operación encargada de realizar transacciones.
+      operationId: InitiatePaymentExecutionProcedure
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiatePaymentExecutionProcedureRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiatePaymentExecutionProcedureRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/PaymentExecutionProcedure/Execute:
+    put:
+      tags:
+        - PaymentExecutionProcedure
+      summary: Execute PaymentExecutionProcedure
+      description: Operación asociada al dominio Pmt que permite ejecutar el pago de una tarjeta de crédito de Banesco.
+      operationId: ExecutePaymentExecutionProcedure
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/ExecutePaymentExecutionProcedureRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/ExecutePaymentExecutionProcedureRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    InitiatePaymentExecutionProcedureRq:
+      $ref: './Operations/InitiatePaymentExecutionProcedure/InitiatePaymentExecutionProcedureRq.yaml'
+    ExecutePaymentExecutionProcedureRq:
+      $ref: './Operations/ExecutePaymentExecutionProcedure/ExecutePaymentExecutionProcedureRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    InitiatePaymentExecutionProcedureRs:
+      $ref: './Operations/InitiatePaymentExecutionProcedure/InitiatePaymentExecutionProcedureRs.yaml'
+    ExecutePaymentExecutionProcedureRs:
+      $ref: './Operations/ExecutePaymentExecutionProcedure/ExecutePaymentExecutionProcedureRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    InitiatePaymentExecutionProcedureRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiatePaymentExecutionProcedureRq'
+          example:
+            CustomerAgreement:
+              SignatureReference:
+                PartyReference:
+                  referenceId: ""
+            PayeeBankReference:
+              routingNumber: ""
+            PayeeProductReference:
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: ""
+              - Identifier:
+                  identifierValue: ""
+              Amount:
+                amount: 100
+                currencyCode: ""
+              Interest:
+                interestFee: ""
+              transactionDate: ""
+              transactionDescription: ""
+            PayeeReference:
+              PartyReference:
+                Person:
+                  PersonIdentification:
+                  - Identifier:
+                      identifierValue: ""
+                  PersonName:
+                  - personName: ""
+                referenceId: ""
+            PayerProductReference:
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: ""
+              Amount:
+                amount: 100
+                currencyCode: ""
+              PaymentCard:
+                cardNumber: ""
+              transactionDate: ""
+              transactionDescription: ""
+            PayerReference:
+              PartyReference:
+                referenceId: ""
+            TransactionFacility:
+              Cheque:
+                chequeNumber: ""
+                chequeType: ""
+                draftNumber: ""
+                serialId: ""
+                serialNumber: ""
+              Fees:
+                FeeArrangement:
+                  feeCode: ""
+                  feeType: ""
+              authorizationNumber: ""
+              paymentType: ""
+              referenceCode: ""
+              transactionDate: ""
+              transactionDescription: ""
+              transactionType: ""
+            
+    
+    ExecutePaymentExecutionProcedureRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExecutePaymentExecutionProcedureRq'
+          example:
+            PayerProductReference:
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: ""
+              PaymentCard:
+                cardNumber: ""
+            PayerReference:
+              Person:
+                PersonName:
+                - personName: ""
+            TransactionFacility:
+              Amount:
+                amount: 123
+                currencyCode: ""
+              referenceCode: ""
+              transactionDescription: ""
+              transactionType: ""
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    InitiatePaymentExecutionProcedureRs:
+      description: InitiatePaymentExecutionProcedureRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiatePaymentExecutionProcedureRs'
+          example:
+            StatusInstanceRecord:
+              description: "exampleDescription"
+              status: "exampleStatus"
+            TransactionFacility:
+              referenceId: ""
+            
+    
+    ExecutePaymentExecutionProcedureRs:
+      description: ExecutePaymentExecutionProcedureRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExecutePaymentExecutionProcedureRs'
+          example:
+            StatusInstanceRecord:
+              description: "exampleDescription"
+              status: "exampleStatus"
+            TransactionFacility:
+              referenceId: ""
+              transactionDate: ""
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

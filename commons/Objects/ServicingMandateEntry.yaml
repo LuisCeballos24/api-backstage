@@ -1,0 +1,12 @@
+type: object
+description: Asociaciones o Sociedades
+properties:
+    currency:
+        type: string
+        description: monedo
+    description:
+        type: string
+    Identifier:
+        $ref: './Identifier.yaml'
+    Agreement:
+        $ref: './Agreement.yaml'

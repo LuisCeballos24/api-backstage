@@ -1,0 +1,4 @@
+type: object
+properties:
+    TransactionReversal:
+        $ref: '../../../../commons/Objects/TransactionReversal.yaml'

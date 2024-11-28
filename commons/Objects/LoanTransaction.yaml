@@ -1,0 +1,32 @@
+type: array
+items:
+    type: object
+    properties:
+        transactionRule:
+            type: string
+        transactionType:
+            type: string 
+        transactionActivityCode:
+            type: string
+        transactionDescription:
+            type: boolean
+        accountPurpose:
+            type: string
+        debitAccount:
+            type: string
+        Account:
+            $ref: './Account.yaml'
+        costCenterId:
+            type: string
+        transactionDate:
+            type: string
+        PartyReference:
+            $ref: './PartyReference.yaml'
+        Amount:
+            $ref: './Amount.yaml'
+        TransactionIdentification:
+            $ref: './TransactionIdentification.yaml'
+        FromAccount:
+            $ref: './Account.yaml'
+        TargetAccount:
+            $ref: './Account.yaml'

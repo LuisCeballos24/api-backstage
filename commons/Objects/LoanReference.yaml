@@ -1,0 +1,12 @@
+type: object
+properties:
+    LoanAccount:
+        $ref: './LoanAccount.yaml'
+    LoanNumber:
+        $ref: './LoanNumber.yaml'
+    Amount:
+        $ref: './Amount.yaml'
+    PaymentAccount:
+        $ref: './PaymentAccount.yaml'
+    DepositAccount:
+        $ref: './DepositAccount.yaml'

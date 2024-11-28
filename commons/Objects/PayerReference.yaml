@@ -1,0 +1,23 @@
+type: object
+description: Referencia del beneficiario
+properties:
+    referenceId:
+        type: string
+    Person:
+        $ref: './Person.yaml'
+    Organisation:
+        $ref: './Organisation.yaml'
+    Location:
+        $ref: './Location.yaml'
+    ABAReference:
+        $ref: './ABAReference.yaml'
+    TargetReference:
+        $ref: './TargetReference.yaml'
+    beneficiaryType:
+        type: string
+    relationshipType:
+        type: string
+    ContactPoint:
+        $ref: './ContactPoint.yaml'
+    PartyReference:
+        $ref: './PartyReference.yaml'

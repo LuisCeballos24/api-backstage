@@ -1,0 +1,600 @@
+openapi: 3.0.3
+info:
+  title: ChequeProcessing
+  description: ChequeProcessing
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/experience/Payments/ChequeProcessing/3.0.0/'
+paths:
+  /v3/ChequeFacility/Initiate:
+    post:
+      tags:
+        - ChequeFacility
+      summary: Initiate ChequeFacility
+      description: Operación reception asociada al Chk que permite Ejecutar registro de Cheques o Chequeras.
+      operationId: InitiateChequeFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateChequeFacilityRq'
+
+      responses:
+       '201':
+          description: 'Success'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/FeeArrangement/Initiate:
+    post:
+      tags:
+        - FeeArrangement
+      summary: Initiate FeeArrangement
+      description: Operación reception asociada a ejecutar Cobro comisión por chequera.
+      operationId: InitiateFeeArrangement
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateFeeArrangementRq'
+
+      responses:
+       '201':
+          description: 'Success'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/ChequeFacility/Create:
+    post:
+      tags:
+        - ChequeFacility
+      summary: Create ChequeFacility
+      description: Operación reception asociada a Crear cheques de gerencia.
+      operationId: CreateChequeFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/CreateChequeFacilityRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/CreateChequeFacilityRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/ChequeFacility/Update:
+    patch:
+      tags:
+        - ChequeFacility
+      summary: Update ChequeFacility
+      description: Operación reception asociada a Actualizar cheques de gerencia.
+      operationId: UpdateChequeFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateChequeFacilityRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/UpdateChequeFacilityRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/ChequeBook/Update:
+    patch:
+      tags:
+        - ChequeBook
+      summary: Update ChequeBook
+      description: Operación reception que permite ejecutar Habilitación y Activación de Chequeras.
+      operationId: UpdateChequeBook
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateChequeBookRq'
+
+      responses:
+       '201':
+          description: 'Success'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/ChequeExceptionHandling/Control:
+    patch:
+      tags:
+        - ChequeExceptionHandling
+      summary: Control ChequeExceptionHandling
+      description: Operación reception  perteneciente a Chk que permite la suspencion de chequera.
+      operationId: ControlChequeExceptionHandling
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/ControlChequeExceptionHandlingRq'
+
+      responses:
+       '201':
+          description: 'Success'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/ChequeExceptionHandling/Execute:
+    put:
+      tags:
+        - ChequeExceptionHandling
+      summary: Execute ChequeExceptionHandling
+      description: Operación asociada al Chk que permite la suspendion de cheque.
+      operationId: ExecuteChequeExceptionHandling
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/ExecuteChequeExceptionHandlingRq'
+
+      responses:
+       '204':
+          description: 'Not content'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    InitiateChequeFacilityRq:
+      $ref: './Operations/InitiateChequeFacility/InitiateChequeFacilityRq.yaml'
+    InitiateFeeArrangementRq:
+      $ref: './Operations/InitiateFeeArrangement/InitiateFeeArrangementRq.yaml'
+    CreateChequeFacilityRq:
+      $ref: './Operations/CreateChequeFacility/CreateChequeFacilityRq.yaml'
+    UpdateChequeFacilityRq:
+      $ref: './Operations/UpdateChequeFacility/UpdateChequeFacilityRq.yaml'
+    UpdateChequeBookRq:
+      $ref: './Operations/UpdateChequeBook/UpdateChequeBookRq.yaml'
+    ControlChequeExceptionHandlingRq:
+      $ref: './Operations/ControlChequeExceptionHandling/ControlChequeExceptionHandlingRq.yaml'
+    ExecuteChequeExceptionHandlingRq:
+      $ref: './Operations/ExecuteChequeExceptionHandling/ExecuteChequeExceptionHandlingRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    CreateChequeFacilityRs:
+      $ref: './Operations/CreateChequeFacility/CreateChequeFacilityRs.yaml'
+    UpdateChequeFacilityRs:
+      $ref: './Operations/UpdateChequeFacility/UpdateChequeFacilityRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    InitiateChequeFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateChequeFacilityRq'
+          example:
+            ChequeFacility:
+              amount: 1232
+              chequeStartNumber: "a123"
+              chequeType: "asdd13"
+              issueBank: "aada"
+            
+    
+    InitiateFeeArrangementRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateFeeArrangementRq'
+          example:
+            ChequeFacility:
+              ChequeAccount:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: "value"
+              FeeArrangement:
+              - feeAmount: 1235
+                feeCurrency: "value"
+                feeType: "value"
+            
+    
+    CreateChequeFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateChequeFacilityRq'
+          example:
+            ChequeFacility:
+              ChequeAccount:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: "value"
+              ChequePayment:
+                PayeeProductReference:
+                  AccountIdentification:
+                  - Identifier:
+                      identifierValue: "value"
+                PayeeReference:
+                  Organisation:
+                    organisationBusinessName: "value"
+                  Person:
+                    PersonName:
+                    - personName: "value"
+                chequeDraftNumber: "value"
+                chequeSeriesIdentifier: "value"
+                chequeStockIdentifier: "value"
+                paymentDetails: "value"
+              chequeAmount: "value"
+              chequeCurrency: "value"
+              chequeNumber: "value"
+              chequeType: "value"
+            
+    
+    UpdateChequeFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateChequeFacilityRq'
+          example:
+            ChequeFacility:
+              ChequeAccount:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: "value"
+              ChequePayment:
+                PayeeProductReference:
+                  AccountIdentification:
+                  - Identifier:
+                      identifierValue: "value"
+                PayeeReference:
+                  Organisation:
+                    organisationBusinessName: "value"
+                  Person:
+                    PersonName:
+                    - personName: "value"
+                chequeDraftNumber: "value"
+                chequeSeriesIdentifier: "value"
+                chequeStockIdentifier: "value"
+                paymentDetails: "value"
+              chequeAmount: "value"
+              chequeCurrency: "value"
+              chequeNumber: "value"
+              chequeType: "value"
+            
+    
+    UpdateChequeBookRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateChequeBookRq'
+          example:
+            ChequeBook:
+              ChequeAccount:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: " "
+              chequeBookType: " "
+              chequeCount: " "
+              chequeStartNumber: " "
+            requestIdentifier: " "
+            
+    
+    ControlChequeExceptionHandlingRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ControlChequeExceptionHandlingRq'
+          example:
+            ChequeExceptionHandling:
+              chequeExceptionHandlingDate: ""
+              chequeExceptionHandlingReason: ""
+              chequeExceptionHandlingServiceDescription: ""
+            ChequeFacility:
+              FeeArrangement:
+              - feeAmount: 1234
+                feeDefinition: ""
+                feeType: ""
+              chequeNumber: ""
+              chequeStartNumber: ""
+              status: ""
+            
+    
+    ExecuteChequeExceptionHandlingRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExecuteChequeExceptionHandlingRq'
+          example:
+            ChequeExceptionHandling:
+              chequeExceptionHandlingDate: "2024-10-09"
+              chequeExceptionHandlingReason: "Insufficient Funds"
+            ChequeFacility:
+              Currency:
+                currencyCode: "USD"
+              FeeArrangement:
+              - feeAmount: 15.0
+                feeDefinition: "Fee for processing the cheque"
+                feeType: "Processing Fee"
+              PartyReference:
+                referenceId: "123456789"
+              chequeEndNumber: "000200"
+              chequeNumber: "000123456"
+              chequeStartNumber: "000100"
+              chequeStatus: "Processed"
+              chequeType: "Personal"
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    CreateChequeFacilityRs:
+      description: CreateChequeFacilityRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateChequeFacilityRs'
+          example:
+            ChequeFacility:
+              ChequePayment:
+                chequeDraftNumber: "value"
+                chequeSeriesIdentifier: "value"
+                chequeStockIdentifier: "value"
+              chequeNumber: "value"
+            
+    
+    UpdateChequeFacilityRs:
+      description: UpdateChequeFacilityRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateChequeFacilityRs'
+          example:
+            ChequeFacility:
+              ChequePayment:
+                chequeDraftNumber: "value"
+                chequeSeriesIdentifier: "value"
+                chequeStockIdentifier: "value"
+              chequeNumber: "value"
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

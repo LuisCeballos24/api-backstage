@@ -1,0 +1,8 @@
+type: object
+properties:
+    chequeExceptionHandlingDate:
+        type: string
+    chequeExceptionHandlingReason:
+        type: string
+    chequeExceptionHandlingServiceDescription:
+        type: string

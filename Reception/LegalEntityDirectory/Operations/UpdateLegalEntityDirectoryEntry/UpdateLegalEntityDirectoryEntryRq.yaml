@@ -1,0 +1,4 @@
+type: object
+properties:
+    LegalEntityDirectoryEntry:
+        $ref: '../../../../commons/Objects/LegalEntityDirectoryEntry.yaml'

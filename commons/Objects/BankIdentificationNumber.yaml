@@ -1,0 +1,5 @@
+type: object
+description: Número de identificación del banco
+properties:
+    Identifier:
+        $ref: './Identifier.yaml'

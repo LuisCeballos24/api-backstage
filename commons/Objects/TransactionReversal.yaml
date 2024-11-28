@@ -1,0 +1,26 @@
+type: object
+properties:
+    TransactionFacility:
+        $ref: './TransactionFacility.yaml'
+    ProductInstanceReference:
+        $ref: './ProductInstanceReference.yaml'
+    OriginAmount:
+        $ref: './OriginAmount.yaml'
+    Amount:
+        $ref: './Amount.yaml'
+    CardExpirationDate:
+        $ref: './CardExpirationDate.yaml'
+    transactionMerchantReference:
+        type: string
+    transactionDateTime:
+        type: string
+    returnUrlReference:
+        type: string
+    cardCVV:
+        type: string
+    cardNumber:
+        type: string
+    merchantNonceNumber:
+        type: string
+    merchantMacAddress:
+        type: string

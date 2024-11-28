@@ -1,0 +1,6 @@
+type: object
+properties:
+    TransactionFacility:
+        $ref: '../../../../commons/Objects/TransactionFacility.yaml'
+    StatusInstanceRecord:
+        $ref: '../../../../commons/Objects/StatusInstanceRecord.yaml'

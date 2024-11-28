@@ -1,0 +1,12 @@
+type: object
+properties:
+    chequeNumber:
+        type: string
+    chequeType:
+        type: string
+    draftNumber:
+        type: string
+    serialId:
+        type: string
+    serialNumber:
+        type: string

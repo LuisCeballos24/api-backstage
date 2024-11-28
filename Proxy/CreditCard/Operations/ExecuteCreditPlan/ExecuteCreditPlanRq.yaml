@@ -1,0 +1,6 @@
+type: object
+properties:
+    CreditCardFacility:
+        $ref: '../../../../commons/Objects/CreditCardFacility.yaml'
+    CreditCardPayment:
+        $ref: '../../../../commons/Objects/CreditCardPayment.yaml'

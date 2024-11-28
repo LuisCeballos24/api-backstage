@@ -1,0 +1,16 @@
+type: object
+properties:
+    stockQuoting:
+        type: boolean
+        description: ¿La empresa cotiza sus acciones en la bolsa de valores?.
+    name:
+        type: string
+        description: Nombre de la bolsa donde cotiza
+    stockPercentage:
+        type: string
+        description: Porcentaje de cotización en bolsa
+    Location:
+        type: object
+        properties:
+            Country:
+                $ref: './Country.yaml'

@@ -1,0 +1,10 @@
+type: array
+items:
+    type: object
+    properties:
+        AccountIdentification:
+            $ref: './AccountIdentification.yaml'
+        referenceId:
+            type: string
+        sourceOfFundsCode:
+            type: string

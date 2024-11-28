@@ -1,0 +1,21 @@
+type: array
+items:
+    type: object
+    description: Una designación o descripción específica de una ubicación, que generalmente se usa para especificar la ubicación o el destino de algo o alguien.
+    properties:
+        addressType:
+            type: string
+            description: 
+            enum:
+                - Postal Address
+                - Geolocation Address
+                - Latitude Address
+                - Longitude Address
+                - Electronic Address
+        PostalAddress:
+            $ref: './PostalAddress.yaml'
+            description: Información que localiza e identifica una dirección específica. (ISO20022) 
+        ElectronicAddress:
+            $ref: './ElectronicAddress.yaml'
+        PhoneAddress:
+            $ref: './PhoneAddress.yaml'

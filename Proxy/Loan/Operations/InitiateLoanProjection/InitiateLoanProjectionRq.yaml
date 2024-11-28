@@ -1,0 +1,8 @@
+type: object
+properties:
+        LoanFacility:
+            $ref: '../../../../commons/Objects/LoanFacility.yaml'
+        Repayment:
+            $ref: '../../../../commons/Objects/Repayment.yaml'
+        Interest: 
+            $ref: '../../../../commons/Objects/Interest.yaml'

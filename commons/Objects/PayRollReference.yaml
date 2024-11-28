@@ -1,0 +1,8 @@
+type: object
+properties:
+  payRollDescription:
+    type: string
+  Organisation:
+    $ref: './Organisation.yaml'
+  payRollRelationType:
+    type: string

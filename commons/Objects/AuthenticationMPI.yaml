@@ -1,0 +1,14 @@
+type: object
+properties:
+    eci:
+        type: string
+    cardCVV:
+        type: string
+    TransactionFacility:
+        $ref: './TransactionFacility.yaml'
+    protocolVersion:
+        type: string
+    authMethod:
+        type: string
+    cardCVVAlgorithm:
+        type: string

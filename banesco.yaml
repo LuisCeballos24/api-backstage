@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cash-management-and-account-services
+  description: "Cash Management and Account Services API"
+  tags:
+    - finance
+    - banking
+  links:
+    - url: https://github.com/LuisCeballos24/api-banesco
+      title: Source Code
+      icon: github
+    - url: https://banesco.com
+      title: Production
+      icon: globe
+spec:
+  type: api
+  lifecycle: production
+  owner: team:banking-team
+  system: cash-management
+  dependsOn: []
+  definition:
+    - $ref: './Domain/CashManagementAndAccountServices/CashManagementAndAccountServices.yaml'
+    - $ref: './Proxy/CashManagementAndAccountServices/CashManagementAndAccountServices.yaml'
+    - $ref: './Reception/CashManagementAndAccountServices/CashManagementAndAccountServices.yaml'
+    - $ref: './commons/Objects/ABAReference.yaml'
+    - $ref: './commons/HttpResponses/HttpError.yaml'
+    - $ref: './commons/HttpResponses/BadRequest.yaml'
+  # Aquí puedes agregar cualquier anotación si es necesario.
+  annotations:
+    backstage.io/techdocs-ref: 'dir:./docs'

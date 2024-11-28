@@ -1,0 +1,10 @@
+type: object
+properties:
+    PartyReference:
+        $ref: '../../../../commons/Objects/PartyReference.yaml'
+    Account:
+        $ref: '../../../../commons/Objects/Account.yaml'
+    Period:
+        $ref: '../../../../commons/Objects/Period.yaml'
+    Document:
+        $ref: '../../../../commons/Objects/Document.yaml'

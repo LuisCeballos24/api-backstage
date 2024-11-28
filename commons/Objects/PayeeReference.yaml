@@ -1,0 +1,36 @@
+type: object
+description: Referencia del beneficiario
+properties:
+    referenceId:
+        type: string
+    beneficiaryType:
+        type: string
+    relationshipType:
+        type: string
+    Person:
+        $ref: './Person.yaml'
+    ContactPoint:
+        $ref: './ContactPoint.yaml'
+    Organisation:
+        $ref: './Organisation.yaml'
+    Location:
+        $ref: './Location.yaml'
+    ABAReference:
+        $ref: './ABAReference.yaml'
+    TargetReference:
+        $ref: './TargetReference.yaml'
+    underAge:
+        type: boolean
+    payeeType:
+        type: string
+    Association:
+        $ref: './Association.yaml'
+    payeePercentage:
+        type: number
+        description: porciento de beneficiario
+    PartyIdentification:
+        $ref: './PartyIdentification.yaml'
+    dateOfBirth:
+        type: string
+    PartyReference:
+        $ref: './PartyReference.yaml'

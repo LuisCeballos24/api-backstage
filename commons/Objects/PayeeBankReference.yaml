@@ -1,0 +1,9 @@
+type: object
+description: Referencia del banco del beneficiario
+properties:
+    referenceId:
+        type: string
+    bankName:
+        type: string
+    routingNumber:
+        type: string

@@ -1,0 +1,8 @@
+type: object
+properties:
+    accountType:
+        type: string
+        description: Tipo de Cuenta
+    accountName:
+        type: string
+        description: nombre o descripcion.

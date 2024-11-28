@@ -1,0 +1,660 @@
+openapi: 3.0.3
+info:
+  title: Credit Card
+  description: Credit Card
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/system/Cards/CreditCard/3.0.0/'
+paths:
+  /v3/CreditPlan/Execute:
+    patch:
+      tags:
+        - CreditPlan
+      summary: Execute CreditPlan
+      description: Procesa la creación del plan de intra financiamiento, cobro de comisiones y ejecución de transferencia ACH.
+      operationId: ExecuteCreditPlan
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/ExecuteCreditPlanRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/ExecuteCreditPlanRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/CreditCardFacility/Initiate:
+    post:
+      tags:
+        - CreditCardFacility
+      summary: Initiate CreditCardFacility
+      description: Operación proxy que permite crear una pignoración.
+      operationId: InitiateCreditCardFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateCreditCardFacilityRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateCreditCardFacilityRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/CreditCardFacility/Update:
+    patch:
+      tags:
+        - CreditCardFacility
+      summary: Update CreditCardFacility
+      description: Operación proxy CardDb que permite actualizar la tarjeta de débito en el sistemas Hitech como en T24
+      operationId: UpdateCreditCardFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateCreditCardFacilityRq'
+
+      responses:
+       '204':
+          description: 'Not content'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/CardManagement/Update:
+    patch:
+      tags:
+        - CardManagement
+      summary: Update CardManagement
+      description: Operación proxy CardDb que permite actualizar la tarjeta de débito en el sistemas Hitech como en T24
+      operationId: UpdateCardManagement
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateCardManagementRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/UpdateCardManagementRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/CardManagement/Create:
+    post:
+      tags:
+        - CardManagement
+      summary: Create CardManagement
+      description: Operación proxy que permite consular la información detallada a partir de un cliente con una cuenta crear una tarjeta de débito en Hitech y T24.
+      operationId: CreateCardManagement
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/CreateCardManagementRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/CreateCardManagementRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    ExecuteCreditPlanRq:
+      $ref: './Operations/ExecuteCreditPlan/ExecuteCreditPlanRq.yaml'
+    InitiateCreditCardFacilityRq:
+      $ref: './Operations/InitiateCreditCardFacility/InitiateCreditCardFacilityRq.yaml'
+    UpdateCreditCardFacilityRq:
+      $ref: './Operations/UpdateCreditCardFacility/UpdateCreditCardFacilityRq.yaml'
+    UpdateCardManagementRq:
+      $ref: './Operations/UpdateCardManagement/UpdateCardManagementRq.yaml'
+    CreateCardManagementRq:
+      $ref: './Operations/CreateCardManagement/CreateCardManagementRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    ExecuteCreditPlanRs:
+      $ref: './Operations/ExecuteCreditPlan/ExecuteCreditPlanRs.yaml'
+    InitiateCreditCardFacilityRs:
+      $ref: './Operations/InitiateCreditCardFacility/InitiateCreditCardFacilityRs.yaml'
+    UpdateCardManagementRs:
+      $ref: './Operations/UpdateCardManagement/UpdateCardManagementRs.yaml'
+    CreateCardManagementRs:
+      $ref: './Operations/CreateCardManagement/CreateCardManagementRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    ExecuteCreditPlanRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExecuteCreditPlanRq'
+          example:
+            CreditCardFacility:
+              CreditPlan:
+              - creditPlanAmount: 1234
+                creditPlanCode: ""
+                creditPlanCurrency: ""
+                creditPlanId: ""
+                creditPlanTerms: ""
+                creditPlanType: ""
+              PartyReference:
+                PartyIdentification:
+                - Identifier:
+                    identifierValue: ""
+                  partyIdentificationType: "IdentityCardNumber"
+                Person:
+                  PersonName:
+                  - personName: ""
+                partyType: ""
+              PaymentCard:
+                cardNumber: ""
+              creditCardProductType: ""
+              creditType: ""
+            CreditCardPayment:
+              CardPaymentTransaction:
+                Transaction:
+                  FromAccount:
+                    AccountIdentification:
+                    - Identifier:
+                        identifierValue: ""
+                  TargetAccount:
+                    AccountIdentification:
+                    - Identifier:
+                        identifierValue: ""
+            
+    
+    InitiateCreditCardFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateCreditCardFacilityRq'
+          example:
+            CreditCardFacility:
+              AccountBalance:
+              - BalanceAmount: 1234
+              Associations:
+              - PartyReference:
+                  partyType: "string"
+                  referenceId: "FNBE534684"
+              BankReference:
+                agencyName: "string"
+                bankName: "string"
+              CollateralReference:
+                Amount:
+                  amountValue: 1234
+                  currencyCode: "string"
+                CentralAmount:
+                  amountValue: 12311
+                CollateralSubTypeCode: "string"
+                CustomerReference:
+                - PartyReference:
+                    partyType: "string"
+                    referenceId: "FNBE534684"
+                ExecutionAmount:
+                  amountValue: 12323
+                GeneralLedgerAmount:
+                  amountValue: 1243
+                InitialAmount:
+                  amountValue: 1234
+                ThirdPartyAmount:
+                  amountValue: 41231
+                collateralDescription: "string"
+                referenceId: "string"
+              LinkedAccounts:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: "string"
+                referenceId: "FNBE534684"
+              PartyReference:
+                ContactPoint:
+                - contactPointAreaCode: "string"
+                  contactPointValue: "string"
+                Person:
+                  PersonName:
+                  - personName: "string"
+              PaymentCard:
+                cardExpiryDate: "string"
+                cardIssueDate: "string"
+                cardNumber: "string"
+              PositionLimits:
+                LimitAmount:
+                  amountValue: 1234
+              ProductReference:
+                currencyCode: "string"
+                productSubType: "string"
+                productSubTypeDescription: "string"
+                productType: "string"
+                referenceId: "string"
+            
+    
+    UpdateCreditCardFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateCreditCardFacilityRq'
+          example:
+            CreditCardFacility:
+              AccountBalance:
+              - BalanceAmount: 1234
+              Associations:
+              - PartyReference:
+                  partyType: "string"
+                  referenceId: "string"
+              BankReference:
+                agencyName: "string"
+                bankName: "string"
+              CollateralReference:
+                Amount:
+                  amountValue: 1234
+                  currencyCode: "string"
+                CentralAmount:
+                  amountValue: 1234
+                CollateralSubTypeCode: "string"
+                ExecutionAmount:
+                  amountValue: 1234
+                GeneralLedgerAmount:
+                  amountValue: 1234
+                ThirdPartyAmount:
+                  amountValue: 1234
+                collateralDescription: "string"
+                collateralTypeCode: "string"
+              LinkedAccounts:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: "string"
+                referenceId: "string"
+              PartyReference:
+                ContactPoint:
+                - contactPointAreaCode: "string"
+                  contactPointValue: "string"
+                - contactPointAreaCode: "string"
+                  contactPointValue: "string"
+                Person:
+                  PersonName:
+                  - personName: "string"
+              PaymentCard:
+                cardExpiryDate: "string"
+                cardIssueDate: "string"
+                cardNumber: "string"
+              PositionLimits:
+                LimitAmount:
+                  amountValue: 1234
+              ProductReference:
+                currencyCode: "string"
+                productSubType: "string"
+                productSubTypeDescription: "string"
+                productType: "string"
+                referenceId: "string"
+            
+    
+    UpdateCardManagementRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateCardManagementRq'
+          example:
+            CardManagement:
+              LinkedAccounts:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: "string"
+              PaymentCard:
+                cardExpiryDate: "string"
+                cardIssueDate: "string"
+                cardNumber: "string"
+                deviceStatus: "string"
+              cancelationDate: "string"
+              cancelationReason: "string"
+              operationType: "string"
+            
+    
+    CreateCardManagementRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateCardManagementRq'
+          example:
+            CardManagement:
+              ChannelFacility:
+                channelReferenceId: ""
+              DestinationBankReference:
+                referenceId: ""
+              FraudInsurance:
+                insuranceCode: ""
+                insuranceDescription: ""
+              LinkedAccounts:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+                mainAccount: false
+              PartyReference:
+                Person:
+                  PersonName:
+                  - personName: ""
+                referenceId: ""
+              PayRollReference:
+                Organisation:
+                  organisationBusinessName: ""
+                payRollDescription: ""
+                payRollRelationType: ""
+              PaymentCard:
+                BankIdentificationNumber:
+                  Identifier:
+                    identifierValue: ""
+                IssuedAllocation:
+                  issuedCode: ""
+                  issuedDescription: ""
+                cancelationDate: ""
+                cancelationReason: ""
+                cardExpiryDate: ""
+                cardHolderName: ""
+                cardIssueDate: ""
+                cardNumber: ""
+                customized: false
+                deliveryMethod: ""
+                deliveryPinMethod: ""
+                deviceStatus: ""
+                promoCode: ""
+                promoDescription: ""
+              ProductReference:
+                productName: ""
+                productType: ""
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    ExecuteCreditPlanRs:
+      description: ExecuteCreditPlanRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExecuteCreditPlanRs'
+          example:
+            CreditCardPayment:
+              CardPaymentTransaction:
+                Transaction:
+                  TransactionIdentification:
+                    Identifier:
+                      identifierValue: ""
+                  transactionDate: ""
+            StatusDetails:
+              description: ""
+              status: ""
+            
+    
+    InitiateCreditCardFacilityRs:
+      description: InitiateCreditCardFacilityRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateCreditCardFacilityRs'
+          example:
+            CollateralReference:
+              referenceId: "string"
+            
+    
+    UpdateCardManagementRs:
+      description: UpdateCardManagementRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateCardManagementRs'
+          example:
+            CardManagement:
+              LinkedAccounts:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: "string"
+              PaymentCard:
+                cardExpiryDate: "string"
+                cardHolderName: "string"
+                cardIssueDate: "string"
+                cardNumber: "string"
+                deviceStatus: "string"
+              cancelationDate: "string"
+              cancelationReason: "string"
+              operationType: "string"
+            
+    
+    CreateCardManagementRs:
+      description: CreateCardManagementRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateCardManagementRs'
+          example:
+            CardManagement:
+              PartyReference:
+                Person:
+                  PersonName:
+                  - personName: ""
+                referenceId: ""
+              PayRollReference:
+                payRollDescription: ""
+              PaymentCard:
+                cancelationDate: ""
+                cancelationReason: ""
+                cardExpiryDate: ""
+                cardHolderName: ""
+                cardIssueDate: ""
+                cardNumber: ""
+                deviceStatus: ""
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

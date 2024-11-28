@@ -1,0 +1,4 @@
+type: object
+properties:
+    LegalAdviceFacility:
+        $ref: '../../../../commons/Objects/LegalAdviceFacility.yaml'

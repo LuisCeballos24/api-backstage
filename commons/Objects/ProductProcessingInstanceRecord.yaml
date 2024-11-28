@@ -1,0 +1,23 @@
+type: object
+properties:
+    productInstanceReference:
+        type: object
+        description: Referencia a la instancia de producto específica que se está procesando
+    productAction/EventType:
+        type: string
+        description: El tipo de evento (por ejemplo, inicio de pago, solicitud de estado de cuenta)
+    productAction/EventDescription:
+        type: string
+        description: Detalles de la actividad de procesamiento, si están disponibles
+    productAction/EventResult:
+        type: string
+        description: Resultado de la acción de tratamiento, si está disponible
+    employee/UnitReference:
+        type: object
+        description: Empleados involucrados en la grabación del evento
+    customerProductandServiceEventRecord:
+        type: string
+        description: Los detalles del evento (en un formato adecuado)
+    date/Time/Location:
+        type: string
+        description: Fecha y hora y el lugar en el que se capturó el evento

@@ -1,0 +1,10 @@
+type: object
+properties:
+    chequeBookType:
+        type: string
+    ChequeAccount:
+        $ref: './ChequeAccount.yaml'
+    chequeStartNumber:
+        type: string
+    chequeCount:
+        type: string

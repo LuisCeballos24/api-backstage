@@ -1,0 +1,6 @@
+type: object
+properties:
+    AccountReference:
+        $ref: '../../../../commons/Objects/AccountReference.yaml'
+    StatusInstanceRecord:
+        $ref: '../../../../commons/Objects/StatusInstanceRecord.yaml'

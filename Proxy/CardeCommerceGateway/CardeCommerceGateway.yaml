@@ -1,0 +1,329 @@
+openapi: 3.0.3
+info:
+  title: Card eCommerce Gateway
+  description: Card eCommerce Gateway
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/system/Payments/CardeCommerceGateway/3.0.0/'
+paths:
+  /v3/TransactionAuthorization/Initiate:
+    post:
+      tags:
+        - TransactionAuthorization
+      summary: Initiate TransactionAuthorization
+      description: Operación Proxy que verifica y bloquea el monto  de una Transacción para ser debitado posteriormente via gateway
+      operationId: InitiateTransactionAuthorization
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateTransactionAuthorizationRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateTransactionAuthorizationRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/TransactionAuthenticationMPI/Initiate:
+    post:
+      tags:
+        - TransactionAuthenticationMPI
+      summary: Initiate TransactionAuthenticationMPI
+      description: Para transacciones con autenticación de terceros a través de un MPI externo.
+      operationId: InitiateTransactionAuthenticationMPI
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateTransactionAuthenticationMPIRq'
+
+      responses:
+       '201':
+          description: 'Success'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    InitiateTransactionAuthorizationRq:
+      $ref: './Operations/InitiateTransactionAuthorization/InitiateTransactionAuthorizationRq.yaml'
+    InitiateTransactionAuthenticationMPIRq:
+      $ref: './Operations/InitiateTransactionAuthenticationMPI/InitiateTransactionAuthenticationMPIRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    InitiateTransactionAuthorizationRs:
+      $ref: './Operations/InitiateTransactionAuthorization/InitiateTransactionAuthorizationRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    InitiateTransactionAuthorizationRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateTransactionAuthorizationRq'
+          example:
+            CardTransaction:
+              Amount:
+                amountValue: 12
+                currencyCode: "currency"
+              CardExpirationDate:
+                month: "expMonth"
+                year: "expYear"
+              CustomerReference:
+              - PartyReference:
+                  ContactPoint:
+                  - contactPointValue: "EMAIL"
+                  Location:
+                    Address:
+                    - PostalAddress:
+                        Country:
+                          code: "COUNTRY"
+                        PostCode:
+                          Identifier:
+                            identifierValue: "ZIP"
+                    locationTimeZone: "MERCH_GMT"
+              PayeeProductReference:
+                AccountIdentification:
+                - accountIdentificationType: "AccountNumber"
+              PayerProductReference:
+                AccountIdentification:
+                - accountIdentificationType: "AccountNumber"
+              PaymentFacilitor:
+                referenceId: "UPI_PAYMENT_FID"
+                retailerIndicator: "FOREIGN_RETAILER_IND"
+                visaReferenceId: "VISA_PAYMENT_FID"
+                visaSubReferenceId: "VISA_SUB_MERCH_ID"
+              ProductInstanceReference:
+                referenceId: "orderId"
+              TransactionFacility:
+                transactionDescription: "desc"
+                transactionType: "trtype"
+              authenticationData: "Ucaf_Authentication_Data"
+              cardAVS: "AVS"
+              cardCVV: "cvc2"
+              cardCVV2: "CVC2_RC"
+              cardCVV3: "CVC3"
+              cardHolderName: "MERCH_NAME"
+              cardNumber: "card"
+              merchantAcquiringBankReference: "MERCHANT"
+              merchantMacAddress: "P_SIGN"
+              merchantNonceNumber: "NONCE"
+              returnUrlReference: "backRefUrl"
+              securityLevelIndicator: "Ucaf_Flag"
+              transactionDateTime: "timestamp"
+              transactionMerchantReference: "terminal"
+              urlReference: "MERCH_URL"
+            
+    
+    InitiateTransactionAuthenticationMPIRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateTransactionAuthenticationMPIRq'
+          example:
+            AuthenticationMPI:
+              TransactionFacility:
+                referenceId: "valor_del_referenceId"
+              authMethod: "valor_del_authMethod"
+              cardCVV: "valor_del_cvv"
+              cardCVVAlgorithm: "valor_del_cardCVVAlgorithm"
+              eci: "valor_del_eci"
+              protocolVersion: "valor_del_protocolVersion"
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    InitiateTransactionAuthorizationRs:
+      description: InitiateTransactionAuthorizationRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateTransactionAuthorizationRs'
+          example:
+            CardTransaction:
+              Amount:
+                amountValue: 123
+                currencyCode: "currency"
+              ProductInstanceReference:
+                referenceId: "orderId"
+              TransactionFacility:
+                actionCode: "action"
+                authorizationNumber: "authCode"
+                referenceCode: "rc"
+                referenceId: "intRef"
+                referenceNumber: "rrn"
+                transactionStatus: "approval"
+              cardNumber: "card"
+              merchantMacAddress: "P_SIGN"
+              merchantNonceNumber: "NONCE"
+              transactionDateTime: "timestamp"
+              transactionMerchantReference: "terminal"
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

@@ -1,0 +1,27 @@
+type: object
+properties:
+    brokerName:
+        type: string
+    emisionDate:
+        type: string
+    expirationDate:
+        type: string
+    PartyReference:
+        $ref: './PartyReference.yaml'
+    Amount:
+        $ref: './Amount.yaml'
+    insuranceNumber:
+        type: string
+    insuranceStatus:
+        type: string
+    insuranceProductType:
+        type: string
+    Companies:
+        type: array
+        items:
+            type: object
+            properties:
+                code:
+                    type: string
+                name:
+                    type: string

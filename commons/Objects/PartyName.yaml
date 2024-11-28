@@ -1,0 +1,21 @@
+type: array
+items:
+    type: object
+    properties:
+        name:
+            type: string
+            description: Nombre del cliente
+        nameType:
+            type: string
+            description: Tipo de nombre
+            enum:
+                - FirstName
+                - FamilyName
+                - NickName
+                - GivenName
+                - FullName
+                - SecondName
+                - SecondLastName
+                - Short Name
+                - Trading Name
+                - Legal Name

@@ -1,0 +1,26 @@
+type: array
+items:      
+    type: object
+    properties:
+        PayeeReference:
+            $ref: './PayeeReference.yaml'
+        PayerReference:
+            $ref: './PayerReference.yaml'
+        PayeeBankReference:
+            $ref: './PayeeBankReference.yaml'
+        PayeeProductReference:
+            $ref: './PayeeProductReference.yaml'
+        PaymentCard:
+            $ref: './PaymentCard.yaml'
+        OutboundTransaction:
+            $ref: './OutboundTransaction.yaml'
+        IntemediaryBankReference:
+            $ref: './IntemediaryBankReference.yaml'
+        SWIFTTransactionReference:
+            $ref: './SWIFTTransactionReference.yaml'
+        paymentTransactionType:
+            type: string
+        currency:
+            type: string
+        referenceId:
+            type: string

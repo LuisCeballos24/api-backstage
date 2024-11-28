@@ -1,0 +1,5 @@
+type: object
+description: Tipo de Beneficiario Internacional (Persona, Empresa)
+properties:
+    description:
+        type: string

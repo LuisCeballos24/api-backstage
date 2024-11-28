@@ -1,0 +1,14 @@
+type: object
+properties:
+    TransactionFacility:
+        $ref: './TransactionFacility.yaml'
+    transactionMerchantReference:
+        type: string
+    ProductInstanceReference:
+        $ref: './ProductInstanceReference.yaml'
+    cardNumber:
+        type: number
+    Amount:
+        $ref: './Amount.yaml'
+    transactionDateTime:
+        type: string

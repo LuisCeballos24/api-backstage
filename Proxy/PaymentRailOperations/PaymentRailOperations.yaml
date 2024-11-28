@@ -1,0 +1,297 @@
+openapi: 3.0.3
+info:
+  title: Payment Rail Operations
+  description: Payment Rail Operations
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/system/Payments/PaymentRailOperations/3.0.0/'
+paths:
+  /v3/BeneficiaryTransaction/Initiate:
+    post:
+      tags:
+        - BeneficiaryTransaction
+      summary: Initiate BeneficiaryTransaction
+      description: El servicio de proxy está encargado de iniciar el proceso de transacción de pago de servicios a un beneficiario.
+      operationId: InitiateBeneficiaryTransaction
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateBeneficiaryTransactionRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateBeneficiaryTransactionRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/BeneficiaryTransaction/Update:
+    patch:
+      tags:
+        - BeneficiaryTransaction
+      summary: Update BeneficiaryTransaction
+      description: El servicio de proxy está encargado de iniciar el proceso de transacción de pago de servicios a un beneficiario.
+      operationId: UpdateBeneficiaryTransaction
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateBeneficiaryTransactionRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/UpdateBeneficiaryTransactionRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    InitiateBeneficiaryTransactionRq:
+      $ref: './Operations/InitiateBeneficiaryTransaction/InitiateBeneficiaryTransactionRq.yaml'
+    UpdateBeneficiaryTransactionRq:
+      $ref: './Operations/UpdateBeneficiaryTransaction/UpdateBeneficiaryTransactionRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    InitiateBeneficiaryTransactionRs:
+      $ref: './Operations/InitiateBeneficiaryTransaction/InitiateBeneficiaryTransactionRs.yaml'
+    UpdateBeneficiaryTransactionRs:
+      $ref: './Operations/UpdateBeneficiaryTransaction/UpdateBeneficiaryTransactionRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    InitiateBeneficiaryTransactionRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateBeneficiaryTransactionRq'
+          example:
+            BeneficiaryTransaction:
+              OutboundTransaction:
+                OutboundTransactionFunctionReference:
+                - functionItem: "01010101"
+                  functionValue: "01010101"
+                outboundTransactionFunctionDescription: "ENSA TEST2"
+                outboundTransactionFunctionType: "SERVICIOS.PUBLICOS<"
+              PayeeProductReference:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: "1100013424"
+                  accountIdentificationType: "AccountNumber"
+              PayeeReference:
+                referenceId: "191352"
+              paymentTransactionType: "AC1K"
+            
+    
+    UpdateBeneficiaryTransactionRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateBeneficiaryTransactionRq'
+          example:
+            BeneficiaryTransaction:
+              OutboundTransaction:
+                OutboundTransactionFunctionReference:
+                - functionItem: "01010101"
+                  functionValue: "01010101"
+                outboundTransactionFunctionDescription: "ENSA TEST2"
+                outboundTransactionFunctionType: "SERVICIOS.PUBLICOS<"
+              PayeeProductReference:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: "1100013424"
+                  accountIdentificationType: "AccountNumber"
+              PayeeReference:
+                referenceId: "191352"
+              paymentTransactionType: "AC1K"
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    InitiateBeneficiaryTransactionRs:
+      description: InitiateBeneficiaryTransactionRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateBeneficiaryTransactionRs'
+          example:
+            BeneficiaryTransaction:
+              referenceId: "string"
+            
+    
+    UpdateBeneficiaryTransactionRs:
+      description: UpdateBeneficiaryTransactionRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateBeneficiaryTransactionRs'
+          example:
+            BeneficiaryTransaction:
+              referenceId: "string"
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

@@ -1,0 +1,40 @@
+type: array
+items:
+    type: object
+    properties:
+        riskClass:
+            type: string
+        riskManualClass:
+            type: string
+        riskReturnRate:
+            type: number
+        riskReturnTrimmedAverage:
+            type: number
+        riskReturnAccumulated:
+            type: number
+        segmentType:
+            type: string
+        segmentCode:
+            type: string
+        engagementScore:
+            type: number
+        engagementCategory:
+            type: string
+        riskReturnScore:
+            type: number
+        riskReturnCategory:
+            type: string
+        riskScore:
+            type: string
+        riskCategory:
+            type: string
+        retentionAction:
+            type: string
+        retentionOffer:
+            type: string
+        preApprovedFlag:
+            type: string
+        grossInterestCost:
+            type: string
+        tier:
+            type: string

@@ -1,0 +1,4 @@
+type: object
+properties:
+    TermDepositFacility:
+        $ref: '../../../../commons/Objects/TermDepositFacility.yaml'

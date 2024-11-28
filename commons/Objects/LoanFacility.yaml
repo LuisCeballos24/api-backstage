@@ -1,0 +1,143 @@
+type: object
+properties:
+    AccountIdentifier:
+        $ref: './Identifier.yaml'
+    AccountMembers:
+        $ref: './AccountMembers.yaml'
+    TaxReference:
+        $ref: './TaxReference.yaml'
+    InterestInstanceRecord:
+        $ref: './Interest.yaml'
+    LoanAgreement:
+        $ref: './LoanAgreement.yaml'
+    autoPay:
+        type: boolean
+    fromDay:
+        type: string
+    toDay:
+        type: string
+    LoanTransaction:
+        $ref: './LoanTransaction.yaml'
+    DisbursementInstanceRecord:
+        $ref: './DisbursementInstanceRecord.yaml'
+    loanTermAndCondition:
+        type: string
+    Interest:
+        $ref: './Interest.yaml'
+    LoanAccount:
+        type: array
+        items:   
+            type: object
+            properties:
+                AccountIdentification:
+                    $ref: './AccountIdentification.yaml'
+    loanMaturityDate:
+        type: string
+    clubBanesco:
+        type: boolean
+    SubProductType:
+        type: object
+        properties:
+            name:
+                type: string
+    Variations:
+        type: array
+        items:
+          type: object
+          properties:
+            variationType:
+                type: string
+    calculationMethod:
+        type: string
+    BankAccountingUnitReference:
+        type: object
+        properties:
+            businessUnit:
+                type: string
+    disbursementDescription:
+        type: string
+    MaintenanceInstanceRecord:
+        type: object
+        properties:
+            maintenanceReportType:
+                type: string
+    billsCombined:
+        type: boolean
+    loanAmount:
+        type: number
+    loanType:
+        type: string
+    loanProductType:
+        type: string
+    loanCurrency:
+        type: string
+    BankBranch:
+        $ref: './BankBranch.yaml'
+    loanTerm:
+        type: string
+    loanOriginationDate:
+        type: string
+    LoanOutstandingBalance:
+        type: array
+        items:
+            type: object
+            properties:
+                balanceAmount:
+                    type: number
+                balanceType:
+                    type: number
+    LoanNumber:
+        type: array
+        items:   
+            type: object
+            properties:
+                AccountIdentification:
+                    $ref: './AccountIdentification.yaml'
+    PartyReference:
+        type: object
+        properties:
+            PartyIdentification:
+                $ref: './PartyIdentification.yaml'
+    ServiceFeesInstanceRecord:
+        $ref: './ServiceFeesInstanceRecord.yaml'
+    feeArrangement:
+        type: array
+        items:
+          type: object
+          properties:
+            feeType:
+                type: string
+            feeAmount:
+                type: number
+            feeCurrency:
+                type: string
+            listCharges:
+                type: string
+    Repayment:
+        $ref: './Repayment.yaml'
+    autonomyCode:
+        type: string
+    refinancingDate:
+        type: string
+    refinancedLoanNumber:
+        type: string
+    financingPurpose:
+        type: string
+    status:
+        type: string
+    restructuringDate:
+        type: string
+    restructuredLoanNumber:
+        type: string
+    autonomyRegisteredBy:
+        type: string
+    salesInformationSource:
+        type: string
+    countryDestination:
+        type: string
+    restructuringReviewDate:
+        type: string
+    apcObservations:
+        type: string
+    salesInformationDesc:
+        type: string

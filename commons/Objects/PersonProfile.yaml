@@ -1,0 +1,42 @@
+type: object
+properties:
+    profession:
+        type: string
+        description: Profesion
+    educationLevel:
+        type: string
+        description: Nivel de educacion
+    PEPProfile:
+        $ref: './PEPProfile.yaml'
+    Employment:
+        $ref: './EmploymentProfile.yaml'
+    incomeLevel:
+        type: string
+    incomeLocation:
+        type: string
+    incomeSource:
+        type: string
+    incomeType:
+        type: string
+    professionType:
+        type: string
+        description: Tipo de Profesión
+    memberLevel:
+        type: string
+    creationDate:
+        type: string
+    staffPosition:
+        type: string
+    FATCAProfile:
+        $ref: './FATCA.yaml'
+    Location:
+        $ref: './Location.yaml'
+    PersonIdentification:
+        $ref: './PersonIdentification.yaml'
+    economicActivity:
+        type: string
+        description: Actividad Económica
+    staffDescription:
+        type: string
+    personCompany:
+        type: string

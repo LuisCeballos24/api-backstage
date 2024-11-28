@@ -1,0 +1,20 @@
+type: array
+items:
+    type: object
+    properties:
+        accountIdentificationType:
+            type: string
+            description: Tipo de identificacion
+            enum:
+                - AccountNumber
+                - BBAN
+                - SecondaryAccountNumber
+                - Wallet
+                - Paym
+                - PAN
+                - IBAN
+                - UPIC
+        Identifier:
+            $ref: './Identifier.yaml'
+        referenceId:
+            type: string

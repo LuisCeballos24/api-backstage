@@ -1,0 +1,31 @@
+type: object
+properties:
+    birthDate:
+        type: string
+        description: Fecha de nacimiento
+    nationality:
+        type: string
+        description: Nombre del pais (preferiblemente segun el estandar ISO20022)
+    gender:
+        type: string
+        description: Genero del cliente
+    civilStatus:
+        type: string
+        description: Estado marital
+    PersonName:
+        $ref: './PersonName.yaml'
+    language:
+        type: string
+        description: Idioma
+    industry:
+        type: string
+        description: Codigo de la industria donde labora
+    PersonIdentification:
+        $ref: './PersonIdentification.yaml'
+    CountryBirth:
+        $ref: './Country.yaml'
+    PersonProfile:
+        $ref: './PersonProfile.yaml'
+    sector:
+        type: string
+        description: Sector al que pertenece el Cliente

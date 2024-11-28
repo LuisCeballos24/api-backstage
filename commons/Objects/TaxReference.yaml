@@ -1,0 +1,15 @@
+type: object
+properties:
+    taxRate:
+        type: string
+    taxCalculationConditions:
+        type: string
+    taxCalculationProperty:
+        type: string
+    panamaResident:
+        type: boolean
+        description: Residencia fiscal
+    taxEntityClass:
+        type: string
+    Country:
+        $ref: './Country.yaml'

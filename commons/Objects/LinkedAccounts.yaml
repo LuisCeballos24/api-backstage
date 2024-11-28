@@ -1,0 +1,10 @@
+type: array
+items:
+    type: object
+    properties:
+        mainAccount:
+          type: boolean
+        AccountIdentification:
+            $ref: './AccountIdentification.yaml'
+        referenceId:
+            type: string

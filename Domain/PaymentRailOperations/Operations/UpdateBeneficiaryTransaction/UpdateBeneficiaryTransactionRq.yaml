@@ -1,0 +1,14 @@
+type: object
+properties:
+    BeneficiaryTransaction:
+        type: object
+        properties:
+            PayeeProductReference:
+                $ref: '../../../../commons/Objects/PayeeProductReference.yaml'
+            PayeeReference:
+                $ref: '../../../../commons/Objects/PayeeReference.yaml'
+            OutboundTransaction:    
+                $ref: '../../../../commons/Objects/OutboundTransaction.yaml'
+            paymentTransactionType:
+                type: string
+                example: AC1K

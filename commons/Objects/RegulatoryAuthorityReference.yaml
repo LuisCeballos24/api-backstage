@@ -1,0 +1,5 @@
+type: object
+properties:
+    regulatoryAuthorityResult:
+        type: string
+        description: El puntaje de confianza generado.

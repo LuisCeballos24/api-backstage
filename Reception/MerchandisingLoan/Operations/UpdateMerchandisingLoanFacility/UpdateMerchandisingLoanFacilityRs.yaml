@@ -1,0 +1,4 @@
+type: object
+properties:
+    MerchandisingLoan:
+        $ref: '../../../../commons/Objects/LoanFacility.yaml'

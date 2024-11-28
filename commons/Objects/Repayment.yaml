@@ -1,0 +1,36 @@
+type: array
+items:
+  type: object
+  properties:
+    repaymentTransactionValueDate:
+        type: string
+    repaymentType:
+        type: string
+    repaymentTransactionMethod:
+        type: string
+    repaymentTransactionType:
+        type: string
+    repaymentInstruction:
+        type: object
+        properties:
+            repaymentMonth:
+                type: string
+            repaymentDay:
+                type: string
+            repaymentTarget:
+                type: string
+    repaymentInvolvementType:
+        type: string
+    repaymentTransactionDate:
+        type: string
+    repaymentArrangement:
+        type: array
+        items:
+            type: object
+            properties:
+                repaymentArrangementAmount:
+                    type: number
+                repaymentArrangementPercentage:
+                    type: string
+                repaymentArrangementOriginationDate:
+                    type: string

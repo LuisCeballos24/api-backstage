@@ -1,0 +1,20 @@
+type: array
+items:
+    type: object
+    properties:
+        disbursementActivityCode:
+            type: string
+        DisbursementPayeeProductReference:
+            type: object
+            properties:
+              AccountIdentification:
+                $ref: './AccountIdentification.yaml'
+        MoneyTransferInstruction:
+            type: object
+            properties:
+                moneyTransferInstructionPurpose:
+                    type: string
+        disbursementAgreementCode:
+            type: string
+        disbursementAgreement:
+            type: boolean

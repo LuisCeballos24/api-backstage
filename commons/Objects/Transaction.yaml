@@ -1,0 +1,26 @@
+type: object
+properties:
+    Amount:
+        $ref: './Amount.yaml'
+    transactionType:
+        type: string
+        description: tipo de transaccion
+    Location:
+        $ref: './Location.yaml'
+    allowTransactions:
+        type: boolean
+    transactionDescription:
+                type: string
+                description: Descripcion de la transaccion
+    TransactionIdentification:
+        type: object
+        properties:
+            Identifier:  
+                $ref: './Identifier.yaml'
+            transactionDescription:
+                type: string
+    TransactionLifecycleStatus:
+        type: object
+        properties:
+            transactionLifecycleStatus:
+                type: string

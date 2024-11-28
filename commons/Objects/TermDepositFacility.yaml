@@ -1,0 +1,34 @@
+type: object
+properties:
+    ProductInstanceReference:
+        $ref: './ProductInstanceReference.yaml'
+    AccountDetails:
+        $ref: './AccountDetails.yaml'
+    TermDepositAgreement:
+        $ref: './TermDepositAgreement.yaml'
+    PaymentInstruction:
+        $ref: './PaymentInstruction.yaml'
+    PositionLimits:
+        $ref: './PositionLimits.yaml'
+    TermDepositAmount:
+        $ref: './TermDepositAmount.yaml'
+    Associations:
+        $ref: './Associations.yaml'
+    positionLimitType:
+        type: string
+    maturityDate:
+        type: string
+    generalDescription:
+        type: string
+    description:
+        type: string
+    termDepositOpenDate:
+        type: string
+    requestReason:
+        type: string
+    salesChannel:
+        type: string
+    AccountReference:
+        $ref: './AccountReference.yaml'
+    simplified:
+        type: boolean

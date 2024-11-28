@@ -1,0 +1,25 @@
+type: object
+properties:
+    collaborator:
+        type: boolean
+        description: ¿Es usted estrecho colaborador de una persona expuesta políticamente (PEP)?
+    family:
+        type: boolean
+        description: ¿Es usted familiar de una persona expuesta políticamente (PEP)?
+    governmentEntity:
+        type: string
+        description: Entidad del Gobierno con la que mantiene relación contractual
+    governmentRelated:
+        type: boolean
+        description: ¿Usted mantiene algún tipo de relación contractual con el Gobierno?
+    isPEP:
+        type: boolean
+        description: Indica si una persona es PEP
+    internationalOrganization:
+        type: boolean
+        description: ¿Pertenece usted a un Organismo Internacional?
+    Beneficiary:
+        $ref: './Beneficiary.yaml'
+    periodStart:
+        type: string
+        description: Periodo en que inicia el cargo.

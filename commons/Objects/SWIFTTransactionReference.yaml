@@ -1,0 +1,5 @@
+type: object
+description: Referencia de transacciones SWIFT
+properties:
+    referenceId:
+        type: string

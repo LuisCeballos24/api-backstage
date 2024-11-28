@@ -1,0 +1,695 @@
+openapi: 3.0.3
+info:
+  title: Savings Account
+  description: Savings Account
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/experience/LoansAndDeposits/SavingsAccount/3.0.0/'
+paths:
+  /v3/SavingsAccountFacility/Register:
+    post:
+      tags:
+        - SavingsAccountFacility
+      summary: Register SavingsAccountFacility
+      description: Servicio de recepcion encargado guardar los datos de una cuenta.
+      operationId: RegisterSavingsAccountFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/RegisterSavingsAccountFacilityRq'
+
+      responses:
+       '201':
+          description: 'Success'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/SavingsAccountFacility/Update:
+    patch:
+      tags:
+        - SavingsAccountFacility
+      summary: Update SavingsAccountFacility
+      description: Servicio de recepcion está encargado de actualizar los datos de una cuenta.
+      operationId: UpdateSavingsAccountFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateSavingsAccountFacilityRq'
+
+      responses:
+       '204':
+          description: 'Not content'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/SavingsAccountFacility/Execute:
+    put:
+      tags:
+        - SavingsAccountFacility
+      summary: Execute SavingsAccountFacility
+      description: Servicio de recepcion está encargado de ejecutar activación de cuentas inactivas.
+      operationId: ExecuteSavingsAccountFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/ExecuteSavingsAccountFacilityRq'
+
+      responses:
+       '204':
+          description: 'Not content'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/SavingsAccountFacility/Initiate:
+    post:
+      tags:
+        - SavingsAccountFacility
+      summary: Initiate SavingsAccountFacility
+      description: Servicio de recepción encargado iniciar el proceso de creación de una cuenta corriente.
+      operationId: InitiateSavingsAccountFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateSavingsAccountFacilityRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateSavingsAccountFacilityRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/ServiceFee/Initiate:
+    post:
+      tags:
+        - ServiceFee
+      summary: Initiate ServiceFee
+      description: Servicio de Reception encargado de agrupar las funcionalidades del servicio Card
+      operationId: InitiateServiceFee
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateServiceFeeRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateServiceFeeRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/EnforceAccountRestriction/Initiate:
+    post:
+      tags:
+        - EnforceAccountRestriction
+      summary: Initiate EnforceAccountRestriction
+      description: Operación asociada al área de Acct que permite bloquear los fondos.
+      operationId: InitiateEnforceAccountRestriction
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateEnforceAccountRestrictionRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateEnforceAccountRestrictionRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/EnforceAccountRestriction/Control:
+    patch:
+      tags:
+        - EnforceAccountRestriction
+      summary: Control EnforceAccountRestriction
+      description: Operación asociada al área de Acct Acct que permite desbloquear fondos.
+      operationId: ControlEnforceAccountRestriction
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/ControlEnforceAccountRestrictionRq'
+
+      responses:
+       '204':
+          description: 'Not content'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    RegisterSavingsAccountFacilityRq:
+      $ref: './Operations/RegisterSavingsAccountFacility/RegisterSavingsAccountFacilityRq.yaml'
+    UpdateSavingsAccountFacilityRq:
+      $ref: './Operations/UpdateSavingsAccountFacility/UpdateSavingsAccountFacilityRq.yaml'
+    ExecuteSavingsAccountFacilityRq:
+      $ref: './Operations/ExecuteSavingsAccountFacility/ExecuteSavingsAccountFacilityRq.yaml'
+    InitiateSavingsAccountFacilityRq:
+      $ref: './Operations/InitiateSavingsAccountFacility/InitiateSavingsAccountFacilityRq.yaml'
+    InitiateServiceFeeRq:
+      $ref: './Operations/InitiateServiceFee/InitiateServiceFeeRq.yaml'
+    InitiateEnforceAccountRestrictionRq:
+      $ref: './Operations/InitiateEnforceAccountRestriction/InitiateEnforceAccountRestrictionRq.yaml'
+    ControlEnforceAccountRestrictionRq:
+      $ref: './Operations/ControlEnforceAccountRestriction/ControlEnforceAccountRestrictionRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    InitiateSavingsAccountFacilityRs:
+      $ref: './Operations/InitiateSavingsAccountFacility/InitiateSavingsAccountFacilityRs.yaml'
+    InitiateServiceFeeRs:
+      $ref: './Operations/InitiateServiceFee/InitiateServiceFeeRs.yaml'
+    InitiateEnforceAccountRestrictionRs:
+      $ref: './Operations/InitiateEnforceAccountRestriction/InitiateEnforceAccountRestrictionRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    RegisterSavingsAccountFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RegisterSavingsAccountFacilityRq'
+          example:
+            SavingsAccountFacility:
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: "06846846846876664"
+                accountIdentificationType: "AccountNumber"
+            
+    
+    UpdateSavingsAccountFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateSavingsAccountFacilityRq'
+          example:
+            SavingsAccountFacility:
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: "06846846846876664"
+                accountIdentificationType: "AccountNumber"
+            
+    
+    ExecuteSavingsAccountFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExecuteSavingsAccountFacilityRq'
+          example:
+            SavingsAccountFacility:
+              AccountDate:
+              - accountDate: "2021-03-01"
+                accountDateType: "OpeningDate"
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: "06846846846876664"
+                accountIdentificationType: "AccountNumber"
+            
+    
+    InitiateSavingsAccountFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateSavingsAccountFacilityRq'
+          example:
+            AccountInitialization:
+              AccountDetails:
+                AccountCurrency:
+                  Amount:
+                    currencyCode: "USD"
+                AccountType:
+                  accountName: "Personal Savings"
+                  accountType: "Savings"
+                ActivityType:
+                  code: "01"
+                  description: "Personal Savings"
+                AverageBalance:
+                  Amount:
+                    amount: 200
+                    currencyCode: "USD"
+                AverageDeposits:
+                  Amount:
+                    amount: 200
+                    currencyCode: "USD"
+                DebitCard:
+                  cardNumber: "1234-5678-9012-3456"
+                Deposits:
+                  Amount:
+                    amount: 200
+                    currencyCode: "USD"
+                  depositsCount: 20
+                OpeningAmount:
+                  Amount:
+                    amount: 200
+                    currencyCode: "USD"
+                OpeningMode:
+                  description: "Opened via online banking"
+                  mode: "Online"
+                PartyReference:
+                  PartyIdentification:
+                  - Identifier:
+                      identifierValue: "PID654321"
+                    partyIdentificationType: "IdentityCardNumber"
+                  Person:
+                    PersonProfile:
+                      staffDescription: "Branch Manager"
+                      staffPosition: "Manager"
+                PaymentCollector:
+                  agent: "John Doe"
+                  agentCategory: "Bank Employee"
+                  agentCategoryDescription: "Authorized Bank Staff"
+                PercentageDeposits:
+                  Amount:
+                    amount: 200
+                ServiceRequestReasons:
+                - reason: "New Account Opening"
+                TargetAmount:
+                  Amount:
+                    amount: 200
+                    currencyCode: "USD"
+                Transaction:
+                  Amount:
+                    amount: 200
+                  Location:
+                    Address:
+                    - PostalAddress:
+                        Country:
+                          code: "US"
+                          name: "United States"
+                  allowTransactions: true
+                  transactionType: "Deposit"
+                accountUsage: "Personal"
+                businessUnit: "Retail Banking"
+                clubBanesco: "Gold Member"
+                movType: "Electronic"
+                purpose: "Savings for future"
+                sourceOfFundsCode: "SALARY"
+                sourceOfFundsDescription: "Monthly Salary"
+              ChequeBookReference:
+                Holders:
+                - holderName: "John Doe"
+                chequeBookType: "Standard"
+                hasChequeBook: true
+                holderCondition: "Primary Holder"
+                multipleHolders: false
+                totalAmount: 200
+              PartyReference:
+                PartyIdentification:
+                - Identifier:
+                    identifierValue: "PID987654"
+              PayeeReference:
+                Association:
+                - PartyReference:
+                    ContactPoint:
+                    - contactPointAreaCode: "123"
+                      contactPointValue: "4567890"
+                    Location:
+                      Address:
+                      - PostalAddress:
+                          Country:
+                            code: "US"
+                            name: "United States"
+                    PartyIdentification:
+                    - Identifier:
+                        identifierValue: "PID654321"
+                    Person:
+                      PersonName:
+                      - personName: "Alex Smith"
+                payeePercentage: 200
+                payeeType: "Primary"
+                underAge: false
+              ProductDetails:
+                ProductType:
+                  productName: "High Yield Savings Account"
+                  productType: "Savings"
+                SubProductType:
+                  subProductName: "Standard Savings"
+                Variations:
+                - description: "2.5% annual interest"
+                  variationType: "Interest Rate"
+                salesChannel: "Online"
+              SavingsAccountAgreementReference:
+                AgreementIdentification:
+                  Identifier:
+                    identifierValue: "AGR987654"
+                referenceId: "REF123456"
+            
+    
+    InitiateServiceFeeRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateServiceFeeRq'
+          example:
+            SavingsAccountFacility:
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: "123456789"
+              SavingsAccountTransaction:
+                Transaction:
+                  TransactionIdentification:
+                    Identifier:
+                      identifierValue: "TXN001"
+                  TransactionLifecycleStatus:
+                    transactionLifecycleStatus: "Completed"
+                  transactionDescription: "Deposit"
+            ServiceFee:
+            - feeAmount: 10.0
+              feeType: "Monthly Maintenance"
+            - feeAmount: 2.5
+              feeType: "ATM Fee"
+            
+    
+    InitiateEnforceAccountRestrictionRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateEnforceAccountRestrictionRq'
+          example:
+            AccountReference:
+              AccountIdentification:
+              - Identifier:
+                  identifierValue: ""
+            AccountRestriction:
+              Amount:
+                amount: 123
+              endDate: ""
+              restrictionDescription: ""
+              startDate: ""
+            
+    
+    ControlEnforceAccountRestrictionRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ControlEnforceAccountRestrictionRq'
+          example:
+            AccountReference:
+              referenceId: ""
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    InitiateSavingsAccountFacilityRs:
+      description: InitiateSavingsAccountFacilityRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateSavingsAccountFacilityRs'
+          example:
+            AccountInitialization:
+              AccountReference:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: "ID123"
+                  accountIdentificationType: "AccountNumber"
+                - Identifier:
+                    identifierValue: "ID456"
+                  accountIdentificationType: "AccountNumber"
+                referenceId: "REF123456"
+            StatusInstanceRecord:
+              description: "string"
+              message: "string"
+              status: "string"
+            
+    
+    InitiateServiceFeeRs:
+      description: InitiateServiceFeeRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateServiceFeeRs'
+          example:
+            SavingsAccountFacility:
+              SavingsAccountTransaction:
+                Transaction:
+                  TransactionIdentification:
+                    Identifier:
+                      identifierValue: "TXN001"
+                  transactionType: "Deposit"
+            ServiceFee:
+            - feeApplicationDate: "2024-08-01"
+            
+    
+    InitiateEnforceAccountRestrictionRs:
+      description: InitiateEnforceAccountRestrictionRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateEnforceAccountRestrictionRs'
+          example:
+            AccountReference:
+              referenceId: ""
+            StatusInstanceRecord:
+              message: ""
+              status: ""
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

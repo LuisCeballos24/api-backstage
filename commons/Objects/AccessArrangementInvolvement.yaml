@@ -1,0 +1,9 @@
+type: array
+items:
+    type: object
+    properties:
+        AccessAgreementInvolvementIdentification:
+            type: object
+            properties:
+                Identifier:
+                    $ref: './Identifier.yaml'

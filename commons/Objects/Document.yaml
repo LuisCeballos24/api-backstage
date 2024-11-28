@@ -1,0 +1,8 @@
+type: object
+properties:
+    uril:
+        type: string
+    name:
+        type: string
+    url:
+        type: string

@@ -1,0 +1,17 @@
+type: object
+description: Objeto encargado del manejo de notificaciones o alertas para el cliente.
+properties:
+    division:
+        type: string
+        description: Esta propiedad restringe el acceso a las alertas a los límites especificados. 
+    emailNotification:
+        type: boolean
+        description: envía un único mensaje de correo electrónico a cada usuario o usuarios específicos con roles
+    roles:
+        type: array
+        description: Este elemento contiene los roles o los usuarios a los que se les asignarán alertas.
+        items:
+            type: string
+    customerRelationshipAlertType:
+        type: string
+        description: Tipo de roles a asignar.

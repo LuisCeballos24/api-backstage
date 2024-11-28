@@ -1,0 +1,15 @@
+type: object
+properties:
+    ChangePeriod:
+        type: object
+        properties:
+            changeDateType:
+                type: string
+            changeDate:
+                type: string
+            changePeriodType:
+                type: string
+    renewalDescription:  
+        type: string
+    depositTermAndCondition:  
+        type: string

@@ -1,0 +1,8 @@
+type: object
+properties:
+    bankRelation:
+        type: string
+        description: Relacion con el banco
+    bankRelationType:
+        type: string
+        description: Codigo de la relacion con el banco

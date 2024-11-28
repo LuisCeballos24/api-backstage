@@ -1,0 +1,8 @@
+type: object
+properties:
+    FinancialTransaction:
+        type: array
+        items:
+            properties:
+                financialTransactionFrequency:
+                    type: string

@@ -1,0 +1,15 @@
+type: object
+description: Referencia del banco del beneficiario
+properties:
+    referenceId:
+        type: string
+    bankName:
+        type: string
+    Organisation:
+        $ref: './Organisation.yaml'
+    Location:
+        $ref: './Location.yaml'
+    SWIFTTransactionReference:
+        $ref: './SWIFTTransactionReference.yaml'
+    ABAReference:
+        $ref: './ABAReference.yaml'

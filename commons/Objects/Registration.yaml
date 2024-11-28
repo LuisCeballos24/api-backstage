@@ -1,0 +1,6 @@
+type: object
+properties:
+    folio:
+        type: string
+    volumen:
+        type: string

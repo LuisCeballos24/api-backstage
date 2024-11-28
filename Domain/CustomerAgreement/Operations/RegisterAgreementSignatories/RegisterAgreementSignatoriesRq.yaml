@@ -1,0 +1,4 @@
+type: object
+properties:
+    AgreementSignatories:
+        $ref: '../../../../commons/Objects/AgreementSignatories.yaml'

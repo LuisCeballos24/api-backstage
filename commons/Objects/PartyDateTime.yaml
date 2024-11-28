@@ -1,0 +1,20 @@
+type: array
+items:
+    type: object
+    properties:
+        date:
+            type: string
+            description: Valor de una fecha determinada
+        dateType:
+            type: string
+            description: Tipo de fecha
+            example: FirstName
+        timeDuration:
+            type: array
+            description: identifica una duración de tiempo en varias unidades de tiempo -> año, mes, semana, día, hora, minuto, segundo y fracciones del mismo.
+            items:
+                type: integer
+        partyDateTime:
+            type: string
+        partyDateTimeType:
+            type: string

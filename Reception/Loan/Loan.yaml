@@ -1,0 +1,1112 @@
+openapi: 3.0.3
+info:
+  title: Loan
+  description: Loan
+  version: 3.0.0
+servers:
+  - url: 'https://test.api.ob.banesco.com.pa/experience/LoansAndDeposits/Loan/3.0.0/'
+paths:
+  /v3/LoanFacility/Execute:
+    put:
+      tags:
+        - LoanFacility
+      summary: Execute LoanFacility
+      description: Operación de Reception encargada de ejecutar la aprobación del préstamo.
+      operationId: ExecuteLoanFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/ExecuteLoanFacilityRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/ExecuteLoanFacilityRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/LoanFacility/Initiate:
+    post:
+      tags:
+        - LoanFacility
+      summary: Initiate LoanFacility
+      description: Operación de Reception encargada de crear préstamo personal.
+      operationId: InitiateLoanFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateLoanFacilityRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateLoanFacilityRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/LoanAgreement/Initiate:
+    post:
+      tags:
+        - LoanAgreement
+      summary: Initiate LoanAgreement
+      description: Operación de Reception encargada de permitir asociar un cliente a un préstamo.
+      operationId: InitiateLoanAgreement
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateLoanAgreementRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateLoanAgreementRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/LoanProjection/Initiate:
+    post:
+      tags:
+        - LoanProjection
+      summary: Initiate LoanProjection
+      description: Operación de Reception encargada de simular cuotas financiera y préstamos de a un cliente.
+      operationId: InitiateLoanProjection
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateLoanProjectionRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateLoanProjectionRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/LoanAgreement/Update:
+    put:
+      tags:
+        - LoanAgreement
+      summary: Update LoanAgreement
+      description: Operación de Reception encargada de permitir actualizar la asociación de un cliente a un préstamo.
+      operationId: UpdateLoanAgreement
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateLoanAgreementRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/UpdateLoanAgreementRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/CustomerAgreementReference/Initiate:
+    post:
+      tags:
+        - CustomerAgreementReference
+      summary: Initiate CustomerAgreementReference
+      description: Operación que permite Crear acuerdos del préstamo.
+      operationId: InitiateCustomerAgreementReference
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateCustomerAgreementReferenceRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateCustomerAgreementReferenceRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/CustomerAgreementReference/Update:
+    patch:
+      tags:
+        - CustomerAgreementReference
+      summary: Update CustomerAgreementReference
+      description: Operación que permite Actualizar acuerdos del préstamo.
+      operationId: UpdateCustomerAgreementReference
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateCustomerAgreementReferenceRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/UpdateCustomerAgreementReferenceRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/LoanTransaction/Initiate:
+    post:
+      tags:
+        - LoanTransaction
+      summary: Initiate LoanTransaction
+      description: Operación que permite entradas contables de un crédito.
+      operationId: InitiateLoanTransaction
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateLoanTransactionRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/InitiateLoanTransactionRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+  /v3/LoanFacility/Update:
+    put:
+      tags:
+        - LoanFacility
+      summary: Update LoanFacility
+      description: Operación de Reception encargada de permitir actualizar préstamos personales.
+      operationId: UpdateLoanFacility
+      parameters:
+        - $ref: '#/components/parameters/ClientDt'
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/ClientApp-ChannelId'
+        - $ref: '#/components/parameters/ClientApp-Name'
+        - $ref: '#/components/parameters/ClientApp-UserId'
+        - $ref: '#/components/parameters/X-API-Key'
+
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateLoanFacilityRq'
+
+      responses:
+       '200':
+          $ref: '#/components/responses/UpdateLoanFacilityRs'
+       '400':
+          $ref: '#/components/responses/badRequest'
+       '401':
+          $ref: '#/components/responses/unauthorized'
+       '403':
+          $ref: '#/components/responses/forbidden'
+       '404':
+          $ref: '#/components/responses/notFound'
+       '408':
+          $ref: '#/components/responses/timeOut'
+       '500':
+          $ref: '#/components/responses/internalServerError'
+
+
+components:
+  parameters:
+    ### Headers ###
+    ClientDt:
+      name: ClientDt
+      in: header
+      schema:
+        type: string
+      required: true
+    RequestId:
+      name: RequestId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-ChannelId:
+      name: ClientApp-ChannelId
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-Name:
+      name: ClientApp-Name
+      in: header
+      schema:
+        type: string
+      required: true
+    ClientApp-UserId:
+      name: ClientApp-UserId
+      in: header
+      schema:
+        type: string
+      required: true
+    X-API-Key:
+      name: X-API-Key
+      in: header
+      schema:
+        type: string
+      required: true
+    ### Headers ###
+
+  schemas:
+    ### Request ###
+    ExecuteLoanFacilityRq:
+      $ref: './Operations/ExecuteLoanFacility/ExecuteLoanFacilityRq.yaml'
+    InitiateLoanFacilityRq:
+      $ref: './Operations/InitiateLoanFacility/InitiateLoanFacilityRq.yaml'
+    InitiateLoanAgreementRq:
+      $ref: './Operations/InitiateLoanAgreement/InitiateLoanAgreementRq.yaml'
+    InitiateLoanProjectionRq:
+      $ref: './Operations/InitiateLoanProjection/InitiateLoanProjectionRq.yaml'
+    UpdateLoanAgreementRq:
+      $ref: './Operations/UpdateLoanAgreement/UpdateLoanAgreementRq.yaml'
+    InitiateCustomerAgreementReferenceRq:
+      $ref: './Operations/InitiateCustomerAgreementReference/InitiateCustomerAgreementReferenceRq.yaml'
+    UpdateCustomerAgreementReferenceRq:
+      $ref: './Operations/UpdateCustomerAgreementReference/UpdateCustomerAgreementReferenceRq.yaml'
+    InitiateLoanTransactionRq:
+      $ref: './Operations/InitiateLoanTransaction/InitiateLoanTransactionRq.yaml'
+    UpdateLoanFacilityRq:
+      $ref: './Operations/UpdateLoanFacility/UpdateLoanFacilityRq.yaml'
+    ### Request ###
+
+    ### Response ###
+    ExecuteLoanFacilityRs:
+      $ref: './Operations/ExecuteLoanFacility/ExecuteLoanFacilityRs.yaml'
+    InitiateLoanFacilityRs:
+      $ref: './Operations/InitiateLoanFacility/InitiateLoanFacilityRs.yaml'
+    InitiateLoanAgreementRs:
+      $ref: './Operations/InitiateLoanAgreement/InitiateLoanAgreementRs.yaml'
+    InitiateLoanProjectionRs:
+      $ref: './Operations/InitiateLoanProjection/InitiateLoanProjectionRs.yaml'
+    UpdateLoanAgreementRs:
+      $ref: './Operations/UpdateLoanAgreement/UpdateLoanAgreementRs.yaml'
+    InitiateCustomerAgreementReferenceRs:
+      $ref: './Operations/InitiateCustomerAgreementReference/InitiateCustomerAgreementReferenceRs.yaml'
+    UpdateCustomerAgreementReferenceRs:
+      $ref: './Operations/UpdateCustomerAgreementReference/UpdateCustomerAgreementReferenceRs.yaml'
+    InitiateLoanTransactionRs:
+      $ref: './Operations/InitiateLoanTransaction/InitiateLoanTransactionRs.yaml'
+    UpdateLoanFacilityRs:
+      $ref: './Operations/UpdateLoanFacility/UpdateLoanFacilityRs.yaml'
+    ### Http Response ###
+    httpResponse:
+      $ref: '../../commons/HttpResponses/HttpError.yaml'
+    ### Http Response ###
+
+    ### Response ###
+
+
+  ### Define Relation with  Request ###
+  requestBodies:
+    ### Artefacts Request ###
+    ExecuteLoanFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExecuteLoanFacilityRq'
+          example:
+            LoanFacility:
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: "AAACT1819726TN6CXL"
+            
+    
+    InitiateLoanFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateLoanFacilityRq'
+          example:
+            LoanFacility:
+              AccountMembers:
+              - memberName: ""
+                memberType: ""
+              BankAccountingUnitReference:
+                businessUnit: ""
+              BankBranch:
+                codeDestination: ""
+                collOfficer: ""
+                countryDestination: ""
+                creditDestination: ""
+                fundsDestination: ""
+                fundsPurpose: ""
+                salesChannel: ""
+              DisbursementInstanceRecord:
+              - DisbursementPayeeProductReference:
+                  AccountIdentification:
+                  - Identifier:
+                      identifierValue: ""
+                MoneyTransferInstruction:
+                  moneyTransferInstructionPurpose: ""
+                disbursementActivityCode: ""
+                disbursementAgreement: true
+                disbursementAgreementCode: ""
+              Interest:
+              - interestCalculationDate: ""
+              InterestInstanceRecord:
+              - AccrualRule:
+                  accrualType: ""
+                  dailyBasis: ""
+                InterestRate:
+                  Rate:
+                    rateValue: 0
+                interestRateType: ""
+              LoanAgreement:
+              - agreementType: ""
+                completionDate: ""
+                description: ""
+                expiryDate: ""
+                loanReference: ""
+                paymentMethod: ""
+                registrationDate: ""
+              LoanTransaction:
+              - Account:
+                  AccountIdentification:
+                  - Identifier:
+                      identifierValue: ""
+                  accountPurpose: ""
+                transactionActivityCode: ""
+                transactionDescription: true
+                transactionRule: ""
+                transactionType: ""
+              MaintenanceInstanceRecord:
+                maintenanceReportType: ""
+              Repayment:
+              - repaymentArrangement:
+                - repaymentArrangementAmount: 0
+                  repaymentArrangementOriginationDate: ""
+                  repaymentArrangementPercentage: ""
+                repaymentInstruction:
+                  repaymentDay: ""
+                  repaymentMonth: ""
+                  repaymentTarget: ""
+                repaymentTransactionMethod: ""
+                repaymentTransactionType: ""
+                repaymentType: ""
+              ServiceFeesInstanceRecord:
+              - feePlan:
+                - chargeAutoSettle: true
+                  feeMethod: ""
+                  feePeriod: ""
+                serviceFeesId: ""
+              SubProductType:
+                name: ""
+              TaxReference:
+                taxCalculationConditions: ""
+                taxCalculationProperty: ""
+                taxRate: ""
+              Variations:
+              - variationType: ""
+              autoPay: true
+              billsCombined: true
+              calculationMethod: ""
+              clubBanesco: true
+              disbursementDescription: ""
+              feeArrangement:
+              - feeAmount: 0
+                feeCurrency: ""
+                feeType: ""
+                listCharges: ""
+              fromDay: ""
+              loanAmount: 0
+              loanCurrency: ""
+              loanMaturityDate: ""
+              loanOriginationDate: ""
+              loanTermAndCondition: ""
+              loanType: ""
+              toDay: ""
+            
+    
+    InitiateLoanAgreementRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateLoanAgreementRq'
+          example:
+            LoanAgreement:
+            - LoanAgreementInvolvement:
+                LoanTransaction:
+                  FinancialTransaction:
+                  - financialTransactionFrequency: "Biweekly"
+                    financialTransactionNumber: 1000
+                  - financialTransactionFrequency: "Monthly"
+                    financialTransactionNumber: 2000
+                  transactionDiscountCode: "50519"
+                PartyReference:
+                  PartyIdentification:
+                  - Identifier:
+                      identifierValue: "190028"
+                  - Identifier:
+                      identifierValue: "IF3"
+                  - Identifier:
+                      identifierValue: "E-8-333333"
+                  PartyRole:
+                    partyRoleType: "FIRMANTEPN"
+                  Person:
+                    PersonIdentification:
+                    - Identifier:
+                        identifierValue: "000003"
+            LoanFacility:
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: "AA18115KCWWX"
+            
+    
+    InitiateLoanProjectionRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateLoanProjectionRq'
+          example:
+            Interest:
+            - InterestRate:
+                Rate:
+                  rateValue: 4
+              interestRateType: ""
+            LoanFacility:
+              BankBranch:
+                collOfficer: "0103"
+                saleOfficer: "0176"
+              LoanOutstandingBalance:
+              - balanceAmount: 0
+                balanceType: 0
+              PartyReference:
+                PartyIdentification:
+                - Identifier:
+                    identifierValue: "190056"
+              loanCurrency: "USD"
+              loanOriginationDate: "10Y"
+              loanProductType: "AL.COTIZADOR.AUTO"
+              loanTerm: "5Y"
+              loanType: "COP"
+            Repayment:
+            - repaymentTransactionValueDate: ""
+            
+    
+    UpdateLoanAgreementRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateLoanAgreementRq'
+          example:
+            LoanAgreement:
+            - LoanAgreementInvolvement:
+                LoanTransaction:
+                  FinancialTransaction:
+                  - financialTransactionFrequency: "Biweekly"
+                    financialTransactionNumber: 1000
+                  - financialTransactionFrequency: "Monthly"
+                    financialTransactionNumber: 2000
+                  transactionDiscountCode: "50519"
+                PartyReference:
+                  PartyIdentification:
+                  - Identifier:
+                      identifierValue: "190028"
+                  - Identifier:
+                      identifierValue: "IF3"
+                  - Identifier:
+                      identifierValue: "E-8-333333"
+                  PartyRole:
+                    partyRoleType: "FIRMANTEPN"
+                  Person:
+                    PersonIdentification:
+                    - Identifier:
+                        identifierValue: "000003"
+            LoanFacility:
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: "AA18115KCWWX"
+            
+    
+    InitiateCustomerAgreementReferenceRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateCustomerAgreementReferenceRq'
+          example:
+            LoanAgreement:
+            - agreementType: ""
+              completionDate: ""
+              description: ""
+              expiryDate: ""
+              paymentMethod: ""
+              registrationDate: ""
+            LoanFacility:
+              BankBranch:
+                creditDestination: ""
+                fundsDestination: ""
+                fundsPurpose: ""
+              Interest:
+              - interestCalculationDate: ""
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+              MaintenanceInstanceRecord:
+                maintenanceReportType: ""
+              apcObservations: ""
+              autonomyCode: ""
+              autonomyRegisteredBy: ""
+              countryDestination: ""
+              financingPurpose: ""
+              refinancedLoanNumber: ""
+              refinancingDate: ""
+              restructuredLoanNumber: ""
+              restructuringDate: ""
+              restructuringReviewDate: ""
+              salesInformationDesc: ""
+              salesInformationSource: ""
+              status: ""
+            
+    
+    UpdateCustomerAgreementReferenceRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateCustomerAgreementReferenceRq'
+          example:
+            LoanAgreement:
+            - agreementType: ""
+              completionDate: ""
+              description: ""
+              expiryDate: ""
+              paymentMethod: ""
+              registrationDate: ""
+            LoanFacility:
+              BankBranch:
+                creditDestination: ""
+                fundsDestination: ""
+                fundsPurpose: ""
+              Interest:
+              - interestCalculationDate: ""
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+              MaintenanceInstanceRecord:
+                maintenanceReportType: ""
+              apcObservations: ""
+              autonomyCode: ""
+              autonomyRegisteredBy: ""
+              countryDestination: ""
+              financingPurpose: ""
+              refinancedLoanNumber: ""
+              refinancingDate: ""
+              restructuredLoanNumber: ""
+              restructuringDate: ""
+              restructuringReviewDate: ""
+              salesInformationDesc: ""
+              salesInformationSource: ""
+              status: ""
+            
+    
+    InitiateLoanTransactionRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateLoanTransactionRq'
+          example:
+            LoanTransaction:
+            - Amount:
+                amount: 1000.0
+                currencyCode: "USD"
+              FromAccount:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: "123456789"
+              PartyReference:
+                referenceId: "CL456"
+              TargetAccount:
+                AccountIdentification:
+                - Identifier:
+                    identifierValue: "987654321"
+              TransactionIdentification:
+                Identifier:
+                  identifierValue: "TX789"
+              costCenterId: "CC123"
+              transactionDate: "2024-07-22"
+              transactionType: "Credit"
+            
+    
+    UpdateLoanFacilityRq:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateLoanFacilityRq'
+          example:
+            LoanFacility:
+              AccountMembers:
+              - memberName: ""
+                memberType: ""
+              BankAccountingUnitReference:
+                businessUnit: ""
+              BankBranch:
+                codeDestination: ""
+                collOfficer: ""
+                countryDestination: ""
+                creditDestination: ""
+                fundsDestination: ""
+                fundsPurpose: ""
+                salesChannel: ""
+              DisbursementInstanceRecord:
+              - DisbursementPayeeProductReference:
+                  AccountIdentification:
+                  - Identifier:
+                      identifierValue: ""
+                MoneyTransferInstruction:
+                  moneyTransferInstructionPurpose: ""
+                disbursementActivityCode: ""
+                disbursementAgreement: true
+                disbursementAgreementCode: ""
+              Interest:
+              - interestCalculationDate: ""
+              InterestInstanceRecord:
+              - AccrualRule:
+                  accrualType: ""
+                  dailyBasis: ""
+                InterestRate:
+                  Rate:
+                    rateValue: 0
+                interestRateType: ""
+              LoanAgreement:
+              - agreementType: ""
+                completionDate: ""
+                description: ""
+                expiryDate: ""
+                loanReference: ""
+                paymentMethod: ""
+                registrationDate: ""
+              LoanTransaction:
+              - Account:
+                  AccountIdentification:
+                  - Identifier:
+                      identifierValue: ""
+                  accountPurpose: ""
+                transactionActivityCode: ""
+                transactionDescription: true
+                transactionRule: ""
+                transactionType: ""
+              MaintenanceInstanceRecord:
+                maintenanceReportType: ""
+              Repayment:
+              - repaymentArrangement:
+                - repaymentArrangementAmount: 0
+                  repaymentArrangementOriginationDate: ""
+                  repaymentArrangementPercentage: ""
+                repaymentInstruction:
+                  repaymentDay: ""
+                  repaymentMonth: ""
+                  repaymentTarget: ""
+                repaymentTransactionMethod: ""
+                repaymentTransactionType: ""
+                repaymentType: ""
+              ServiceFeesInstanceRecord:
+              - feePlan:
+                - chargeAutoSettle: true
+                  feeMethod: ""
+                  feePeriod: ""
+                serviceFeesId: ""
+              SubProductType:
+                name: ""
+              TaxReference:
+                taxCalculationConditions: ""
+                taxCalculationProperty: ""
+                taxRate: ""
+              Variations:
+              - variationType: ""
+              autoPay: true
+              billsCombined: true
+              calculationMethod: ""
+              clubBanesco: true
+              disbursementDescription: ""
+              feeArrangement:
+              - feeAmount: 0
+                feeCurrency: ""
+                feeType: ""
+                listCharges: ""
+              fromDay: ""
+              loanAmount: 0
+              loanCurrency: ""
+              loanMaturityDate: ""
+              loanOriginationDate: ""
+              loanTermAndCondition: ""
+              loanType: ""
+              toDay: ""
+            
+    
+    ### Artefacts Request ###
+  ### Define Relation with  Request ###
+
+
+
+  ### Define Relation with  Response ###
+  responses:
+    ### Artefacts Response ###
+    ExecuteLoanFacilityRs:
+      description: ExecuteLoanFacilityRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExecuteLoanFacilityRs'
+          example:
+            LoanFacility:
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: "AAACT1819726TN6CXL"
+              PartyReference:
+                PartyIdentification:
+                - Identifier:
+                    identifierValue: "111111"
+            
+    
+    InitiateLoanFacilityRs:
+      description: InitiateLoanFacilityRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateLoanFacilityRs'
+          example:
+            LoanFacility:
+              LoanAccount:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+            
+    
+    InitiateLoanAgreementRs:
+      description: InitiateLoanAgreementRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateLoanAgreementRs'
+          example:
+            LoanFacility:
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: "AA18115KCWWX"
+              PartyReference:
+                PartyIdentification:
+                - Identifier:
+                    identifierValue: "190030"
+                - Identifier:
+                    identifierValue: "190028"
+                - Identifier:
+                    identifierValue: "190056"
+                - Identifier:
+                    identifierValue: "189"
+            
+    
+    InitiateLoanProjectionRs:
+      description: InitiateLoanProjectionRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateLoanProjectionRs'
+          example:
+            LoanProjection:
+              loanProjectionId: "AASIMR1736469QXCTX"
+            
+    
+    UpdateLoanAgreementRs:
+      description: UpdateLoanAgreementRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateLoanAgreementRs'
+          example:
+            LoanFacility:
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: "AA18115KCWWX"
+              PartyReference:
+                PartyIdentification:
+                - Identifier:
+                    identifierValue: "190030"
+                - Identifier:
+                    identifierValue: "190028"
+                - Identifier:
+                    identifierValue: "190056"
+                - Identifier:
+                    identifierValue: "189"
+            
+    
+    InitiateCustomerAgreementReferenceRs:
+      description: InitiateCustomerAgreementReferenceRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateCustomerAgreementReferenceRs'
+          example:
+            LoanAgreement:
+            - referenceId: ""
+            LoanFacility:
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+            
+    
+    UpdateCustomerAgreementReferenceRs:
+      description: UpdateCustomerAgreementReferenceRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateCustomerAgreementReferenceRs'
+          example:
+            LoanAgreement:
+            - referenceId: ""
+            LoanFacility:
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+            
+    
+    InitiateLoanTransactionRs:
+      description: InitiateLoanTransactionRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InitiateLoanTransactionRs'
+          example:
+            LoanTransaction:
+            - Amount:
+                amount: 100.0
+                currencyCode: "USD"
+              PartyReference:
+                referenceId: "CL456"
+              TransactionIdentification:
+                Identifier:
+                  identifierValue: "TX789"
+            StatusInstanceRecord:
+              description: ""
+              status: ""
+            
+    
+    UpdateLoanFacilityRs:
+      description: UpdateLoanFacilityRs
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateLoanFacilityRs'
+          example:
+            LoanFacility:
+              LoanAccount:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+              LoanNumber:
+              - AccountIdentification:
+                - Identifier:
+                    identifierValue: ""
+            
+    
+    ### Artefacts Responses ###
+
+    ### Https Responses ###
+    badRequest:
+      description: badRequest
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Bad Request"
+            status: "FAILED"
+            statusCode: "400"
+            
+    
+    unauthorized:
+      description: unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Unauthorized"
+            status: "FAILED"
+            statusCode: "401"
+            
+    
+    forbidden:
+      description: forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Forbidden"
+            status: "FAILED"
+            statusCode: "403"
+            
+    
+    notFound:
+      description: notFound
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Not Found"
+            status: "FAILED"
+            statusCode: "404"
+            
+    
+    timeOut:
+      description: timeOut
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Time Out"
+            status: "FAILED"
+            statusCode: "408"
+            
+    
+    internalServerError:
+      description: internalServerError
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/httpResponse'
+          example:
+            message: "Internal Server Error"
+            status: "FAILED"
+            statusCode: "500"
+            
+    
+    ### Https Responses ###
+  ### Define Relation with  Response ###
+

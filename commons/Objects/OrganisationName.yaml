@@ -1,0 +1,16 @@
+type: array
+items:
+    type: object
+    properties:
+        organisationName:
+            type: string
+            description: Nombre por el que se conoce a una organización y que se suele utilizar para identificarla.
+        organisationNameType:
+            type: string
+            example: Legal Name
+            description: Valores posibles para el tipo de nombre de organización
+            enum:
+                - Short Name
+                - Trading Name
+                - Legal Name
+                - Full Name

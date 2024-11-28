@@ -1,0 +1,6 @@
+type: object
+properties:
+    CollateralReference:
+        $ref: '../../../../commons/Objects/CollateralReference.yaml'
+    StatusDetails:
+        $ref: '../../../../commons/Objects/StatusInstanceRecord.yaml'

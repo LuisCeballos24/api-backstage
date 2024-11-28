@@ -1,0 +1,10 @@
+type: object
+properties:
+    AgreementIdentification:
+        type: object
+        properties:
+            Identifier:
+                $ref: './Identifier.yaml'
+                description: Identificador de la cuenta
+    referenceId:  
+        type: string

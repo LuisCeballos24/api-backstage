@@ -1,0 +1,6 @@
+type: object
+properties:
+  insuranceCode:
+    type: string
+  insuranceDescription:
+    type: string

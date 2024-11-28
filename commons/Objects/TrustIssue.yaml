@@ -1,0 +1,6 @@
+type: object
+properties:
+    trustIssueDate:
+        type: string
+    trustIssueNumber:
+        type: string

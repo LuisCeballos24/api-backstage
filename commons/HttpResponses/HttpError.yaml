@@ -1,0 +1,12 @@
+type: object
+properties:
+  statusCode:
+    type: string
+    format: string
+  status:
+    type: string
+    format: string
+  message:
+    type: string
+    format: string
+description: Status Attributes
