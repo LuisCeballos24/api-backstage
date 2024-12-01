@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
-  name: cash-management-and-account-services
+  name: cash-management-and-account-services2
   description: "Cash Management and Account Services API"
   tags:
     - finance
@@ -16,12 +16,5 @@ metadata:
 spec:
   tarjets:
       #Domains
-    - Domain/CashManagementAndAccountServices/CashManagementAndAccountServices.yaml'
-    - Proxy/CashManagementAndAccountServices/CashManagementAndAccountServices.yaml'
-    - Reception/CashManagementAndAccountServices/CashManagementAndAccountServices.yaml'
-    - commons/Objects/ABAReference.yaml'
-    - commons/HttpResponses/HttpError.yaml'
-    - commons/HttpResponses/BadRequest.yaml'
+    - Domain/AchOperations/AchOperations.yaml'
   # Aquí puedes agregar cualquier anotación si es necesario.
-  annotations:
-    backstage.io/techdocs-ref: 'dir:./docs'
