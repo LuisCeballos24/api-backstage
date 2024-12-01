@@ -6,7 +6,7 @@ metadata:
     backstage.io/definition-location: C:\backstage-demo\backstage\banesco-apis\Yaml\commons\Objects\AccessArrangementInvolvement.yaml
     backstage.io/source-location: C:\backstage-demo\backstage\banesco-apis\Yaml\commons\Objects\AccessArrangementInvolvement.yaml
   description: No description
-  name: undefined-api-api
+  name: AchOperations
   tags:
   - openapi
   - api
