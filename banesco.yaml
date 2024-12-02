@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
-  name: Prueba1
+  name: Prueba2
   description: "Cash Management and Account Services API"
   tags:
     - finance
