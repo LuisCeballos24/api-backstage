@@ -14,4 +14,4 @@ spec:
                 referenceId:
                     type: string
         StatusInstanceRecord:
-            $ref: 'https://raw.githubusercontent.com/LuisCeballos24/api-backstage/blob/c06b5e72f16ca6ee9932b654a977f5a47a90a5f3/commons/Objects/StatusInstanceRecord.yaml'
+            $ref: 'https://raw.githubusercontent.com/LuisCeballos24/api-backstage/c06b5e72f16ca6ee9932b654a977f5a47a90a5f3/commons/Objects/StatusInstanceRecord.yaml'
