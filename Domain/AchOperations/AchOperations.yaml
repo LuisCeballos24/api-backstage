@@ -139,9 +139,9 @@ spec:
       schemas:
         ### Request ###
         InitiateBeneficiaryEntryRq:
-          $ref: './Operations/InitiateBeneficiaryEntry/InitiateBeneficiaryEntryRq.yaml'
+          $ref: 'https://github.com/LuisCeballos24/api-backstage/blob/f0835351f573ea3d8d23d557951885202e308ea2/Domain/AchOperations/Operations/InitiateBeneficiaryEntry/InitiateBeneficiaryEntryRq.yaml'
         UpdateBeneficiaryEntryRq:
-          $ref: './Operations/UpdateBeneficiaryEntry/UpdateBeneficiaryEntryRq.yaml'
+          $ref: 'https://github.com/LuisCeballos24/api-backstage/blob/f0835351f573ea3d8d23d557951885202e308ea2/Domain/AchOperations/Operations/InitiateBeneficiaryEntry/InitiateBeneficiaryEntryRs.yaml'
         ### Request ###
     
         ### Response ###
