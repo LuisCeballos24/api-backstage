@@ -1,11 +1,19 @@
-type: object
-properties:
-    status:
-        type: string
-        description: Codigo de respuesta
-    message:
-        type: string
-        description: Mensaje de respuesta
-    description:
-        type: string
-        description: Descripcion de respuesta
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: UpdateBeneficiaryEntryRq
+  description: Reusable schema for CardTransaction object
+spec:
+  type: schema
+  schema:
+    type: object
+    properties:
+        status:
+            type: string
+            description: Codigo de respuesta
+        message:
+            type: string
+            description: Mensaje de respuesta
+        description:
+            type: string
+            description: Descripcion de respuesta
