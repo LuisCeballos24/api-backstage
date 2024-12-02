@@ -1,26 +1,11 @@
 apiVersion: backstage.io/v1alpha1
-kind: API
+kind: Resource
 metadata:
   name: UpdateBeneficiaryEntryRs
-  links:
-    - url: https://github.com/LuisCeballos24/api-backstage
-      title: Source Code
-      icon: github
-    - url: https://test.api.ob.banesco.com.pa
-      title: Production
-      icon: globe
-  annotations:
-    # this could also be `url:<url>` if the documentation isn't in the same location
-    backstage.io/techdocs-ref: dir:.
-    github.com/project-slug: https://github.com/LuisCeballos24/api-backstage/blob/main/Proxy/CashManagementAndAccountServices/CashManagementAndAccountServices.yaml
+  description: Reusable schema for CardTransaction object
 spec:
-  type: openapi
-  lifecycle: production
-  owner: user:LuisCeballos24
-  system: cash-management
-  dependsOn: ['resource:heroes-db']
-  apiConsumedBy: ['component:www-heroes']
-  definition: |
+  type: schema
+  schema:
     type: object
     properties:
         BeneficiaryEntry:
