@@ -6,6 +6,6 @@ metadata:
   tags:
     - finance
 spec:
-  type: file
+  type: url
   targets:
-    - Domain/AchOperations/AchOperations.yaml
+    - https://github.com/LuisCeballos24/api-backstage/blob/ae64b6972f6afd8e290cca1ecd38e1abf95f78c9/Domain/AchOperations/AchOperations.yaml
