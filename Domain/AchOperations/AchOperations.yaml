@@ -139,16 +139,16 @@ spec:
       schemas:
         ### Request ###
         InitiateBeneficiaryEntryRq:
-          $ref: 'https://github.com/LuisCeballos24/api-backstage/blob/f0835351f573ea3d8d23d557951885202e308ea2/Domain/AchOperations/Operations/InitiateBeneficiaryEntry/InitiateBeneficiaryEntryRq.yaml'
+          $ref: 'https://raw.githubusercontent.com/LuisCeballos24/api-backstage/f0835351f573ea3d8d23d557951885202e308ea2/Domain/AchOperations/Operations/InitiateBeneficiaryEntry/InitiateBeneficiaryEntryRq.yaml'
         UpdateBeneficiaryEntryRq:
-          $ref: 'https://github.com/LuisCeballos24/api-backstage/blob/5cc390bb1b46cabc86e8aef81a23364008a1d9f8/Domain/AchOperations/Operations/UpdateBeneficiaryEntry/UpdateBeneficiaryEntryRq.yaml'
+          $ref: 'https://raw.githubusercontent.com/LuisCeballos24/api-backstage/5cc390bb1b46cabc86e8aef81a23364008a1d9f8/Domain/AchOperations/Operations/UpdateBeneficiaryEntry/UpdateBeneficiaryEntryRq.yaml'
         ### Request ###
     
         ### Response ###
         InitiateBeneficiaryEntryRs:
-          $ref: 'https://github.com/LuisCeballos24/api-backstage/blob/f0835351f573ea3d8d23d557951885202e308ea2/Domain/AchOperations/Operations/InitiateBeneficiaryEntry/InitiateBeneficiaryEntryRq.yaml'
+          $ref: 'https://raw.githubusercontent.com.com/LuisCeballos24/api-backstage/f0835351f573ea3d8d23d557951885202e308ea2/Domain/AchOperations/Operations/InitiateBeneficiaryEntry/InitiateBeneficiaryEntryRq.yaml'
         UpdateBeneficiaryEntryRs:
-          $ref: 'https://github.com/LuisCeballos24/api-backstage/blob/5cc390bb1b46cabc86e8aef81a23364008a1d9f8/Domain/AchOperations/Operations/UpdateBeneficiaryEntry/UpdateBeneficiaryEntryRs.yaml'
+          $ref: 'https://raw.githubusercontent.com.com/LuisCeballos24/api-backstage/5cc390bb1b46cabc86e8aef81a23364008a1d9f8/Domain/AchOperations/Operations/UpdateBeneficiaryEntry/UpdateBeneficiaryEntryRs.yaml'
         ### Http Response ###
         httpResponse:
           $ref: '../../commons/HttpResponses/HttpError.yaml'
