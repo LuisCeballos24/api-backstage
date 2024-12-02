@@ -1,16 +1,21 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  annotations:
-    backstage.io/techdocs-ref: dir:.
-    backstage.io/definition-location: C:\backstage-demo\backstage\banesco-apis\Yaml\commons\Objects\AccessArrangementInvolvement.yaml
-    backstage.io/source-location: C:\backstage-demo\backstage\banesco-apis\Yaml\commons\Objects\AccessArrangementInvolvement.yaml
-  description: No description
   name: AchOperations
-  tags:
-  - openapi
-  - api
+  links:
+    - url: https://github.com/LuisCeballos24/api-backstage
+      title: Source Code
+      icon: github
+    - url: https://test.api.ob.banesco.com.pa
+      title: Production
+      icon: globe
 spec:
+  type: openapi
+  lifecycle: production
+  owner: user:LuisCeballos24
+  system: cash-management
+  dependsOn: ['resource:heroes-db']
+  apiConsumedBy: ['component:www-heroes']
   definition: |
     openapi: 3.0.3
     info:
