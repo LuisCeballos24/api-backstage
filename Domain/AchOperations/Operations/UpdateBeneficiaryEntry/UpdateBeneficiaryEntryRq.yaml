@@ -9,4 +9,4 @@ spec:
     type: object
     properties:
         BeneficiaryEntry:
-            $ref: 'https://raw.githubusercontent.com/LuisCeballos24/api-backstage/blob/cf01bfd87036d52a724713f556808f5edc86116f/commons/Objects/BeneficiaryEntry.yaml'
+            $ref: 'https://raw.githubusercontent.com/LuisCeballos24/api-backstage/cf01bfd87036d52a724713f556808f5edc86116f/commons/Objects/BeneficiaryEntry.yaml'
