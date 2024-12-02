@@ -143,16 +143,16 @@ spec:
       schemas:
         ### Request ###
         InitiateBeneficiaryEntryRq:
-          $ref: 'banesco-apis/Yaml/Domain/AchOperations/Operations/InitiateBeneficiaryEntry/InitiateBeneficiaryEntryRq.yaml'
+          $ref: './Yaml/Domain/AchOperations/Operations/InitiateBeneficiaryEntry/InitiateBeneficiaryEntryRq.yaml'
         UpdateBeneficiaryEntryRq:
-          $ref: 'banesco-apis/Yaml/Domain/AchOperations/Operations/UpdateBeneficiaryEntry/UpdateBeneficiaryEntryRs.yaml'
+          $ref: './Yaml/Domain/AchOperations/Operations/UpdateBeneficiaryEntry/UpdateBeneficiaryEntryRs.yaml'
         ### Request ###
 
         ### Response ###
         InitiateBeneficiaryEntryRs:
-          $ref: 'Yaml/Domain/AchOperations/Operations/InitiateBeneficiaryEntry/InitiateBeneficiaryEntryRs.yaml'
+          $ref: './Yaml/Domain/AchOperations/Operations/InitiateBeneficiaryEntry/InitiateBeneficiaryEntryRs.yaml'
         UpdateBeneficiaryEntryRs:
-          $ref: 'Yaml/Domain/AchOperations/Operations/UpdateBeneficiaryEntry/UpdateBeneficiaryEntryRs.yaml'
+          $ref: './Yaml/Domain/AchOperations/Operations/UpdateBeneficiaryEntry/UpdateBeneficiaryEntryRs.yaml'
         ### Http Response ###
         httpResponse:
           $ref: './Yaml/commons/HttpResponses/HttpError.yaml'
