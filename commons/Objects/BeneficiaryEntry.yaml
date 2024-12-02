@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: UpdateBeneficiaryEntryRq
+  name: BeneficiaryEntry
   description: Reusable schema for CardTransaction object
 spec:
   type: schema
