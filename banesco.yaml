@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
-  name: cash-management-and-account-services
+  name: Banesco-APIS
 spec:
   tarjets:
       #Domains
