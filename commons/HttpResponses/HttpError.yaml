@@ -1,12 +1,20 @@
-type: object
-properties:
-  statusCode:
-    type: string
-    format: string
-  status:
-    type: string
-    format: string
-  message:
-    type: string
-    format: string
-description: Status Attributes
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: UpdateBeneficiaryEntryRs
+  description: Reusable schema for CardTransaction object
+spec:
+  type: schema
+  schema:
+    type: object
+    properties:
+      statusCode:
+        type: string
+        format: string
+      status:
+        type: string
+        format: string
+      message:
+        type: string
+        format: string
+    description: Status Attributes
