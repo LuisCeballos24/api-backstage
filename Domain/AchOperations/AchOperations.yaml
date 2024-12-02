@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: AchOperations1
+  name: AchOperations
   links:
     - url: https://github.com/LuisCeballos24/api-backstage
       title: Source Code
