@@ -8,5 +8,5 @@ metadata:
 spec:
   type: url
   targets:
-    - https://raw.githubusercontent.com/LuisCeballos24/api-backstage/ae64b6972f6afd8e290cca1ecd38e1abf95f78c9/Domain/AchOperations/AchOperations.yaml
-    - https://raw.githubusercontent.com/LuisCeballos24/api-backstage/9239f09e6eddd5f0b182a3f1a0e8349d77f6f1e7/Domain/CardTransactionSwitch/CardTransactionSwitch.yaml
+    - https://github.com/LuisCeballos24/api-backstage/ae64b6972f6afd8e290cca1ecd38e1abf95f78c9/Domain/AchOperations/AchOperations.yaml
+    - https://github.com/LuisCeballos24/api-backstage/9239f09e6eddd5f0b182a3f1a0e8349d77f6f1e7/Domain/CardTransactionSwitch/CardTransactionSwitch.yaml
